@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [TestCases.PatExtraOptnTestCases]">
+  <test name="Command line test(failed)">
+    <classes>
+      <class name="TestCases.PatExtraOptnTestCases">
+        <methods>
+          <include name="setup"/>
+          <include name="testCase250"/>
+          <include name="testCase249"/>
+          <include name="screenAfterMethod"/>
+          <include name="testCase251"/>
+          <include name="testCase262"/>
+          <include name="testCase263"/>
+          <include name="flush"/>
+        </methods>
+      </class> <!-- TestCases.PatExtraOptnTestCases -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [TestCases.PatExtraOptnTestCases] -->

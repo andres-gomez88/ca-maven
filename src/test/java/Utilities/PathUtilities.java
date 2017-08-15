@@ -6,7 +6,7 @@
 package Utilities;
 
 public class PathUtilities {
-    private static String geckoDriverPath = "C:\\seleniumdriver\\geckodriver2.exe";
+    private static String geckoDriverPath = "C:\\seleniumdriver\\geckodriver.exe";
     private static String chromeDriverPath = "C:\\seleniumdriver\\chromedriver.exe";
     private static String excelPath = "C:\\Users\\User\\Documents\\NetBeansProjects\\CATest\\testData.xlsx";
     private static String extentRepPath = "C:\\Users\\User\\Documents\\Screenshots\\";
@@ -29,7 +29,7 @@ public class PathUtilities {
     public static String getExtentRepPath() {
         return extentRepPath;
     }
-    
+
     public static String getExtentConfPath() {
         return extentConfPath;
     }
@@ -41,6 +41,6 @@ public class PathUtilities {
     public static String getScreenshotCHPath() {
         return screenshotCHPath;
     }
-    
-    
+
+
 }

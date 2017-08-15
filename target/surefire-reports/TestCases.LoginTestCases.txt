@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: TestCases.LoginTestCases
+-------------------------------------------------------------------------------
+Tests run: 18, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 79.457 sec <<< FAILURE!
+testCase013(TestCases.LoginTestCases)  Time elapsed: 6.399 sec  <<< FAILURE!
+java.lang.AssertionError: Test FAILED
+	at org.testng.Assert.fail(Assert.java:94)
+	at TestCases.LoginTestCases.testCase013(LoginTestCases.java:312)
+
+testCase016(TestCases.LoginTestCases)  Time elapsed: 1.413 sec  <<< FAILURE!
+java.lang.AssertionError: Test FAILED
+	at org.testng.Assert.fail(Assert.java:94)
+	at TestCases.LoginTestCases.testCase016(LoginTestCases.java:370)
+
+testCase017(TestCases.LoginTestCases)  Time elapsed: 0.907 sec  <<< FAILURE!
+java.lang.AssertionError: Test FAILED
+	at org.testng.Assert.fail(Assert.java:94)
+	at TestCases.LoginTestCases.testCase017(LoginTestCases.java:392)
+
+testCase018(TestCases.LoginTestCases)  Time elapsed: 1.266 sec  <<< FAILURE!
+java.lang.AssertionError: Test FAILED
+	at org.testng.Assert.fail(Assert.java:94)
+	at TestCases.LoginTestCases.testCase018(LoginTestCases.java:414)
+

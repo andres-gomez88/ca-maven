@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="61" failures="2" name="TestCases.ProtocolTestCases" time="453.326" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
+    <property name="java.vm.version" value="25.121-b13"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\User\Documents\NetBeansProjects\camaven"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="test" value="ProtocolTestCases"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\User\Documents\NetBeansProjects\camaven"/>
+    <property name="java.runtime.version" value="1.8.0_121-b13"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\User\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Program Files\Apache\apache-maven-3.5.0\bin\..\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_121\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.8.0_121\bin;C:\Program Files (x86)\IntelSWTools\Intel(R)_Media_SDK_2016.0.2\bin\x64;C:\Program Files (x86)\IntelSWTools\Intel(R)_Media_SDK_2016.0.2\bin\win32;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git LFS;C:\Program Files\Git\cmd;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Apache\apache-maven-3.5.0-bin\apache-maven-3.5.0\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Apache\apache-maven-3.5.0\bin;C:\Users\User\AppData\Local\Microsoft\WindowsApps;;."/>
+    <property name="maven.conf" value="C:\Program Files\Apache\apache-maven-3.5.0\bin\../conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="library.jansi.path" value="C:\Program Files\Apache\apache-maven-3.5.0\bin\..\lib\jansi-native\windows64"/>
+    <property name="user.home" value="C:\Users\User"/>
+    <property name="user.timezone" value="America/Los_Angeles"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="User"/>
+    <property name="java.class.path" value="C:\Program Files\Apache\apache-maven-3.5.0\bin\..\boot\plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_121\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -Dtest=ProtocolTestCases"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_121"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_121\jre\classes"/>
+    <property name="sun.stderr.encoding" value="cp437"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\Apache\apache-maven-3.5.0\bin\.."/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.stdout.encoding" value="cp437"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase019" time="6.448"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase020" time="4.76"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase021" time="5.134"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase022" time="4.934"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase023" time="5.119"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase024" time="5.336"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase025" time="5.363"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase026" time="5.414"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase027" time="5.319"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase028" time="5.769"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase029" time="5.511"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase030" time="5.826"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase031" time="20.074"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase032" time="19.929"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase033" time="6.701"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase034" time="5.536"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase035" time="5.927"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase036" time="5.76"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase037" time="5.697"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase038" time="5.355"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase039" time="5.388"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase040" time="6.008"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase041" time="6.486"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase042" time="5.681"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase043" time="5.411"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase044" time="5.504"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase045" time="5.669"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase046" time="5.375"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase047" time="5.761"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase048" time="5.939"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase049" time="7.321"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase050" time="5.987"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase051" time="5.758"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase052" time="41.595">
+    <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
+	at org.testng.Assert.fail(Assert.java:94)
+	at TestCases.ProtocolTestCases.testCase052(ProtocolTestCases.java:1060)
+</failure>
+    <system-out>(07/19/17) - 14:58:31 INFO  ProtocolTestCases.testCase052 - Opened: https://test-maint-wc.test.reflexionhealth.com
+(07/19/17) - 14:58:32 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
+(07/19/17) - 14:58:32 INFO  LogInPg.logIn - Password for Login: Reflexion1
+(07/19/17) - 14:58:32 INFO  LogInPg.logIn - Submit button clicked
+(07/19/17) - 14:58:34 INFO  ProtocolTestCases.testCase052 - Home page loaded
+(07/19/17) - 14:58:34 INFO  NavBarFooterPg.clickProtocolsTabNav - Clicked Protocols Nav Tab
+(07/19/17) - 14:58:36 INFO  ProtocolsListPg.addProtocol - Clicked Add New Protocol
+(07/19/17) - 14:58:36 INFO  ProtocolsListPg.addProtocol - Clicked an excercise
+(07/19/17) - 14:58:36 INFO  ProtocolsListPg.addProtocol - Clicked Save as New Protocol Button
+(07/19/17) - 14:58:37 INFO  ProtocolsListPg.addProtocol - Entered protocol name: Case 52
+(07/19/17) - 14:58:37 INFO  ProtocolsListPg.addProtocol - Entered protocol description: Test description
+(07/19/17) - 14:58:37 INFO  ProtocolsListPg.addProtocol - Clicked Save Button
+(07/19/17) - 14:59:13 WARN  ProtocolsListPg.addProtocol - Protocol Case 52 not created
+</system-out>
+  </testcase>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase053" time="7.781"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase054" time="8.049"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase055" time="5.231"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase056" time="5.513"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase057" time="5.921"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase058" time="5.539"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase059" time="5.283"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase060" time="5.597"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase061" time="5.683"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase062" time="5.749"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase063" time="5.407"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase064" time="6.033"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase065" time="5.675"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase066" time="5.576"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase067" time="5.875"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase068" time="5.382"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase069" time="5.672"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase070" time="5.748"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase071" time="6.059"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase072" time="5.35"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase073" time="5.937"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase074" time="5.619"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase075" time="5.313"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase076" time="5.427"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase077" time="7.109"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase078" time="7.838"/>
+  <testcase classname="TestCases.ProtocolTestCases" name="testCase079" time="41.165">
+    <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
+	at org.testng.Assert.fail(Assert.java:94)
+	at TestCases.ProtocolTestCases.testCase079(ProtocolTestCases.java:1882)
+</failure>
+    <system-out>(07/19/17) - 15:02:50 INFO  ProtocolTestCases.testCase079 - Opened: https://test-maint-wc.test.reflexionhealth.com
+(07/19/17) - 15:02:50 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
+(07/19/17) - 15:02:50 INFO  LogInPg.logIn - Password for Login: Reflexion1
+(07/19/17) - 15:02:50 INFO  LogInPg.logIn - Submit button clicked
+(07/19/17) - 15:02:52 INFO  ProtocolTestCases.testCase079 - Home page loaded
+(07/19/17) - 15:02:52 INFO  NavBarFooterPg.clickProtocolsTabNav - Clicked Protocols Nav Tab
+(07/19/17) - 15:02:54 INFO  ProtocolsListPg.addProtocol - Clicked Add New Protocol
+(07/19/17) - 15:02:54 INFO  ProtocolsListPg.addProtocol - Clicked an excercise
+(07/19/17) - 15:02:54 INFO  ProtocolsListPg.addProtocol - Clicked Save as New Protocol Button
+(07/19/17) - 15:02:55 INFO  ProtocolsListPg.addProtocol - Entered protocol name: Case 79
+(07/19/17) - 15:02:55 INFO  ProtocolsListPg.addProtocol - Entered protocol description: Test description
+(07/19/17) - 15:02:55 INFO  ProtocolsListPg.addProtocol - Clicked Save Button
+(07/19/17) - 15:03:31 WARN  ProtocolsListPg.addProtocol - Protocol Case 79 not created
+</system-out>
+  </testcase>
+</testsuite>

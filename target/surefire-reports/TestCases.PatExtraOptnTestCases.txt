@@ -1,0 +1,29 @@
+-------------------------------------------------------------------------------
+Test set: TestCases.PatExtraOptnTestCases
+-------------------------------------------------------------------------------
+Tests run: 19, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 110.378 sec <<< FAILURE!
+testCase249(TestCases.PatExtraOptnTestCases)  Time elapsed: 6.147 sec  <<< FAILURE!
+java.lang.AssertionError: Test FAILED
+	at org.testng.Assert.fail(Assert.java:94)
+	at TestCases.PatExtraOptnTestCases.testCase249(PatExtraOptnTestCases.java:89)
+
+testCase250(TestCases.PatExtraOptnTestCases)  Time elapsed: 4.98 sec  <<< FAILURE!
+java.lang.AssertionError: Test FAILED
+	at org.testng.Assert.fail(Assert.java:94)
+	at TestCases.PatExtraOptnTestCases.testCase250(PatExtraOptnTestCases.java:112)
+
+testCase251(TestCases.PatExtraOptnTestCases)  Time elapsed: 4.596 sec  <<< FAILURE!
+java.lang.AssertionError: Test FAILED
+	at org.testng.Assert.fail(Assert.java:94)
+	at TestCases.PatExtraOptnTestCases.testCase251(PatExtraOptnTestCases.java:135)
+
+testCase262(TestCases.PatExtraOptnTestCases)  Time elapsed: 9.006 sec  <<< FAILURE!
+java.lang.AssertionError: Test FAILED
+	at org.testng.Assert.fail(Assert.java:94)
+	at TestCases.PatExtraOptnTestCases.testCase262(PatExtraOptnTestCases.java:373)
+
+testCase263(TestCases.PatExtraOptnTestCases)  Time elapsed: 8.763 sec  <<< FAILURE!
+java.lang.AssertionError: Test FAILED
+	at org.testng.Assert.fail(Assert.java:94)
+	at TestCases.PatExtraOptnTestCases.testCase263(PatExtraOptnTestCases.java:397)
+
