@@ -5,8 +5,54 @@
   <test name="Clinician App Chrome Test(failed)">
     <parameter name="browserType" value="chrome"/>
     <classes>
+      <class name="TestCases.ClinicianTestCases">
+        <methods>
+          <include name="flush"/>
+          <include name="screenAfterMethod"/>
+          <include name="testCase123"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- TestCases.ClinicianTestCases -->
+      <class name="TestCases.NavBarFooterTestCases">
+        <methods>
+          <include name="flush"/>
+          <include name="screenAfterMethod"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- TestCases.NavBarFooterTestCases -->
+      <class name="TestCases.LoginTestCases">
+        <methods>
+          <include name="screenAfterMethod"/>
+          <include name="flush"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- TestCases.LoginTestCases -->
+      <class name="TestCases.SupportVideosTestCases">
+        <methods>
+          <include name="screenAfterMethod"/>
+          <include name="flush"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- TestCases.SupportVideosTestCases -->
+      <class name="TestCases.ForgotPassTestCases">
+        <methods>
+          <include name="flush"/>
+          <include name="testCase081"/>
+          <include name="screenAfterMethod"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- TestCases.ForgotPassTestCases -->
+      <class name="TestCases.ChangePWTestCases">
+        <methods>
+          <include name="setup"/>
+          <include name="flush"/>
+          <include name="screenAfterMethod"/>
+        </methods>
+      </class> <!-- TestCases.ChangePWTestCases -->
       <class name="TestCases.HomePageTestCases">
         <methods>
+          <include name="testCase094"/>
+          <include name="testCase092"/>
           <include name="screenAfterMethod"/>
           <include name="setup"/>
           <include name="flush"/>
@@ -23,21 +69,14 @@
           <include name="flush"/>
         </methods>
       </class> <!-- TestCases.PatExtraOptnTestCases -->
-      <class name="TestCases.ClinicianTestCases">
-        <methods>
-          <include name="flush"/>
-          <include name="screenAfterMethod"/>
-          <include name="testCase123"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- TestCases.ClinicianTestCases -->
-      <class name="TestCases.ChangePWTestCases">
+      <class name="TestCases.ProfileTestCases">
         <methods>
           <include name="setup"/>
-          <include name="flush"/>
           <include name="screenAfterMethod"/>
+          <include name="flush"/>
+          <include name="testCase213"/>
         </methods>
-      </class> <!-- TestCases.ChangePWTestCases -->
+      </class> <!-- TestCases.ProfileTestCases -->
       <class name="TestCases.ProtocolTestCases">
         <methods>
           <include name="testCase052"/>
@@ -47,46 +86,6 @@
           <include name="screenAfterMethod"/>
         </methods>
       </class> <!-- TestCases.ProtocolTestCases -->
-      <class name="TestCases.NavBarFooterTestCases">
-        <methods>
-          <include name="flush"/>
-          <include name="screenAfterMethod"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- TestCases.NavBarFooterTestCases -->
-      <class name="TestCases.ForgotPassTestCases">
-        <methods>
-          <include name="flush"/>
-          <include name="testCase081"/>
-          <include name="screenAfterMethod"/>
-          <include name="testCase080"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- TestCases.ForgotPassTestCases -->
-      <class name="TestCases.ProfileTestCases">
-        <methods>
-          <include name="setup"/>
-          <include name="screenAfterMethod"/>
-          <include name="flush"/>
-          <include name="testCase213"/>
-        </methods>
-      </class> <!-- TestCases.ProfileTestCases -->
-      <class name="TestCases.SupportVideosTestCases">
-        <methods>
-          <include name="screenAfterMethod"/>
-          <include name="flush"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- TestCases.SupportVideosTestCases -->
-      <class name="TestCases.LoginTestCases">
-        <methods>
-          <include name="screenAfterMethod"/>
-          <include name="flush"/>
-          <include name="testCase013"/>
-          <include name="setup"/>
-          <include name="testCase017"/>
-        </methods>
-      </class> <!-- TestCases.LoginTestCases -->
     </classes>
   </test> <!-- Clinician App Chrome Test(failed) -->
 </suite> <!-- Failed suite [Clinician App Chrome Test Plan] -->

@@ -1,52 +1,48 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 250, Failures: 12, Errors: 0, Skipped: 0, Time elapsed: 1,781.659 s <<< FAILURE! - in TestSuite
-testCase013(TestCases.LoginTestCases)  Time elapsed: 5.975 s  <<< FAILURE!
-java.lang.AssertionError: Test FAILED
-	at TestCases.LoginTestCases.testCase013(LoginTestCases.java:312)
-
-testCase017(TestCases.LoginTestCases)  Time elapsed: 4.513 s  <<< FAILURE!
-java.lang.AssertionError: Test FAILED
-	at TestCases.LoginTestCases.testCase017(LoginTestCases.java:392)
-
-testCase052(TestCases.ProtocolTestCases)  Time elapsed: 41.776 s  <<< FAILURE!
+Tests run: 250, Failures: 11, Errors: 0, Skipped: 0, Time elapsed: 1,807.447 s <<< FAILURE! - in TestSuite
+testCase052(TestCases.ProtocolTestCases)  Time elapsed: 42.506 s  <<< FAILURE!
 java.lang.AssertionError: Test FAILED
 	at TestCases.ProtocolTestCases.testCase052(ProtocolTestCases.java:1060)
 
-testCase079(TestCases.ProtocolTestCases)  Time elapsed: 41.877 s  <<< FAILURE!
+testCase079(TestCases.ProtocolTestCases)  Time elapsed: 41.289 s  <<< FAILURE!
 java.lang.AssertionError: Test FAILED
 	at TestCases.ProtocolTestCases.testCase079(ProtocolTestCases.java:1882)
 
-testCase080(TestCases.ForgotPassTestCases)  Time elapsed: 7.023 s  <<< FAILURE!
-java.lang.AssertionError: Test FAILED
-	at TestCases.ForgotPassTestCases.testCase080(ForgotPassTestCases.java:86)
-
-testCase081(TestCases.ForgotPassTestCases)  Time elapsed: 6.378 s  <<< FAILURE!
+testCase081(TestCases.ForgotPassTestCases)  Time elapsed: 6.12 s  <<< FAILURE!
 java.lang.AssertionError: Test FAILED
 	at TestCases.ForgotPassTestCases.testCase081(ForgotPassTestCases.java:104)
 
-testCase123(TestCases.ClinicianTestCases)  Time elapsed: 10.064 s  <<< FAILURE!
+testCase092(TestCases.HomePageTestCases)  Time elapsed: 4.715 s  <<< FAILURE!
+java.lang.AssertionError: Test FAILED
+	at TestCases.HomePageTestCases.testCase092(HomePageTestCases.java:114)
+
+testCase094(TestCases.HomePageTestCases)  Time elapsed: 4.683 s  <<< FAILURE!
+java.lang.AssertionError: Test FAILED
+	at TestCases.HomePageTestCases.testCase094(HomePageTestCases.java:136)
+
+testCase123(TestCases.ClinicianTestCases)  Time elapsed: 10.458 s  <<< FAILURE!
 java.lang.AssertionError: Test FAILED
 	at TestCases.ClinicianTestCases.testCase123(ClinicianTestCases.java:191)
 
-testCase213(TestCases.ProfileTestCases)  Time elapsed: 3.708 s  <<< FAILURE!
+testCase213(TestCases.ProfileTestCases)  Time elapsed: 3.647 s  <<< FAILURE!
 java.lang.AssertionError: Test FAILED
 	at TestCases.ProfileTestCases.testCase213(ProfileTestCases.java:213)
 
-testCase261(TestCases.PatExtraOptnTestCases)  Time elapsed: 3.921 s  <<< FAILURE!
+testCase261(TestCases.PatExtraOptnTestCases)  Time elapsed: 4.26 s  <<< FAILURE!
 java.lang.AssertionError: Test FAILED
 	at TestCases.PatExtraOptnTestCases.testCase261(PatExtraOptnTestCases.java:350)
 
-testCase262(TestCases.PatExtraOptnTestCases)  Time elapsed: 8.962 s  <<< FAILURE!
+testCase262(TestCases.PatExtraOptnTestCases)  Time elapsed: 8.862 s  <<< FAILURE!
 java.lang.AssertionError: Test FAILED
 	at TestCases.PatExtraOptnTestCases.testCase262(PatExtraOptnTestCases.java:373)
 
-testCase263(TestCases.PatExtraOptnTestCases)  Time elapsed: 8.901 s  <<< FAILURE!
+testCase263(TestCases.PatExtraOptnTestCases)  Time elapsed: 8.791 s  <<< FAILURE!
 java.lang.AssertionError: Test FAILED
 	at TestCases.PatExtraOptnTestCases.testCase263(PatExtraOptnTestCases.java:397)
 
-testCase264(TestCases.PatExtraOptnTestCases)  Time elapsed: 3.901 s  <<< FAILURE!
+testCase264(TestCases.PatExtraOptnTestCases)  Time elapsed: 4.078 s  <<< FAILURE!
 java.lang.AssertionError: Test FAILED
 	at TestCases.PatExtraOptnTestCases.testCase264(PatExtraOptnTestCases.java:417)
 

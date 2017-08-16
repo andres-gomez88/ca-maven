@@ -18,7 +18,6 @@
           <include name="screenAfterMethod"/>
           <include name="flush"/>
           <include name="testCase016"/>
-          <include name="testCase013"/>
           <include name="setup"/>
           <include name="testCase018"/>
           <include name="testCase017"/>
@@ -43,14 +42,6 @@
           <include name="setup"/>
         </methods>
       </class> <!-- TestCases.SupportVideosTestCases -->
-      <class name="TestCases.ForgotPassTestCases">
-        <methods>
-          <include name="flush"/>
-          <include name="testCase081"/>
-          <include name="screenAfterMethod"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- TestCases.ForgotPassTestCases -->
       <class name="TestCases.ChangePWTestCases">
         <methods>
           <include name="setup"/>
@@ -58,6 +49,13 @@
           <include name="screenAfterMethod"/>
         </methods>
       </class> <!-- TestCases.ChangePWTestCases -->
+      <class name="TestCases.ForgotPassTestCases">
+        <methods>
+          <include name="flush"/>
+          <include name="screenAfterMethod"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- TestCases.ForgotPassTestCases -->
       <class name="TestCases.PatExtraOptnTestCases">
         <methods>
           <include name="setup"/>

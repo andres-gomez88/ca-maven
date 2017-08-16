@@ -1,2 +1,3 @@
 logs/
 src/main
+target/surefire-reports/

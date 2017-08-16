@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="1,781.659" tests="250" errors="0" skipped="0" failures="12">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="1,807.447" tests="250" errors="0" skipped="0" failures="11">
   <properties>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="JOB_NAME" value="TestDataChrome"/>
@@ -7,12 +7,11 @@
     <property name="NUMBER_OF_PROCESSORS" value="8"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="JENKINS_HOME" value="C:\Users\User\.jenkins"/>
-    <property name="FPS_BROWSER_USER_PROFILE_STRING" value="Default"/>
     <property name="HUDSON_SERVER_COOKIE" value="f9e18df1daf7cdb5"/>
     <property name="POM_ARTIFACTID" value="camaven"/>
     <property name="os.name" value="Windows 10"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_121\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_121\jre\classes"/>
-    <property name="EXECUTOR_NUMBER" value="0"/>
+    <property name="EXECUTOR_NUMBER" value="1"/>
     <property name="sun.desktop" value="windows"/>
     <property name="PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
@@ -20,7 +19,6 @@
     <property name="NODE_LABELS" value="master"/>
     <property name="TEMP" value="C:\Users\User\AppData\Local\Temp"/>
     <property name="java.runtime.version" value="1.8.0_121-b13"/>
-    <property name="FPS_BROWSER_APP_PROFILE_STRING" value="Internet Explorer"/>
     <property name="user.name" value="User"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="CommonProgramW6432" value="C:\Program Files\Common Files"/>
@@ -28,9 +26,9 @@
     <property name="PROMPT" value="$P$G"/>
     <property name="user.language" value="en"/>
     <property name="JOB_BASE_NAME" value="TestDataChrome"/>
-    <property name="RUN_CHANGES_DISPLAY_URL" value="http://localhost:8080/job/TestDataChrome/23/display/redirect?page=changes"/>
+    <property name="RUN_CHANGES_DISPLAY_URL" value="http://localhost:8080/job/TestDataChrome/24/display/redirect?page=changes"/>
     <property name="M2" value="C:\Program Files\Apache\apache-maven-3.5.0\bin"/>
-    <property name="BUILD_DISPLAY_NAME" value="#23"/>
+    <property name="BUILD_DISPLAY_NAME" value="#24"/>
     <property name="OneDrive" value="C:\Users\User\OneDrive"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
     <property name="LOCALAPPDATA" value="C:\Users\User\AppData\Local"/>
@@ -41,7 +39,7 @@
     <property name="sun.arch.data.model" value="64"/>
     <property name="NODE_NAME" value="master"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\endorsed"/>
-    <property name="BUILD_ID" value="23"/>
+    <property name="BUILD_ID" value="24"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="INTELMEDIASDK_WINSDK_PATH" value="C:\Program Files (x86)\Windows Kits\8.1"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
@@ -58,8 +56,8 @@
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_121\jre"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="os.version" value="10.0"/>
-    <property name="=ExitCode" value="00000082"/>
-    <property name="RUN_DISPLAY_URL" value="http://localhost:8080/job/TestDataChrome/23/display/redirect"/>
+    <property name="=ExitCode" value="00000001"/>
+    <property name="RUN_DISPLAY_URL" value="http://localhost:8080/job/TestDataChrome/24/display/redirect"/>
     <property name="POM_VERSION" value="1.0-SNAPSHOT"/>
     <property name="TMP" value="C:\Users\User\AppData\Local\Temp"/>
     <property name="path.separator" value=";"/>
@@ -82,7 +80,7 @@
     <property name="GTK_BASEPATH" value="C:\Program Files (x86)\GtkSharp\2.12\"/>
     <property name="user.home" value="C:\Users\User"/>
     <property name="PUBLIC" value="C:\Users\Public"/>
-    <property name="BUILD_TAG" value="jenkins-TestDataChrome-23"/>
+    <property name="BUILD_TAG" value="jenkins-TestDataChrome-24"/>
     <property name="JENKINS_SERVER_COOKIE" value="f9e18df1daf7cdb5"/>
     <property name="HUDSON_URL" value="http://localhost:8080/"/>
     <property name="ProgramData" value="C:\ProgramData"/>
@@ -90,14 +88,14 @@
     <property name="USERPROFILE" value="C:\Users\User"/>
     <property name="CLASSPATH" value=""/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_121\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Apache\apache-maven-3.5.0/bin;C:\Program Files\Java\jdk1.8.0_121/bin;C:\Program Files\Java\jdk1.8.0_121/bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\Program Files (x86)\IntelSWTools\Intel(R)_Media_SDK_2016.0.2\bin\x64;C:\Program Files (x86)\IntelSWTools\Intel(R)_Media_SDK_2016.0.2\bin\win32;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git LFS;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Apache\apache-maven-3.5.0-bin\apache-maven-3.5.0\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Apache\apache-maven-3.5.0\bin;C:\cURL;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\User\AppData\Local\Microsoft\WindowsApps;C:\Users\User\AppData\Roaming\npm;C:\Users\User\AppData\Local\atom\bin;C:\Users\User\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_121\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Apache\apache-maven-3.5.0/bin;C:\Program Files\Java\jdk1.8.0_121/bin;C:\Program Files\Java\jdk1.8.0_121/bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\Program Files (x86)\IntelSWTools\Intel(R)_Media_SDK_2016.0.2\bin\x64;C:\Program Files (x86)\IntelSWTools\Intel(R)_Media_SDK_2016.0.2\bin\win32;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git LFS;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Apache\apache-maven-3.5.0-bin\apache-maven-3.5.0\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Apache\apache-maven-3.5.0\bin;C:\cURL;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\seleniumdriver;C:\Users\User\AppData\Local\Microsoft\WindowsApps;C:\Users\User\AppData\Roaming\npm;C:\Users\User\AppData\Local\atom\bin;C:\Users\User\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\seleniumdriver\geckodriver2.exe;;."/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="APPDATA" value="C:\Users\User\AppData\Roaming"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="maven.home" value="C:\Program Files\Apache\apache-maven-3.5.0"/>
     <property name="java.class.path" value="C:\Users\User\.jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-agent-1.11.jar;C:\Program Files\Apache\apache-maven-3.5.0\boot\plexus-classworlds-2.5.2.jar;C:\Program Files\Apache\apache-maven-3.5.0/conf/logging"/>
-    <property name="sun.java.command" value="jenkins.maven3.agent.Maven35Main C:\Program Files\Apache\apache-maven-3.5.0 C:\Users\User\.jenkins\war\WEB-INF\lib\remoting-3.7.jar C:\Users\User\.jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-interceptor-1.11.jar C:\Users\User\.jenkins\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.11.jar 54221"/>
-    <property name="Path" value="C:\Program Files\Java\jdk1.8.0_121/bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\Program Files (x86)\IntelSWTools\Intel(R)_Media_SDK_2016.0.2\bin\x64;C:\Program Files (x86)\IntelSWTools\Intel(R)_Media_SDK_2016.0.2\bin\win32;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git LFS;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Apache\apache-maven-3.5.0-bin\apache-maven-3.5.0\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Apache\apache-maven-3.5.0\bin;C:\cURL;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\User\AppData\Local\Microsoft\WindowsApps;C:\Users\User\AppData\Roaming\npm;C:\Users\User\AppData\Local\atom\bin;C:\Users\User\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;"/>
+    <property name="sun.java.command" value="jenkins.maven3.agent.Maven35Main C:\Program Files\Apache\apache-maven-3.5.0 C:\Users\User\.jenkins\war\WEB-INF\lib\remoting-3.7.jar C:\Users\User\.jenkins\plugins\maven-plugin\WEB-INF\lib\maven35-interceptor-1.11.jar C:\Users\User\.jenkins\plugins\maven-plugin\WEB-INF\lib\maven3-interceptor-commons-1.11.jar 59437"/>
+    <property name="Path" value="C:\Program Files\Java\jdk1.8.0_121/bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\Program Files (x86)\IntelSWTools\Intel(R)_Media_SDK_2016.0.2\bin\x64;C:\Program Files (x86)\IntelSWTools\Intel(R)_Media_SDK_2016.0.2\bin\win32;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git LFS;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Apache\apache-maven-3.5.0-bin\apache-maven-3.5.0\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Apache\apache-maven-3.5.0\bin;C:\cURL;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\seleniumdriver;C:\Users\User\AppData\Local\Microsoft\WindowsApps;C:\Users\User\AppData\Roaming\npm;C:\Users\User\AppData\Local\atom\bin;C:\Users\User\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\seleniumdriver\geckodriver2.exe;"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="PROCESSOR_ARCHITECTURE" value="AMD64"/>
     <property name="PATH+JDK" value="C:\Program Files\Java\jdk1.8.0_121/bin"/>
@@ -112,7 +110,7 @@
     <property name="HUDSON_HOME" value="C:\Users\User\.jenkins"/>
     <property name="PATH+MAVEN" value="C:\Program Files\Apache\apache-maven-3.5.0/bin"/>
     <property name="ProgramFiles(x86)" value="C:\Program Files (x86)"/>
-    <property name="BUILD_URL" value="http://localhost:8080/job/TestDataChrome/23/"/>
+    <property name="BUILD_URL" value="http://localhost:8080/job/TestDataChrome/24/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="MAVEN_OPTS" value="-Xms256m -Xmx512m"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
@@ -127,7 +125,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="MAVEN_HOME" value="C:\Program Files\Apache\apache-maven-3.5.0"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="BUILD_NUMBER" value="23"/>
+    <property name="BUILD_NUMBER" value="24"/>
     <property name="JENKINS_URL" value="http://localhost:8080/"/>
     <property name="PROCESSOR_REVISION" value="3c03"/>
     <property name="ProgramW6432" value="C:\Program Files"/>
@@ -142,400 +140,393 @@
     <property name="java.specification.version" value="1.8"/>
     <property name="PSModulePath" value="C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules"/>
   </properties>
-  <testcase name="testCase001" classname="TestCases.LoginTestCases" time="1.664"/>
-  <testcase name="testCase002" classname="TestCases.LoginTestCases" time="0.87"/>
-  <testcase name="testCase003" classname="TestCases.LoginTestCases" time="3.743"/>
-  <testcase name="testCase004" classname="TestCases.LoginTestCases" time="0.64"/>
-  <testcase name="testCase005" classname="TestCases.LoginTestCases" time="1.287"/>
-  <testcase name="testCase006" classname="TestCases.LoginTestCases" time="1.073"/>
-  <testcase name="testCase007" classname="TestCases.LoginTestCases" time="0.666"/>
-  <testcase name="testCase008" classname="TestCases.LoginTestCases" time="0.409"/>
-  <testcase name="testCase009" classname="TestCases.LoginTestCases" time="3.386"/>
-  <testcase name="testCase010" classname="TestCases.LoginTestCases" time="3.355"/>
-  <testcase name="testCase011" classname="TestCases.LoginTestCases" time="0.608"/>
-  <testcase name="testCase012" classname="TestCases.LoginTestCases" time="0.441"/>
-  <testcase name="testCase013" classname="TestCases.LoginTestCases" time="5.975">
-    <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
-	at TestCases.LoginTestCases.testCase013(LoginTestCases.java:312)
-</failure>
-    <system-out><![CDATA[(08/15/17) - 09:19:01 INFO  LoginTestCases.testCase013 - Opened: https://test-maint-wc.test.reflexionhealth.com
-(08/15/17) - 09:19:01 INFO  LogInPg.clickResetPw - Clicked Send Reset Link Button
-]]></system-out>
-  </testcase>
-  <testcase name="testCase014" classname="TestCases.LoginTestCases" time="2.669"/>
-  <testcase name="testCase015" classname="TestCases.LoginTestCases" time="0.439"/>
-  <testcase name="testCase016" classname="TestCases.LoginTestCases" time="3.272"/>
-  <testcase name="testCase017" classname="TestCases.LoginTestCases" time="4.513">
-    <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
-	at TestCases.LoginTestCases.testCase017(LoginTestCases.java:392)
-</failure>
-    <system-out><![CDATA[(08/15/17) - 09:19:23 INFO  LoginTestCases.testCase017 - Opened: https://test-maint-wc.test.reflexionhealth.com
-(08/15/17) - 09:19:23 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
-(08/15/17) - 09:19:23 INFO  LogInPg.logIn - Password for Login: Reflexion1
-(08/15/17) - 09:19:23 INFO  LogInPg.logIn - Submit button clicked
-(08/15/17) - 09:19:25 INFO  LoginTestCases.testCase017 - Home page loaded
-(08/15/17) - 09:19:25 INFO  NavBarFooterPg.clickSrchNavBar - Clicked Search Button in Navigation
-(08/15/17) - 09:19:27 INFO  NavBarFooterPg.searchNavBar - Entered for Search: test3
-]]></system-out>
-  </testcase>
-  <testcase name="testCase018" classname="TestCases.LoginTestCases" time="5.976"/>
-  <testcase name="testCase019" classname="TestCases.ProtocolTestCases" time="6.377"/>
-  <testcase name="testCase020" classname="TestCases.ProtocolTestCases" time="5.796"/>
-  <testcase name="testCase021" classname="TestCases.ProtocolTestCases" time="5.209"/>
-  <testcase name="testCase022" classname="TestCases.ProtocolTestCases" time="5.288"/>
-  <testcase name="testCase023" classname="TestCases.ProtocolTestCases" time="6.572"/>
-  <testcase name="testCase024" classname="TestCases.ProtocolTestCases" time="5.3"/>
-  <testcase name="testCase025" classname="TestCases.ProtocolTestCases" time="5.868"/>
-  <testcase name="testCase026" classname="TestCases.ProtocolTestCases" time="5.359"/>
-  <testcase name="testCase027" classname="TestCases.ProtocolTestCases" time="6.236"/>
-  <testcase name="testCase028" classname="TestCases.ProtocolTestCases" time="6.017"/>
-  <testcase name="testCase029" classname="TestCases.ProtocolTestCases" time="6.369"/>
-  <testcase name="testCase030" classname="TestCases.ProtocolTestCases" time="6.36"/>
-  <testcase name="testCase031" classname="TestCases.ProtocolTestCases" time="20.549"/>
-  <testcase name="testCase032" classname="TestCases.ProtocolTestCases" time="6.802"/>
-  <testcase name="testCase033" classname="TestCases.ProtocolTestCases" time="5.842"/>
-  <testcase name="testCase034" classname="TestCases.ProtocolTestCases" time="5.764"/>
-  <testcase name="testCase035" classname="TestCases.ProtocolTestCases" time="5.76"/>
-  <testcase name="testCase036" classname="TestCases.ProtocolTestCases" time="5.776"/>
-  <testcase name="testCase037" classname="TestCases.ProtocolTestCases" time="6.388"/>
-  <testcase name="testCase038" classname="TestCases.ProtocolTestCases" time="7.151"/>
-  <testcase name="testCase039" classname="TestCases.ProtocolTestCases" time="6.288"/>
-  <testcase name="testCase040" classname="TestCases.ProtocolTestCases" time="6.441"/>
-  <testcase name="testCase041" classname="TestCases.ProtocolTestCases" time="6.013"/>
-  <testcase name="testCase042" classname="TestCases.ProtocolTestCases" time="5.923"/>
-  <testcase name="testCase043" classname="TestCases.ProtocolTestCases" time="5.776"/>
-  <testcase name="testCase044" classname="TestCases.ProtocolTestCases" time="6.232"/>
-  <testcase name="testCase045" classname="TestCases.ProtocolTestCases" time="5.865"/>
-  <testcase name="testCase046" classname="TestCases.ProtocolTestCases" time="5.978"/>
-  <testcase name="testCase047" classname="TestCases.ProtocolTestCases" time="6.122"/>
-  <testcase name="testCase048" classname="TestCases.ProtocolTestCases" time="6.567"/>
-  <testcase name="testCase049" classname="TestCases.ProtocolTestCases" time="7.028"/>
-  <testcase name="testCase050" classname="TestCases.ProtocolTestCases" time="5.882"/>
-  <testcase name="testCase051" classname="TestCases.ProtocolTestCases" time="5.773"/>
-  <testcase name="testCase052" classname="TestCases.ProtocolTestCases" time="41.776">
+  <testcase name="testCase001" classname="TestCases.LoginTestCases" time="1.591"/>
+  <testcase name="testCase002" classname="TestCases.LoginTestCases" time="0.785"/>
+  <testcase name="testCase003" classname="TestCases.LoginTestCases" time="3.585"/>
+  <testcase name="testCase004" classname="TestCases.LoginTestCases" time="0.352"/>
+  <testcase name="testCase005" classname="TestCases.LoginTestCases" time="0.627"/>
+  <testcase name="testCase006" classname="TestCases.LoginTestCases" time="1.005"/>
+  <testcase name="testCase007" classname="TestCases.LoginTestCases" time="0.672"/>
+  <testcase name="testCase008" classname="TestCases.LoginTestCases" time="0.753"/>
+  <testcase name="testCase009" classname="TestCases.LoginTestCases" time="3.027"/>
+  <testcase name="testCase010" classname="TestCases.LoginTestCases" time="3.273"/>
+  <testcase name="testCase011" classname="TestCases.LoginTestCases" time="0.496"/>
+  <testcase name="testCase012" classname="TestCases.LoginTestCases" time="0.432"/>
+  <testcase name="testCase013" classname="TestCases.LoginTestCases" time="2.739"/>
+  <testcase name="testCase014" classname="TestCases.LoginTestCases" time="2.548"/>
+  <testcase name="testCase015" classname="TestCases.LoginTestCases" time="0.413"/>
+  <testcase name="testCase016" classname="TestCases.LoginTestCases" time="3.186"/>
+  <testcase name="testCase017" classname="TestCases.LoginTestCases" time="6.191"/>
+  <testcase name="testCase018" classname="TestCases.LoginTestCases" time="5.851"/>
+  <testcase name="testCase019" classname="TestCases.ProtocolTestCases" time="7.167"/>
+  <testcase name="testCase020" classname="TestCases.ProtocolTestCases" time="6.712"/>
+  <testcase name="testCase021" classname="TestCases.ProtocolTestCases" time="6.008"/>
+  <testcase name="testCase022" classname="TestCases.ProtocolTestCases" time="5.82"/>
+  <testcase name="testCase023" classname="TestCases.ProtocolTestCases" time="7.047"/>
+  <testcase name="testCase024" classname="TestCases.ProtocolTestCases" time="6.984"/>
+  <testcase name="testCase025" classname="TestCases.ProtocolTestCases" time="8.463"/>
+  <testcase name="testCase026" classname="TestCases.ProtocolTestCases" time="5.377"/>
+  <testcase name="testCase027" classname="TestCases.ProtocolTestCases" time="6.207"/>
+  <testcase name="testCase028" classname="TestCases.ProtocolTestCases" time="7.351"/>
+  <testcase name="testCase029" classname="TestCases.ProtocolTestCases" time="6.16"/>
+  <testcase name="testCase030" classname="TestCases.ProtocolTestCases" time="6.153"/>
+  <testcase name="testCase031" classname="TestCases.ProtocolTestCases" time="20.487"/>
+  <testcase name="testCase032" classname="TestCases.ProtocolTestCases" time="6.45"/>
+  <testcase name="testCase033" classname="TestCases.ProtocolTestCases" time="6.11"/>
+  <testcase name="testCase034" classname="TestCases.ProtocolTestCases" time="6.069"/>
+  <testcase name="testCase035" classname="TestCases.ProtocolTestCases" time="7.299"/>
+  <testcase name="testCase036" classname="TestCases.ProtocolTestCases" time="6.532"/>
+  <testcase name="testCase037" classname="TestCases.ProtocolTestCases" time="6.43"/>
+  <testcase name="testCase038" classname="TestCases.ProtocolTestCases" time="6.921"/>
+  <testcase name="testCase039" classname="TestCases.ProtocolTestCases" time="6.497"/>
+  <testcase name="testCase040" classname="TestCases.ProtocolTestCases" time="7.172"/>
+  <testcase name="testCase041" classname="TestCases.ProtocolTestCases" time="6.206"/>
+  <testcase name="testCase042" classname="TestCases.ProtocolTestCases" time="7.518"/>
+  <testcase name="testCase043" classname="TestCases.ProtocolTestCases" time="6.287"/>
+  <testcase name="testCase044" classname="TestCases.ProtocolTestCases" time="7.486"/>
+  <testcase name="testCase045" classname="TestCases.ProtocolTestCases" time="7.177"/>
+  <testcase name="testCase046" classname="TestCases.ProtocolTestCases" time="7.321"/>
+  <testcase name="testCase047" classname="TestCases.ProtocolTestCases" time="6.944"/>
+  <testcase name="testCase048" classname="TestCases.ProtocolTestCases" time="6.737"/>
+  <testcase name="testCase049" classname="TestCases.ProtocolTestCases" time="8.217"/>
+  <testcase name="testCase050" classname="TestCases.ProtocolTestCases" time="6.058"/>
+  <testcase name="testCase051" classname="TestCases.ProtocolTestCases" time="6.843"/>
+  <testcase name="testCase052" classname="TestCases.ProtocolTestCases" time="42.506">
     <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
 	at TestCases.ProtocolTestCases.testCase052(ProtocolTestCases.java:1060)
 </failure>
-    <system-out><![CDATA[(08/15/17) - 09:24:33 INFO  ProtocolTestCases.testCase052 - Opened: https://test-maint-wc.test.reflexionhealth.com
-(08/15/17) - 09:24:34 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
-(08/15/17) - 09:24:34 INFO  LogInPg.logIn - Password for Login: Reflexion1
-(08/15/17) - 09:24:34 INFO  LogInPg.logIn - Submit button clicked
-(08/15/17) - 09:24:36 INFO  ProtocolTestCases.testCase052 - Home page loaded
-(08/15/17) - 09:24:36 INFO  NavBarFooterPg.clickProtocolsTabNav - Clicked Protocols Nav Tab
-(08/15/17) - 09:24:38 INFO  ProtocolsListPg.addProtocol - Clicked Add New Protocol
-(08/15/17) - 09:24:39 INFO  ProtocolsListPg.addProtocol - Clicked an excercise
-(08/15/17) - 09:24:39 INFO  ProtocolsListPg.addProtocol - Clicked Save as New Protocol Button
-(08/15/17) - 09:24:39 INFO  ProtocolsListPg.addProtocol - Entered protocol name: Case 52
-(08/15/17) - 09:24:39 INFO  ProtocolsListPg.addProtocol - Entered protocol description: Test description
-(08/15/17) - 09:24:39 INFO  ProtocolsListPg.addProtocol - Clicked Save Button
-(08/15/17) - 09:25:15 WARN  ProtocolsListPg.addProtocol - Protocol Case 52 not created
+    <system-out><![CDATA[(08/16/17) - 09:40:03 INFO  ProtocolTestCases.testCase052 - Opened: https://test-maint-wc.test.reflexionhealth.com
+(08/16/17) - 09:40:04 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
+(08/16/17) - 09:40:04 INFO  LogInPg.logIn - Password for Login: Reflexion1
+(08/16/17) - 09:40:04 INFO  LogInPg.logIn - Submit button clicked
+(08/16/17) - 09:40:07 INFO  ProtocolTestCases.testCase052 - Home page loaded
+(08/16/17) - 09:40:07 INFO  NavBarFooterPg.clickProtocolsTabNav - Clicked Protocols Nav Tab
+(08/16/17) - 09:40:08 INFO  ProtocolsListPg.addProtocol - Clicked Add New Protocol
+(08/16/17) - 09:40:09 INFO  ProtocolsListPg.addProtocol - Clicked an excercise
+(08/16/17) - 09:40:09 INFO  ProtocolsListPg.addProtocol - Clicked Save as New Protocol Button
+(08/16/17) - 09:40:09 INFO  ProtocolsListPg.addProtocol - Entered protocol name: Case 52
+(08/16/17) - 09:40:09 INFO  ProtocolsListPg.addProtocol - Entered protocol description: Test description
+(08/16/17) - 09:40:09 INFO  ProtocolsListPg.addProtocol - Clicked Save Button
+(08/16/17) - 09:40:45 WARN  ProtocolsListPg.addProtocol - Protocol Case 52 not created
 ]]></system-out>
   </testcase>
-  <testcase name="testCase053" classname="TestCases.ProtocolTestCases" time="8.074"/>
-  <testcase name="testCase054" classname="TestCases.ProtocolTestCases" time="8.751"/>
-  <testcase name="testCase055" classname="TestCases.ProtocolTestCases" time="5.11"/>
-  <testcase name="testCase056" classname="TestCases.ProtocolTestCases" time="5.521"/>
-  <testcase name="testCase057" classname="TestCases.ProtocolTestCases" time="5.569"/>
-  <testcase name="testCase058" classname="TestCases.ProtocolTestCases" time="6.026"/>
-  <testcase name="testCase059" classname="TestCases.ProtocolTestCases" time="6.781"/>
-  <testcase name="testCase060" classname="TestCases.ProtocolTestCases" time="5.775"/>
-  <testcase name="testCase061" classname="TestCases.ProtocolTestCases" time="5.644"/>
-  <testcase name="testCase062" classname="TestCases.ProtocolTestCases" time="6.339"/>
-  <testcase name="testCase063" classname="TestCases.ProtocolTestCases" time="7.202"/>
-  <testcase name="testCase064" classname="TestCases.ProtocolTestCases" time="7.431"/>
-  <testcase name="testCase065" classname="TestCases.ProtocolTestCases" time="5.626"/>
-  <testcase name="testCase066" classname="TestCases.ProtocolTestCases" time="5.858"/>
-  <testcase name="testCase067" classname="TestCases.ProtocolTestCases" time="6.287"/>
-  <testcase name="testCase068" classname="TestCases.ProtocolTestCases" time="5.939"/>
-  <testcase name="testCase069" classname="TestCases.ProtocolTestCases" time="6.276"/>
-  <testcase name="testCase070" classname="TestCases.ProtocolTestCases" time="6.025"/>
-  <testcase name="testCase071" classname="TestCases.ProtocolTestCases" time="5.934"/>
-  <testcase name="testCase072" classname="TestCases.ProtocolTestCases" time="6.48"/>
-  <testcase name="testCase073" classname="TestCases.ProtocolTestCases" time="5.912"/>
-  <testcase name="testCase074" classname="TestCases.ProtocolTestCases" time="6.787"/>
-  <testcase name="testCase075" classname="TestCases.ProtocolTestCases" time="5.742"/>
-  <testcase name="testCase076" classname="TestCases.ProtocolTestCases" time="6.401"/>
-  <testcase name="testCase077" classname="TestCases.ProtocolTestCases" time="7.424"/>
-  <testcase name="testCase078" classname="TestCases.ProtocolTestCases" time="8.288"/>
-  <testcase name="testCase079" classname="TestCases.ProtocolTestCases" time="41.877">
+  <testcase name="testCase053" classname="TestCases.ProtocolTestCases" time="9.587"/>
+  <testcase name="testCase054" classname="TestCases.ProtocolTestCases" time="8.994"/>
+  <testcase name="testCase055" classname="TestCases.ProtocolTestCases" time="6.92"/>
+  <testcase name="testCase056" classname="TestCases.ProtocolTestCases" time="5.769"/>
+  <testcase name="testCase057" classname="TestCases.ProtocolTestCases" time="6.454"/>
+  <testcase name="testCase058" classname="TestCases.ProtocolTestCases" time="6.907"/>
+  <testcase name="testCase059" classname="TestCases.ProtocolTestCases" time="6.383"/>
+  <testcase name="testCase060" classname="TestCases.ProtocolTestCases" time="5.48"/>
+  <testcase name="testCase061" classname="TestCases.ProtocolTestCases" time="6.215"/>
+  <testcase name="testCase062" classname="TestCases.ProtocolTestCases" time="6.604"/>
+  <testcase name="testCase063" classname="TestCases.ProtocolTestCases" time="6.036"/>
+  <testcase name="testCase064" classname="TestCases.ProtocolTestCases" time="6.573"/>
+  <testcase name="testCase065" classname="TestCases.ProtocolTestCases" time="6.151"/>
+  <testcase name="testCase066" classname="TestCases.ProtocolTestCases" time="6.1"/>
+  <testcase name="testCase067" classname="TestCases.ProtocolTestCases" time="6.019"/>
+  <testcase name="testCase068" classname="TestCases.ProtocolTestCases" time="5.852"/>
+  <testcase name="testCase069" classname="TestCases.ProtocolTestCases" time="6.521"/>
+  <testcase name="testCase070" classname="TestCases.ProtocolTestCases" time="6.244"/>
+  <testcase name="testCase071" classname="TestCases.ProtocolTestCases" time="6.53"/>
+  <testcase name="testCase072" classname="TestCases.ProtocolTestCases" time="6.453"/>
+  <testcase name="testCase073" classname="TestCases.ProtocolTestCases" time="6.372"/>
+  <testcase name="testCase074" classname="TestCases.ProtocolTestCases" time="6.268"/>
+  <testcase name="testCase075" classname="TestCases.ProtocolTestCases" time="6.067"/>
+  <testcase name="testCase076" classname="TestCases.ProtocolTestCases" time="6.784"/>
+  <testcase name="testCase077" classname="TestCases.ProtocolTestCases" time="8.112"/>
+  <testcase name="testCase078" classname="TestCases.ProtocolTestCases" time="8.118"/>
+  <testcase name="testCase079" classname="TestCases.ProtocolTestCases" time="41.289">
     <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
 	at TestCases.ProtocolTestCases.testCase079(ProtocolTestCases.java:1882)
 </failure>
-    <system-out><![CDATA[(08/15/17) - 09:29:06 INFO  ProtocolTestCases.testCase079 - Opened: https://test-maint-wc.test.reflexionhealth.com
-(08/15/17) - 09:29:06 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
-(08/15/17) - 09:29:06 INFO  LogInPg.logIn - Password for Login: Reflexion1
-(08/15/17) - 09:29:06 INFO  LogInPg.logIn - Submit button clicked
-(08/15/17) - 09:29:08 INFO  ProtocolTestCases.testCase079 - Home page loaded
-(08/15/17) - 09:29:08 INFO  NavBarFooterPg.clickProtocolsTabNav - Clicked Protocols Nav Tab
-(08/15/17) - 09:29:10 INFO  ProtocolsListPg.addProtocol - Clicked Add New Protocol
-(08/15/17) - 09:29:11 INFO  ProtocolsListPg.addProtocol - Clicked an excercise
-(08/15/17) - 09:29:11 INFO  ProtocolsListPg.addProtocol - Clicked Save as New Protocol Button
-(08/15/17) - 09:29:11 INFO  ProtocolsListPg.addProtocol - Entered protocol name: Case 79
-(08/15/17) - 09:29:11 INFO  ProtocolsListPg.addProtocol - Entered protocol description: Test description
-(08/15/17) - 09:29:11 INFO  ProtocolsListPg.addProtocol - Clicked Save Button
-(08/15/17) - 09:29:47 WARN  ProtocolsListPg.addProtocol - Protocol Case 79 not created
+    <system-out><![CDATA[(08/16/17) - 09:44:42 INFO  ProtocolTestCases.testCase079 - Opened: https://test-maint-wc.test.reflexionhealth.com
+(08/16/17) - 09:44:42 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
+(08/16/17) - 09:44:43 INFO  LogInPg.logIn - Password for Login: Reflexion1
+(08/16/17) - 09:44:43 INFO  LogInPg.logIn - Submit button clicked
+(08/16/17) - 09:44:45 INFO  ProtocolTestCases.testCase079 - Home page loaded
+(08/16/17) - 09:44:45 INFO  NavBarFooterPg.clickProtocolsTabNav - Clicked Protocols Nav Tab
+(08/16/17) - 09:44:46 INFO  ProtocolsListPg.addProtocol - Clicked Add New Protocol
+(08/16/17) - 09:44:47 INFO  ProtocolsListPg.addProtocol - Clicked an excercise
+(08/16/17) - 09:44:47 INFO  ProtocolsListPg.addProtocol - Clicked Save as New Protocol Button
+(08/16/17) - 09:44:47 INFO  ProtocolsListPg.addProtocol - Entered protocol name: Case 79
+(08/16/17) - 09:44:48 INFO  ProtocolsListPg.addProtocol - Entered protocol description: Test description
+(08/16/17) - 09:44:48 INFO  ProtocolsListPg.addProtocol - Clicked Save Button
+(08/16/17) - 09:45:23 WARN  ProtocolsListPg.addProtocol - Protocol Case 79 not created
 ]]></system-out>
   </testcase>
-  <testcase name="testCase080" classname="TestCases.ForgotPassTestCases" time="7.023">
-    <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
-	at TestCases.ForgotPassTestCases.testCase080(ForgotPassTestCases.java:86)
-</failure>
-    <system-out><![CDATA[(08/15/17) - 09:29:54 INFO  ForgotPassTestCases.testCase080 - Opened: https://test-maint-wc.test.reflexionhealth.com
-(08/15/17) - 09:29:54 INFO  LogInPg.clickResetPw - Clicked Send Reset Link Button
-]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 2.28.455520 (cc17746adff54984afff480136733114c6b3704b) on port 6522
-Only local connections are allowed.
-Aug 15, 2017 9:29:52 AM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-]]></system-err>
-  </testcase>
-  <testcase name="testCase081" classname="TestCases.ForgotPassTestCases" time="6.378">
+  <testcase name="testCase080" classname="TestCases.ForgotPassTestCases" time="4.385"/>
+  <testcase name="testCase081" classname="TestCases.ForgotPassTestCases" time="6.12">
     <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
 	at TestCases.ForgotPassTestCases.testCase081(ForgotPassTestCases.java:104)
 </failure>
-    <system-out><![CDATA[(08/15/17) - 09:30:03 INFO  ForgotPassTestCases.testCase081 - Opened: https://test-maint-wc.test.reflexionhealth.com
-(08/15/17) - 09:30:03 INFO  LogInPg.clickResetPw - Clicked Send Reset Link Button
+    <system-out><![CDATA[(08/16/17) - 09:45:36 INFO  ForgotPassTestCases.testCase081 - Opened: https://test-maint-wc.test.reflexionhealth.com
+(08/16/17) - 09:45:36 INFO  LogInPg.clickResetPw - Clicked Send Reset Link Button
 ]]></system-out>
   </testcase>
-  <testcase name="testCase082" classname="TestCases.ForgotPassTestCases" time="0.372"/>
-  <testcase name="testCase083" classname="TestCases.ForgotPassTestCases" time="0.519"/>
-  <testcase name="testCase084" classname="TestCases.ForgotPassTestCases" time="0.435"/>
-  <testcase name="testCase090" classname="TestCases.HomePageTestCases" time="5.19"/>
-  <testcase name="testCase092" classname="TestCases.HomePageTestCases" time="6.439"/>
-  <testcase name="testCase094" classname="TestCases.HomePageTestCases" time="6.153"/>
-  <testcase name="testCase095" classname="TestCases.HomePageTestCases" time="5.913"/>
-  <testcase name="testCase096" classname="TestCases.HomePageTestCases" time="3.216"/>
-  <testcase name="testCase097" classname="TestCases.HomePageTestCases" time="3.519"/>
-  <testcase name="testCase098" classname="TestCases.HomePageTestCases" time="3.022"/>
-  <testcase name="testCase099" classname="TestCases.HomePageTestCases" time="2.972"/>
-  <testcase name="testCase100" classname="TestCases.HomePageTestCases" time="3.568"/>
-  <testcase name="testCase101" classname="TestCases.HomePageTestCases" time="3.027"/>
-  <testcase name="testCase102" classname="TestCases.HomePageTestCases" time="3.051"/>
-  <testcase name="testCase103" classname="TestCases.HomePageTestCases" time="3.424"/>
-  <testcase name="testCase104" classname="TestCases.HomePageTestCases" time="3.257"/>
-  <testcase name="testCase105" classname="TestCases.HomePageTestCases" time="3.675"/>
-  <testcase name="testCase106" classname="TestCases.HomePageTestCases" time="3.555"/>
-  <testcase name="testCase107" classname="TestCases.HomePageTestCases" time="3.499"/>
-  <testcase name="testCase108" classname="TestCases.HomePageTestCases" time="5.469"/>
-  <testcase name="testCase109" classname="TestCases.HomePageTestCases" time="4.677"/>
-  <testcase name="testCase110" classname="TestCases.HomePageTestCases" time="4.448"/>
-  <testcase name="testCase119" classname="TestCases.ClinicianTestCases" time="4.829"/>
-  <testcase name="testCase120" classname="TestCases.ClinicianTestCases" time="3.359"/>
-  <testcase name="testCase121" classname="TestCases.ClinicianTestCases" time="3.286"/>
-  <testcase name="testCase122" classname="TestCases.ClinicianTestCases" time="3.143"/>
-  <testcase name="testCase123" classname="TestCases.ClinicianTestCases" time="10.064">
+  <testcase name="testCase082" classname="TestCases.ForgotPassTestCases" time="0.362"/>
+  <testcase name="testCase083" classname="TestCases.ForgotPassTestCases" time="0.364"/>
+  <testcase name="testCase084" classname="TestCases.ForgotPassTestCases" time="0.508"/>
+  <testcase name="testCase090" classname="TestCases.HomePageTestCases" time="5.061"/>
+  <testcase name="testCase092" classname="TestCases.HomePageTestCases" time="4.715">
+    <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
+	at TestCases.HomePageTestCases.testCase092(HomePageTestCases.java:114)
+</failure>
+    <system-out><![CDATA[(08/16/17) - 09:46:04 INFO  HomePageTestCases.testCase092 - Opened: https://test-maint-wc.test.reflexionhealth.com
+(08/16/17) - 09:46:04 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
+(08/16/17) - 09:46:04 INFO  LogInPg.logIn - Password for Login: Reflexion1
+(08/16/17) - 09:46:04 INFO  LogInPg.logIn - Submit button clicked
+(08/16/17) - 09:46:07 INFO  HomePageTestCases.testCase092 - Home page loaded
+(08/16/17) - 09:46:07 INFO  NavBarFooterPg.clickSrchNavBar - Clicked Search Button in Navigation
+(08/16/17) - 09:46:08 INFO  NavBarFooterPg.searchNavBar - Entered for Search: testL
+]]></system-out>
+  </testcase>
+  <testcase name="testCase094" classname="TestCases.HomePageTestCases" time="4.683">
+    <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
+	at TestCases.HomePageTestCases.testCase094(HomePageTestCases.java:136)
+</failure>
+    <system-out><![CDATA[(08/16/17) - 09:46:11 INFO  HomePageTestCases.testCase094 - Opened: https://test-maint-wc.test.reflexionhealth.com
+(08/16/17) - 09:46:11 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
+(08/16/17) - 09:46:11 INFO  LogInPg.logIn - Password for Login: Reflexion1
+(08/16/17) - 09:46:11 INFO  LogInPg.logIn - Submit button clicked
+(08/16/17) - 09:46:13 INFO  HomePageTestCases.testCase094 - Home page loaded
+(08/16/17) - 09:46:14 INFO  NavBarFooterPg.clickSrchNavBar - Clicked Search Button in Navigation
+(08/16/17) - 09:46:15 INFO  NavBarFooterPg.searchNavBar - Entered for Search: test
+]]></system-out>
+  </testcase>
+  <testcase name="testCase095" classname="TestCases.HomePageTestCases" time="6.192"/>
+  <testcase name="testCase096" classname="TestCases.HomePageTestCases" time="3.962"/>
+  <testcase name="testCase097" classname="TestCases.HomePageTestCases" time="3.216"/>
+  <testcase name="testCase098" classname="TestCases.HomePageTestCases" time="3.122"/>
+  <testcase name="testCase099" classname="TestCases.HomePageTestCases" time="3.5"/>
+  <testcase name="testCase100" classname="TestCases.HomePageTestCases" time="3.348"/>
+  <testcase name="testCase101" classname="TestCases.HomePageTestCases" time="3.311"/>
+  <testcase name="testCase102" classname="TestCases.HomePageTestCases" time="3.225"/>
+  <testcase name="testCase103" classname="TestCases.HomePageTestCases" time="3.413"/>
+  <testcase name="testCase104" classname="TestCases.HomePageTestCases" time="3.519"/>
+  <testcase name="testCase105" classname="TestCases.HomePageTestCases" time="3.94"/>
+  <testcase name="testCase106" classname="TestCases.HomePageTestCases" time="3.915"/>
+  <testcase name="testCase107" classname="TestCases.HomePageTestCases" time="3.881"/>
+  <testcase name="testCase108" classname="TestCases.HomePageTestCases" time="5.935"/>
+  <testcase name="testCase109" classname="TestCases.HomePageTestCases" time="5.078"/>
+  <testcase name="testCase110" classname="TestCases.HomePageTestCases" time="4.628"/>
+  <testcase name="testCase119" classname="TestCases.ClinicianTestCases" time="4.9"/>
+  <testcase name="testCase120" classname="TestCases.ClinicianTestCases" time="3.564"/>
+  <testcase name="testCase121" classname="TestCases.ClinicianTestCases" time="3.254"/>
+  <testcase name="testCase122" classname="TestCases.ClinicianTestCases" time="3.528"/>
+  <testcase name="testCase123" classname="TestCases.ClinicianTestCases" time="10.458">
     <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
 	at TestCases.ClinicianTestCases.testCase123(ClinicianTestCases.java:191)
 </failure>
-    <system-out><![CDATA[(08/15/17) - 09:32:53 INFO  ClinicianTestCases.testCase123 - Opened: https://test-maint-wc.test.reflexionhealth.com
-(08/15/17) - 09:32:53 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
-(08/15/17) - 09:32:53 INFO  LogInPg.logIn - Password for Login: Reflexion1
-(08/15/17) - 09:32:53 INFO  LogInPg.logIn - Submit button clicked
-(08/15/17) - 09:32:56 INFO  NavBarFooterPg.clickCliniciansTabNav - Clicked Clinicians Nav Tab
-(08/15/17) - 09:32:56 INFO  CliniciansListPg.addClinician - Clicked Add Clinician Button
-(08/15/17) - 09:32:56 INFO  CliniciansListPg.addClinician - Entered first name: testcase122
-(08/15/17) - 09:32:56 INFO  CliniciansListPg.addClinician - Entered last name: testcase122
-(08/15/17) - 09:32:56 INFO  CliniciansListPg.addClinician - Entered email: test1222@gmail.co
-(08/15/17) - 09:32:56 INFO  CliniciansListPg.addClinician - Entered phone number: 6191231234
-(08/15/17) - 09:32:56 INFO  CliniciansListPg.addClinician - Clicked Create Clinician Button
-(08/15/17) - 09:33:02 WARN  CliniciansListPg.addClinician - Clinician testcase122 testcase122 not created
-(08/15/17) - 09:33:03 INFO  CliniciansListPg.addClinician - Clicked Cancel Button
+    <system-out><![CDATA[(08/16/17) - 09:48:28 INFO  ClinicianTestCases.testCase123 - Opened: https://test-maint-wc.test.reflexionhealth.com
+(08/16/17) - 09:48:28 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
+(08/16/17) - 09:48:28 INFO  LogInPg.logIn - Password for Login: Reflexion1
+(08/16/17) - 09:48:28 INFO  LogInPg.logIn - Submit button clicked
+(08/16/17) - 09:48:30 INFO  NavBarFooterPg.clickCliniciansTabNav - Clicked Clinicians Nav Tab
+(08/16/17) - 09:48:31 INFO  CliniciansListPg.addClinician - Clicked Add Clinician Button
+(08/16/17) - 09:48:31 INFO  CliniciansListPg.addClinician - Entered first name: testcase122
+(08/16/17) - 09:48:31 INFO  CliniciansListPg.addClinician - Entered last name: testcase122
+(08/16/17) - 09:48:31 INFO  CliniciansListPg.addClinician - Entered email: test1222@gmail.co
+(08/16/17) - 09:48:31 INFO  CliniciansListPg.addClinician - Entered phone number: 6191231234
+(08/16/17) - 09:48:31 INFO  CliniciansListPg.addClinician - Clicked Create Clinician Button
+(08/16/17) - 09:48:38 WARN  CliniciansListPg.addClinician - Clinician testcase122 testcase122 not created
+(08/16/17) - 09:48:38 INFO  CliniciansListPg.addClinician - Clicked Cancel Button
 ]]></system-out>
   </testcase>
-  <testcase name="testCase124" classname="TestCases.ClinicianTestCases" time="5.676"/>
-  <testcase name="testCase125" classname="TestCases.ClinicianTestCases" time="5.294"/>
-  <testcase name="testCase126" classname="TestCases.ClinicianTestCases" time="5.689"/>
-  <testcase name="testCase127" classname="TestCases.ClinicianTestCases" time="5.647"/>
-  <testcase name="testCase128" classname="TestCases.ClinicianTestCases" time="5.615"/>
-  <testcase name="testCase129" classname="TestCases.ClinicianTestCases" time="3.492"/>
-  <testcase name="testCase130" classname="TestCases.ClinicianTestCases" time="3.243"/>
-  <testcase name="testCase131" classname="TestCases.ClinicianTestCases" time="3.007"/>
-  <testcase name="testCase132" classname="TestCases.ClinicianTestCases" time="3.613"/>
-  <testcase name="testCase133" classname="TestCases.ClinicianTestCases" time="3.251"/>
-  <testcase name="testCase134" classname="TestCases.ClinicianTestCases" time="3.402"/>
-  <testcase name="testCase135" classname="TestCases.ClinicianTestCases" time="3.194"/>
-  <testcase name="testCase136" classname="TestCases.ClinicianTestCases" time="4.637"/>
-  <testcase name="testCase137" classname="TestCases.ClinicianTestCases" time="3.078"/>
-  <testcase name="testCase138" classname="TestCases.ClinicianTestCases" time="3.146"/>
-  <testcase name="testCase139" classname="TestCases.ClinicianTestCases" time="3.086"/>
-  <testcase name="testCase140" classname="TestCases.ClinicianTestCases" time="3.155"/>
-  <testcase name="testCase141" classname="TestCases.ClinicianTestCases" time="3.612"/>
-  <testcase name="testCase142" classname="TestCases.ClinicianTestCases" time="3.089"/>
-  <testcase name="testCase143" classname="TestCases.ClinicianTestCases" time="3.123"/>
-  <testcase name="testCase144" classname="TestCases.ClinicianTestCases" time="3.056"/>
-  <testcase name="testCase145" classname="TestCases.ClinicianTestCases" time="3.183"/>
-  <testcase name="testCase146" classname="TestCases.ClinicianTestCases" time="3.157"/>
-  <testcase name="testCase147" classname="TestCases.ClinicianTestCases" time="3.25"/>
-  <testcase name="testCase148" classname="TestCases.ClinicianTestCases" time="3.88"/>
-  <testcase name="testCase149" classname="TestCases.ClinicianTestCases" time="4.016"/>
-  <testcase name="testCase150" classname="TestCases.ClinicianTestCases" time="3.109"/>
-  <testcase name="testCase151" classname="TestCases.ClinicianTestCases" time="3.154"/>
-  <testcase name="testCase152" classname="TestCases.ClinicianTestCases" time="3.117"/>
-  <testcase name="testCase153" classname="TestCases.ClinicianTestCases" time="3.387"/>
-  <testcase name="testCase154" classname="TestCases.ClinicianTestCases" time="3.272"/>
-  <testcase name="testCase155" classname="TestCases.ClinicianTestCases" time="3.289"/>
-  <testcase name="testCase156" classname="TestCases.ClinicianTestCases" time="3.261"/>
-  <testcase name="testCase157" classname="TestCases.ClinicianTestCases" time="3.147"/>
-  <testcase name="testCase158" classname="TestCases.ClinicianTestCases" time="3.206"/>
-  <testcase name="testCase159" classname="TestCases.NavBarFooterTestCases" time="4.446"/>
-  <testcase name="testCase160" classname="TestCases.NavBarFooterTestCases" time="3.288"/>
-  <testcase name="testCase161" classname="TestCases.NavBarFooterTestCases" time="3.029"/>
-  <testcase name="testCase162" classname="TestCases.NavBarFooterTestCases" time="3.018"/>
-  <testcase name="testCase163" classname="TestCases.NavBarFooterTestCases" time="3.043"/>
-  <testcase name="testCase164" classname="TestCases.NavBarFooterTestCases" time="2.852"/>
-  <testcase name="testCase165" classname="TestCases.NavBarFooterTestCases" time="3.013"/>
-  <testcase name="testCase166" classname="TestCases.NavBarFooterTestCases" time="3.264"/>
-  <testcase name="testCase167" classname="TestCases.NavBarFooterTestCases" time="3.003"/>
-  <testcase name="testCase168" classname="TestCases.NavBarFooterTestCases" time="3.037"/>
-  <testcase name="testCase169" classname="TestCases.NavBarFooterTestCases" time="3.019"/>
-  <testcase name="testCase170" classname="TestCases.NavBarFooterTestCases" time="4.283"/>
-  <testcase name="testCase171" classname="TestCases.ChangePWTestCases" time="5.051"/>
-  <testcase name="testCase172" classname="TestCases.ChangePWTestCases" time="3.649"/>
-  <testcase name="testCase173" classname="TestCases.ChangePWTestCases" time="3.422"/>
-  <testcase name="testCase174" classname="TestCases.ChangePWTestCases" time="3.26"/>
-  <testcase name="testCase175" classname="TestCases.ChangePWTestCases" time="5.503"/>
-  <testcase name="testCase176" classname="TestCases.ChangePWTestCases" time="5.57"/>
-  <testcase name="testCase178" classname="TestCases.SupportVideosTestCases" time="5.358"/>
-  <testcase name="testCase179" classname="TestCases.SupportVideosTestCases" time="3.455"/>
-  <testcase name="testCase180" classname="TestCases.SupportVideosTestCases" time="3.336"/>
-  <testcase name="testCase181" classname="TestCases.SupportVideosTestCases" time="3.219"/>
-  <testcase name="testCase182" classname="TestCases.SupportVideosTestCases" time="3.352"/>
-  <testcase name="testCase183" classname="TestCases.SupportVideosTestCases" time="4.419"/>
-  <testcase name="testCase184" classname="TestCases.SupportVideosTestCases" time="4.314"/>
-  <testcase name="testCase185" classname="TestCases.SupportVideosTestCases" time="4.638"/>
-  <testcase name="testCase186" classname="TestCases.SupportVideosTestCases" time="4.076"/>
-  <testcase name="testCase187" classname="TestCases.SupportVideosTestCases" time="4.595"/>
-  <testcase name="testCase188" classname="TestCases.SupportVideosTestCases" time="4.167"/>
-  <testcase name="testCase189" classname="TestCases.SupportVideosTestCases" time="4.665"/>
-  <testcase name="testCase190" classname="TestCases.SupportVideosTestCases" time="4.244"/>
-  <testcase name="testCase191" classname="TestCases.SupportVideosTestCases" time="4.581"/>
-  <testcase name="testCase192" classname="TestCases.SupportVideosTestCases" time="4.29"/>
-  <testcase name="testCase193" classname="TestCases.SupportVideosTestCases" time="4.552"/>
-  <testcase name="testCase194" classname="TestCases.SupportVideosTestCases" time="4.806"/>
-  <testcase name="testCase195" classname="TestCases.SupportVideosTestCases" time="4.569"/>
-  <testcase name="testCase196" classname="TestCases.SupportVideosTestCases" time="4.052"/>
-  <testcase name="testCase197" classname="TestCases.SupportVideosTestCases" time="4.74"/>
-  <testcase name="testCase198" classname="TestCases.SupportVideosTestCases" time="4.136"/>
-  <testcase name="testCase199" classname="TestCases.SupportVideosTestCases" time="4.558"/>
-  <testcase name="testCase200" classname="TestCases.SupportVideosTestCases" time="4.207"/>
-  <testcase name="testCase201" classname="TestCases.SupportVideosTestCases" time="4.313"/>
-  <testcase name="testCase202" classname="TestCases.SupportVideosTestCases" time="4.289"/>
-  <testcase name="testCase203" classname="TestCases.SupportVideosTestCases" time="4.057"/>
-  <testcase name="testCase204" classname="TestCases.SupportVideosTestCases" time="4.088"/>
-  <testcase name="testCase205" classname="TestCases.SupportVideosTestCases" time="4.533"/>
-  <testcase name="testCase206" classname="TestCases.SupportVideosTestCases" time="4.073"/>
-  <testcase name="testCase207" classname="TestCases.SupportVideosTestCases" time="3.345"/>
-  <testcase name="testCase208" classname="TestCases.ProfileTestCases" time="5.064"/>
-  <testcase name="testCase209" classname="TestCases.ProfileTestCases" time="3.989"/>
-  <testcase name="testCase210" classname="TestCases.ProfileTestCases" time="3.623"/>
-  <testcase name="testCase211" classname="TestCases.ProfileTestCases" time="3.724"/>
-  <testcase name="testCase213" classname="TestCases.ProfileTestCases" time="3.708">
+  <testcase name="testCase124" classname="TestCases.ClinicianTestCases" time="7.974"/>
+  <testcase name="testCase125" classname="TestCases.ClinicianTestCases" time="5.496"/>
+  <testcase name="testCase126" classname="TestCases.ClinicianTestCases" time="5.737"/>
+  <testcase name="testCase127" classname="TestCases.ClinicianTestCases" time="5.916"/>
+  <testcase name="testCase128" classname="TestCases.ClinicianTestCases" time="5.683"/>
+  <testcase name="testCase129" classname="TestCases.ClinicianTestCases" time="3.63"/>
+  <testcase name="testCase130" classname="TestCases.ClinicianTestCases" time="3.182"/>
+  <testcase name="testCase131" classname="TestCases.ClinicianTestCases" time="3.209"/>
+  <testcase name="testCase132" classname="TestCases.ClinicianTestCases" time="3.174"/>
+  <testcase name="testCase133" classname="TestCases.ClinicianTestCases" time="3.762"/>
+  <testcase name="testCase134" classname="TestCases.ClinicianTestCases" time="3.049"/>
+  <testcase name="testCase135" classname="TestCases.ClinicianTestCases" time="3.152"/>
+  <testcase name="testCase136" classname="TestCases.ClinicianTestCases" time="3.799"/>
+  <testcase name="testCase137" classname="TestCases.ClinicianTestCases" time="3.363"/>
+  <testcase name="testCase138" classname="TestCases.ClinicianTestCases" time="3.848"/>
+  <testcase name="testCase139" classname="TestCases.ClinicianTestCases" time="3.071"/>
+  <testcase name="testCase140" classname="TestCases.ClinicianTestCases" time="3.201"/>
+  <testcase name="testCase141" classname="TestCases.ClinicianTestCases" time="3.541"/>
+  <testcase name="testCase142" classname="TestCases.ClinicianTestCases" time="3.646"/>
+  <testcase name="testCase143" classname="TestCases.ClinicianTestCases" time="3.238"/>
+  <testcase name="testCase144" classname="TestCases.ClinicianTestCases" time="3.108"/>
+  <testcase name="testCase145" classname="TestCases.ClinicianTestCases" time="3.144"/>
+  <testcase name="testCase146" classname="TestCases.ClinicianTestCases" time="3.109"/>
+  <testcase name="testCase147" classname="TestCases.ClinicianTestCases" time="3.341"/>
+  <testcase name="testCase148" classname="TestCases.ClinicianTestCases" time="3.962"/>
+  <testcase name="testCase149" classname="TestCases.ClinicianTestCases" time="3.336"/>
+  <testcase name="testCase150" classname="TestCases.ClinicianTestCases" time="3.065"/>
+  <testcase name="testCase151" classname="TestCases.ClinicianTestCases" time="3.021"/>
+  <testcase name="testCase152" classname="TestCases.ClinicianTestCases" time="3.234"/>
+  <testcase name="testCase153" classname="TestCases.ClinicianTestCases" time="3.119"/>
+  <testcase name="testCase154" classname="TestCases.ClinicianTestCases" time="3.117"/>
+  <testcase name="testCase155" classname="TestCases.ClinicianTestCases" time="3.104"/>
+  <testcase name="testCase156" classname="TestCases.ClinicianTestCases" time="3.166"/>
+  <testcase name="testCase157" classname="TestCases.ClinicianTestCases" time="3.09"/>
+  <testcase name="testCase158" classname="TestCases.ClinicianTestCases" time="3.465"/>
+  <testcase name="testCase159" classname="TestCases.NavBarFooterTestCases" time="4.949"/>
+  <testcase name="testCase160" classname="TestCases.NavBarFooterTestCases" time="3.274"/>
+  <testcase name="testCase161" classname="TestCases.NavBarFooterTestCases" time="2.97"/>
+  <testcase name="testCase162" classname="TestCases.NavBarFooterTestCases" time="2.995"/>
+  <testcase name="testCase163" classname="TestCases.NavBarFooterTestCases" time="2.972"/>
+  <testcase name="testCase164" classname="TestCases.NavBarFooterTestCases" time="2.95"/>
+  <testcase name="testCase165" classname="TestCases.NavBarFooterTestCases" time="2.951"/>
+  <testcase name="testCase166" classname="TestCases.NavBarFooterTestCases" time="3.338"/>
+  <testcase name="testCase167" classname="TestCases.NavBarFooterTestCases" time="3.398"/>
+  <testcase name="testCase168" classname="TestCases.NavBarFooterTestCases" time="2.948"/>
+  <testcase name="testCase169" classname="TestCases.NavBarFooterTestCases" time="2.977"/>
+  <testcase name="testCase170" classname="TestCases.NavBarFooterTestCases" time="3.228"/>
+  <testcase name="testCase171" classname="TestCases.ChangePWTestCases" time="5.152"/>
+  <testcase name="testCase172" classname="TestCases.ChangePWTestCases" time="3.685"/>
+  <testcase name="testCase173" classname="TestCases.ChangePWTestCases" time="3.438"/>
+  <testcase name="testCase174" classname="TestCases.ChangePWTestCases" time="3.432"/>
+  <testcase name="testCase175" classname="TestCases.ChangePWTestCases" time="5.539"/>
+  <testcase name="testCase176" classname="TestCases.ChangePWTestCases" time="5.89"/>
+  <testcase name="testCase178" classname="TestCases.SupportVideosTestCases" time="4.91"/>
+  <testcase name="testCase179" classname="TestCases.SupportVideosTestCases" time="3.503"/>
+  <testcase name="testCase180" classname="TestCases.SupportVideosTestCases" time="3.614"/>
+  <testcase name="testCase181" classname="TestCases.SupportVideosTestCases" time="3.08"/>
+  <testcase name="testCase182" classname="TestCases.SupportVideosTestCases" time="3.124"/>
+  <testcase name="testCase183" classname="TestCases.SupportVideosTestCases" time="4.2"/>
+  <testcase name="testCase184" classname="TestCases.SupportVideosTestCases" time="4.891"/>
+  <testcase name="testCase185" classname="TestCases.SupportVideosTestCases" time="5.233"/>
+  <testcase name="testCase186" classname="TestCases.SupportVideosTestCases" time="4.052"/>
+  <testcase name="testCase187" classname="TestCases.SupportVideosTestCases" time="4.328"/>
+  <testcase name="testCase188" classname="TestCases.SupportVideosTestCases" time="4.024"/>
+  <testcase name="testCase189" classname="TestCases.SupportVideosTestCases" time="4.569"/>
+  <testcase name="testCase190" classname="TestCases.SupportVideosTestCases" time="4.809"/>
+  <testcase name="testCase191" classname="TestCases.SupportVideosTestCases" time="4.353"/>
+  <testcase name="testCase192" classname="TestCases.SupportVideosTestCases" time="3.996"/>
+  <testcase name="testCase193" classname="TestCases.SupportVideosTestCases" time="3.985"/>
+  <testcase name="testCase194" classname="TestCases.SupportVideosTestCases" time="4.034"/>
+  <testcase name="testCase195" classname="TestCases.SupportVideosTestCases" time="4.427"/>
+  <testcase name="testCase196" classname="TestCases.SupportVideosTestCases" time="4.001"/>
+  <testcase name="testCase197" classname="TestCases.SupportVideosTestCases" time="4.737"/>
+  <testcase name="testCase198" classname="TestCases.SupportVideosTestCases" time="3.957"/>
+  <testcase name="testCase199" classname="TestCases.SupportVideosTestCases" time="4.308"/>
+  <testcase name="testCase200" classname="TestCases.SupportVideosTestCases" time="4.027"/>
+  <testcase name="testCase201" classname="TestCases.SupportVideosTestCases" time="4.463"/>
+  <testcase name="testCase202" classname="TestCases.SupportVideosTestCases" time="4.088"/>
+  <testcase name="testCase203" classname="TestCases.SupportVideosTestCases" time="4.25"/>
+  <testcase name="testCase204" classname="TestCases.SupportVideosTestCases" time="4.085"/>
+  <testcase name="testCase205" classname="TestCases.SupportVideosTestCases" time="4.217"/>
+  <testcase name="testCase206" classname="TestCases.SupportVideosTestCases" time="4.196"/>
+  <testcase name="testCase207" classname="TestCases.SupportVideosTestCases" time="3.517"/>
+  <testcase name="testCase208" classname="TestCases.ProfileTestCases" time="5.099"/>
+  <testcase name="testCase209" classname="TestCases.ProfileTestCases" time="3.595"/>
+  <testcase name="testCase210" classname="TestCases.ProfileTestCases" time="3.751"/>
+  <testcase name="testCase211" classname="TestCases.ProfileTestCases" time="3.632"/>
+  <testcase name="testCase213" classname="TestCases.ProfileTestCases" time="3.647">
     <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
 	at TestCases.ProfileTestCases.testCase213(ProfileTestCases.java:213)
 </failure>
-    <system-out><![CDATA[(08/15/17) - 09:42:20 INFO  ProfileTestCases.testCase213 - Opened: https://test-maint-wc.test.reflexionhealth.com
-(08/15/17) - 09:42:20 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
-(08/15/17) - 09:42:20 INFO  LogInPg.logIn - Password for Login: Reflexion1
-(08/15/17) - 09:42:20 INFO  LogInPg.logIn - Submit button clicked
-(08/15/17) - 09:42:22 INFO  PatientListPg.clickExtraOptn - Clicked Extra Options
-(08/15/17) - 09:42:22 INFO  PatientListPg.profileExtraOptn - Clicked Profile Extra Option
-(08/15/17) - 09:42:23 INFO  ProfilePg.clickDischrgBtn - Clicked Discharge Button
-(08/15/17) - 09:42:23 INFO  ProfileTestCases.testCase213 - Discharge Confirmation Popup Displayed
+    <system-out><![CDATA[(08/16/17) - 09:57:58 INFO  ProfileTestCases.testCase213 - Opened: https://test-maint-wc.test.reflexionhealth.com
+(08/16/17) - 09:57:58 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
+(08/16/17) - 09:57:58 INFO  LogInPg.logIn - Password for Login: Reflexion1
+(08/16/17) - 09:57:58 INFO  LogInPg.logIn - Submit button clicked
+(08/16/17) - 09:58:01 INFO  PatientListPg.clickExtraOptn - Clicked Extra Options
+(08/16/17) - 09:58:01 INFO  PatientListPg.profileExtraOptn - Clicked Profile Extra Option
+(08/16/17) - 09:58:01 INFO  ProfilePg.clickDischrgBtn - Clicked Discharge Button
+(08/16/17) - 09:58:01 INFO  ProfileTestCases.testCase213 - Discharge Confirmation Popup Displayed
 ]]></system-out>
   </testcase>
-  <testcase name="testCase214" classname="TestCases.ProfileTestCases" time="3.604"/>
-  <testcase name="testCase215" classname="TestCases.ProfileTestCases" time="4.468"/>
-  <testcase name="testCase216" classname="TestCases.ProfileTestCases" time="3.408"/>
-  <testcase name="testCase217" classname="TestCases.ProfileTestCases" time="3.455"/>
-  <testcase name="testCase218" classname="TestCases.ProfileTestCases" time="3.64"/>
-  <testcase name="testCase219" classname="TestCases.ProfileTestCases" time="3.432"/>
-  <testcase name="testCase220" classname="TestCases.ProfileTestCases" time="4.316"/>
-  <testcase name="testCase221" classname="TestCases.ProfileTestCases" time="3.825"/>
-  <testcase name="testCase222" classname="TestCases.ProfileTestCases" time="3.81"/>
-  <testcase name="testCase223" classname="TestCases.ProfileTestCases" time="4.146"/>
-  <testcase name="testCase224" classname="TestCases.ProfileTestCases" time="3.813"/>
-  <testcase name="testCase225" classname="TestCases.ProfileTestCases" time="3.833"/>
-  <testcase name="testCase226" classname="TestCases.ProfileTestCases" time="3.747"/>
-  <testcase name="testCase227" classname="TestCases.ProfileTestCases" time="3.674"/>
-  <testcase name="testCase228" classname="TestCases.ProfileTestCases" time="3.745"/>
-  <testcase name="testCase229" classname="TestCases.ProfileTestCases" time="3.704"/>
-  <testcase name="testCase230" classname="TestCases.ProfileTestCases" time="3.699"/>
-  <testcase name="testCase231" classname="TestCases.ProfileTestCases" time="4.012"/>
-  <testcase name="testCase232" classname="TestCases.ProfileTestCases" time="3.745"/>
-  <testcase name="testCase233" classname="TestCases.ProfileTestCases" time="3.856"/>
-  <testcase name="testCase234" classname="TestCases.ProfileTestCases" time="3.765"/>
-  <testcase name="testCase235" classname="TestCases.ProfileTestCases" time="3.598"/>
-  <testcase name="testCase236" classname="TestCases.ProfileTestCases" time="3.787"/>
-  <testcase name="testCase237" classname="TestCases.ProfileTestCases" time="3.581"/>
-  <testcase name="testCase238" classname="TestCases.ProfileTestCases" time="3.597"/>
-  <testcase name="testCase239" classname="TestCases.ProfileTestCases" time="3.709"/>
-  <testcase name="testCase240" classname="TestCases.ProfileTestCases" time="4.368"/>
-  <testcase name="testCase241" classname="TestCases.ProfileTestCases" time="3.414"/>
-  <testcase name="testCase242" classname="TestCases.ProfileTestCases" time="3.709"/>
-  <testcase name="testCase243" classname="TestCases.ProfileTestCases" time="3.668"/>
-  <testcase name="testCase244" classname="TestCases.ProfileTestCases" time="3.641"/>
-  <testcase name="testCase245" classname="TestCases.ProfileTestCases" time="3.533"/>
-  <testcase name="testCase246" classname="TestCases.ProfileTestCases" time="3.752"/>
-  <testcase name="testCase247" classname="TestCases.ProfileTestCases" time="4.093"/>
-  <testcase name="testCase248" classname="TestCases.ProfileTestCases" time="3.741"/>
-  <testcase name="testCase249" classname="TestCases.PatExtraOptnTestCases" time="3.521"/>
-  <testcase name="testCase250" classname="TestCases.PatExtraOptnTestCases" time="2.052"/>
-  <testcase name="testCase251" classname="TestCases.PatExtraOptnTestCases" time="1.888"/>
-  <testcase name="testCase252" classname="TestCases.PatExtraOptnTestCases" time="1.733"/>
-  <testcase name="testCase253" classname="TestCases.PatExtraOptnTestCases" time="1.726"/>
-  <testcase name="testCase254" classname="TestCases.PatExtraOptnTestCases" time="1.878"/>
-  <testcase name="testCase255" classname="TestCases.PatExtraOptnTestCases" time="1.707"/>
-  <testcase name="testCase256" classname="TestCases.PatExtraOptnTestCases" time="2.579"/>
-  <testcase name="testCase257" classname="TestCases.PatExtraOptnTestCases" time="1.817"/>
-  <testcase name="testCase258" classname="TestCases.PatExtraOptnTestCases" time="2.087"/>
-  <testcase name="testCase259" classname="TestCases.PatExtraOptnTestCases" time="1.783"/>
-  <testcase name="testCase260" classname="TestCases.PatExtraOptnTestCases" time="3.029"/>
-  <testcase name="testCase261" classname="TestCases.PatExtraOptnTestCases" time="3.921">
+  <testcase name="testCase214" classname="TestCases.ProfileTestCases" time="3.758"/>
+  <testcase name="testCase215" classname="TestCases.ProfileTestCases" time="3.876"/>
+  <testcase name="testCase216" classname="TestCases.ProfileTestCases" time="3.565"/>
+  <testcase name="testCase217" classname="TestCases.ProfileTestCases" time="3.326"/>
+  <testcase name="testCase218" classname="TestCases.ProfileTestCases" time="3.606"/>
+  <testcase name="testCase219" classname="TestCases.ProfileTestCases" time="3.395"/>
+  <testcase name="testCase220" classname="TestCases.ProfileTestCases" time="3.586"/>
+  <testcase name="testCase221" classname="TestCases.ProfileTestCases" time="3.611"/>
+  <testcase name="testCase222" classname="TestCases.ProfileTestCases" time="3.708"/>
+  <testcase name="testCase223" classname="TestCases.ProfileTestCases" time="3.913"/>
+  <testcase name="testCase224" classname="TestCases.ProfileTestCases" time="3.493"/>
+  <testcase name="testCase225" classname="TestCases.ProfileTestCases" time="3.786"/>
+  <testcase name="testCase226" classname="TestCases.ProfileTestCases" time="3.842"/>
+  <testcase name="testCase227" classname="TestCases.ProfileTestCases" time="3.714"/>
+  <testcase name="testCase228" classname="TestCases.ProfileTestCases" time="3.808"/>
+  <testcase name="testCase229" classname="TestCases.ProfileTestCases" time="3.737"/>
+  <testcase name="testCase230" classname="TestCases.ProfileTestCases" time="3.499"/>
+  <testcase name="testCase231" classname="TestCases.ProfileTestCases" time="3.646"/>
+  <testcase name="testCase232" classname="TestCases.ProfileTestCases" time="3.596"/>
+  <testcase name="testCase233" classname="TestCases.ProfileTestCases" time="4.011"/>
+  <testcase name="testCase234" classname="TestCases.ProfileTestCases" time="4.157"/>
+  <testcase name="testCase235" classname="TestCases.ProfileTestCases" time="4.309"/>
+  <testcase name="testCase236" classname="TestCases.ProfileTestCases" time="4.123"/>
+  <testcase name="testCase237" classname="TestCases.ProfileTestCases" time="3.941"/>
+  <testcase name="testCase238" classname="TestCases.ProfileTestCases" time="4.345"/>
+  <testcase name="testCase239" classname="TestCases.ProfileTestCases" time="4.25"/>
+  <testcase name="testCase240" classname="TestCases.ProfileTestCases" time="3.776"/>
+  <testcase name="testCase241" classname="TestCases.ProfileTestCases" time="3.467"/>
+  <testcase name="testCase242" classname="TestCases.ProfileTestCases" time="3.663"/>
+  <testcase name="testCase243" classname="TestCases.ProfileTestCases" time="3.799"/>
+  <testcase name="testCase244" classname="TestCases.ProfileTestCases" time="3.496"/>
+  <testcase name="testCase245" classname="TestCases.ProfileTestCases" time="3.514"/>
+  <testcase name="testCase246" classname="TestCases.ProfileTestCases" time="3.722"/>
+  <testcase name="testCase247" classname="TestCases.ProfileTestCases" time="3.686"/>
+  <testcase name="testCase248" classname="TestCases.ProfileTestCases" time="3.814"/>
+  <testcase name="testCase249" classname="TestCases.PatExtraOptnTestCases" time="3.642"/>
+  <testcase name="testCase250" classname="TestCases.PatExtraOptnTestCases" time="2.102"/>
+  <testcase name="testCase251" classname="TestCases.PatExtraOptnTestCases" time="1.82"/>
+  <testcase name="testCase252" classname="TestCases.PatExtraOptnTestCases" time="2.332"/>
+  <testcase name="testCase253" classname="TestCases.PatExtraOptnTestCases" time="1.939"/>
+  <testcase name="testCase254" classname="TestCases.PatExtraOptnTestCases" time="1.801"/>
+  <testcase name="testCase255" classname="TestCases.PatExtraOptnTestCases" time="2.088"/>
+  <testcase name="testCase256" classname="TestCases.PatExtraOptnTestCases" time="1.685"/>
+  <testcase name="testCase257" classname="TestCases.PatExtraOptnTestCases" time="1.719"/>
+  <testcase name="testCase258" classname="TestCases.PatExtraOptnTestCases" time="1.785"/>
+  <testcase name="testCase259" classname="TestCases.PatExtraOptnTestCases" time="1.849"/>
+  <testcase name="testCase260" classname="TestCases.PatExtraOptnTestCases" time="2.184"/>
+  <testcase name="testCase261" classname="TestCases.PatExtraOptnTestCases" time="4.26">
     <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
 	at TestCases.PatExtraOptnTestCases.testCase261(PatExtraOptnTestCases.java:350)
 </failure>
-    <system-out><![CDATA[(08/15/17) - 09:46:56 INFO  PatExtraOptnTestCases.testCase261 - Opened: https://test-maint-wc.test.reflexionhealth.com
-(08/15/17) - 09:46:57 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
-(08/15/17) - 09:46:57 INFO  LogInPg.logIn - Password for Login: Reflexion1
-(08/15/17) - 09:46:57 INFO  LogInPg.logIn - Submit button clicked
-(08/15/17) - 09:46:58 INFO  PatientListPg.clickExtraOptn - Clicked Extra Options
-(08/15/17) - 09:46:58 INFO  PatientListPg.clickSaveHoldBtn - Clicked Save Hold Button
+    <system-out><![CDATA[(08/16/17) - 10:02:33 INFO  PatExtraOptnTestCases.testCase261 - Opened: https://test-maint-wc.test.reflexionhealth.com
+(08/16/17) - 10:02:34 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
+(08/16/17) - 10:02:34 INFO  LogInPg.logIn - Password for Login: Reflexion1
+(08/16/17) - 10:02:34 INFO  LogInPg.logIn - Submit button clicked
+(08/16/17) - 10:02:35 INFO  PatientListPg.clickExtraOptn - Clicked Extra Options
+(08/16/17) - 10:02:35 INFO  PatientListPg.clickSaveHoldBtn - Clicked Save Hold Button
 ]]></system-out>
   </testcase>
-  <testcase name="testCase262" classname="TestCases.PatExtraOptnTestCases" time="8.962">
+  <testcase name="testCase262" classname="TestCases.PatExtraOptnTestCases" time="8.862">
     <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
 	at TestCases.PatExtraOptnTestCases.testCase262(PatExtraOptnTestCases.java:373)
 </failure>
-    <system-out><![CDATA[(08/15/17) - 09:47:03 INFO  PatExtraOptnTestCases.testCase262 - Opened: https://test-maint-wc.test.reflexionhealth.com
-(08/15/17) - 09:47:03 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
-(08/15/17) - 09:47:03 INFO  LogInPg.logIn - Password for Login: Reflexion1
-(08/15/17) - 09:47:03 INFO  LogInPg.logIn - Submit button clicked
-(08/15/17) - 09:47:04 INFO  PatientListPg.clickExtraOptn - Clicked Extra Options
+    <system-out><![CDATA[(08/16/17) - 10:02:40 INFO  PatExtraOptnTestCases.testCase262 - Opened: https://test-maint-wc.test.reflexionhealth.com
+(08/16/17) - 10:02:40 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
+(08/16/17) - 10:02:40 INFO  LogInPg.logIn - Password for Login: Reflexion1
+(08/16/17) - 10:02:40 INFO  LogInPg.logIn - Submit button clicked
+(08/16/17) - 10:02:41 INFO  PatientListPg.clickExtraOptn - Clicked Extra Options
 ]]></system-out>
   </testcase>
-  <testcase name="testCase263" classname="TestCases.PatExtraOptnTestCases" time="8.901">
+  <testcase name="testCase263" classname="TestCases.PatExtraOptnTestCases" time="8.791">
     <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
 	at TestCases.PatExtraOptnTestCases.testCase263(PatExtraOptnTestCases.java:397)
 </failure>
-    <system-out><![CDATA[(08/15/17) - 09:47:14 INFO  PatExtraOptnTestCases.testCase263 - Opened: https://test-maint-wc.test.reflexionhealth.com
-(08/15/17) - 09:47:14 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
-(08/15/17) - 09:47:14 INFO  LogInPg.logIn - Password for Login: Reflexion1
-(08/15/17) - 09:47:14 INFO  LogInPg.logIn - Submit button clicked
-(08/15/17) - 09:47:15 INFO  PatientListPg.clickExtraOptn - Clicked Extra Options
+    <system-out><![CDATA[(08/16/17) - 10:02:51 INFO  PatExtraOptnTestCases.testCase263 - Opened: https://test-maint-wc.test.reflexionhealth.com
+(08/16/17) - 10:02:51 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
+(08/16/17) - 10:02:52 INFO  LogInPg.logIn - Password for Login: Reflexion1
+(08/16/17) - 10:02:52 INFO  LogInPg.logIn - Submit button clicked
+(08/16/17) - 10:02:52 INFO  PatientListPg.clickExtraOptn - Clicked Extra Options
 ]]></system-out>
   </testcase>
-  <testcase name="testCase264" classname="TestCases.PatExtraOptnTestCases" time="3.901">
+  <testcase name="testCase264" classname="TestCases.PatExtraOptnTestCases" time="4.078">
     <failure message="Test FAILED" type="java.lang.AssertionError">java.lang.AssertionError: Test FAILED
 	at TestCases.PatExtraOptnTestCases.testCase264(PatExtraOptnTestCases.java:417)
 </failure>
-    <system-out><![CDATA[(08/15/17) - 09:47:25 INFO  PatExtraOptnTestCases.testCase264 - Opened: https://test-maint-wc.test.reflexionhealth.com
-(08/15/17) - 09:47:26 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
-(08/15/17) - 09:47:26 INFO  LogInPg.logIn - Password for Login: Reflexion1
-(08/15/17) - 09:47:26 INFO  LogInPg.logIn - Submit button clicked
-(08/15/17) - 09:47:27 INFO  PatientListPg.clickExtraOptn - Clicked Extra Options
+    <system-out><![CDATA[(08/16/17) - 10:03:02 INFO  PatExtraOptnTestCases.testCase264 - Opened: https://test-maint-wc.test.reflexionhealth.com
+(08/16/17) - 10:03:02 INFO  LogInPg.logIn - Email for Login: andres.gomez+testmaint@reflexionhealth.com
+(08/16/17) - 10:03:02 INFO  LogInPg.logIn - Password for Login: Reflexion1
+(08/16/17) - 10:03:03 INFO  LogInPg.logIn - Submit button clicked
+(08/16/17) - 10:03:04 INFO  PatientListPg.clickExtraOptn - Clicked Extra Options
 ]]></system-out>
   </testcase>
-  <testcase name="testCase265" classname="TestCases.PatExtraOptnTestCases" time="1.672"/>
-  <testcase name="testCase266" classname="TestCases.PatExtraOptnTestCases" time="1.708"/>
-  <testcase name="testCase267" classname="TestCases.PatExtraOptnTestCases" time="1.817"/>
+  <testcase name="testCase265" classname="TestCases.PatExtraOptnTestCases" time="1.686"/>
+  <testcase name="testCase266" classname="TestCases.PatExtraOptnTestCases" time="1.883"/>
+  <testcase name="testCase267" classname="TestCases.PatExtraOptnTestCases" time="1.79"/>
 </testsuite>
