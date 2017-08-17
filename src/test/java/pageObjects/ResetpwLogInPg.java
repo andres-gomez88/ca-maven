@@ -17,9 +17,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import static pageObjects.NavBarFooterPg.waitForClick;
-import static pageObjects.NavBarFooterPg.waitForNoVisibility;
-import static pageObjects.NavBarFooterPg.waitForVisibilityList;
+import static Utilities.WaitUtilities.*;
 /**
  *
  * @author Admin

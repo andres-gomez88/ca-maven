@@ -47,8 +47,8 @@ public class LoginTestCases {
     @BeforeClass
     public void setup(@Optional String browser) throws Exception {
         if(browser == null) {
-            System.setProperty("webdriver.gecko.driver", getGeckoDriverPath());
-            driver = new FirefoxDriver();
+            System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
+            driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
             System.setProperty("webdriver.gecko.driver", getGeckoDriverPath());
             driver = new FirefoxDriver();

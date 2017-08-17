@@ -24,7 +24,7 @@ import pageObjects.ProfilePg;
 import pageObjects.SupportPg;
 import pageObjects.CreateEditProgramPg;
 import pageObjects.CreateEditProtocolPg;
-import static pageObjects.NavBarFooterPg.waitForVisibility;
+import static Utilities.WaitUtilities.*;
 /**
  *
  * @author Admin

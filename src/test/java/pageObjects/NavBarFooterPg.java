@@ -15,8 +15,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import static Utilities.WaitUtilities.*;
+
 /**
  *
  * @author Admin
@@ -87,26 +87,6 @@ public class NavBarFooterPg {
         this.patientListPgTest = new PatientListPg(driver);
         this.navBarElements = new ArrayList<>(Arrays.asList(patientsNavBar,
         protocolsNavBar, cliniciansNavBar, addPatientNavBar));
-    }
-    
-    public static void waitForVisibility(WebElement element, int sec, WebDriver driver) {
-        (new WebDriverWait(driver, sec)).until(ExpectedConditions.visibilityOf(element));
-    }
-    
-    public static void waitForClick(WebElement element, int sec, WebDriver driver) {
-        (new WebDriverWait(driver, sec)).until(ExpectedConditions.elementToBeClickable(element));
-    }
-    
-    public static void waitForVisibilityList(List<WebElement> elements, int sec, WebDriver driver) {
-        (new WebDriverWait(driver, sec)).until(ExpectedConditions.visibilityOfAllElements(elements));
-    }
-    
-    public static void waitForNoVisibility(List<WebElement> elements, int sec, WebDriver driver) {
-        (new WebDriverWait(driver, sec)).until(ExpectedConditions.invisibilityOfAllElements(elements));
-    }
-    
-    public static void waitForVisibilityText(WebElement element, int sec, String text, WebDriver driver) {
-        (new WebDriverWait(driver, sec)).until(ExpectedConditions.textToBePresentInElement(element, text));
     }
     
     public void searchNavBar(String input) throws InterruptedException {
