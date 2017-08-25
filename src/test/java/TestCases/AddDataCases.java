@@ -112,7 +112,7 @@ public class AddDataCases {
         Reporter.log("Logged in with " + finalEmail() + " and pw: Reflexion1");
     }
     
-    //Method for using sets of username and pass for trying login attempts 
+    // Method for using sets of username and pass for trying login attempts 
     @Test(dataProvider = "logInInputsExcel", priority = 1, enabled = false)
     public void testExcelData(String email, String pw) throws InterruptedException {
         logInPgTest.clearLogInText();
@@ -147,6 +147,7 @@ public class AddDataCases {
         cliniciansListPgTest.waitPgLoad(); 
         cliniciansListPgTest.addClinician(testfName, testlName, testEmail, testPhoneNum);
     }
+    
     //Loop for discharging patients 
     @Test(enabled = false, priority = 2)
     public void dischargePatient() throws InterruptedException {

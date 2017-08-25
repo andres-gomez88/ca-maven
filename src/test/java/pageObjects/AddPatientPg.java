@@ -25,22 +25,17 @@ import static Utilities.WaitUtilities.*;
 public class AddPatientPg {    
     WebDriver driver;
     List<WebElement> btnElements;
-    //NavBarFooterPg navBarFooterPgTest = new NavBarFooterPg(driver);
-    //PatientListPg patientListPgTest = new PatientListPg(driver);
     private static final Logger log = LogManager.getLogger(AddPatientPg.class.getName());
     
     //Patient Information
     @FindBy(name = "first_name")
-    WebElement firstName;
+    WebElement firstName; // Locating WebElement by name
     
     @FindBy(name = "last_name")
     WebElement lastName;
     
-    @FindBy(name = "first_name")
-    WebElement fName;
-    
     @FindBy(xpath = "//*[@id='patient-add']//article[1]/rflx-select[1]/div/div/span")
-    WebElement genderClick;
+    WebElement genderClick; // Locating WebElement by X-Path
     
     @FindBy(xpath = "//input[@placeholder='Gender']")
     WebElement gender;
@@ -222,17 +217,21 @@ public class AddPatientPg {
     String adobM, String adobD, String adobY, String aEmail) {
         try {
             waitPgLoad();
-            firstName.sendKeys(afName);
+            firstName.sendKeys(afName); 
             log.info("Entered first name: " + afName);
             lastName.sendKeys(alName);
             log.info("Entered last name: " + alName);
             genderClick.click();
+            // Fill Gender
             gender.sendKeys(aGender, Keys.ENTER);
             log.info("Entered Gender: " + aGender);
+            // Fill DOB Month
             dobMClick.click();
             dobM.sendKeys(adobM, Keys.ENTER);
+            // Fill DOB Day
             dobDClick.click();
             dobD.sendKeys(adobD, Keys.ENTER);
+            // Fill DOB Year
             dobYClick.click();
             dobY.sendKeys(adobY, Keys.ENTER);
             log.info("Entered DOB: " + adobM + "/" + adobD + "/" + adobY);
