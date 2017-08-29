@@ -6,6 +6,7 @@
 package TestCases;
 
 import Utilities.ExtentFactory;
+import static Utilities.JamaAPIUtilities.*;
 import static Utilities.LoginEnvUtilities.*;
 import static Utilities.PathUtilities.*;
 import static Utilities.Screenshot.*;
@@ -13,6 +14,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
@@ -42,6 +44,7 @@ public class LoginTestCases {
     public String methodName;
     ExtentReports extent;
     ExtentTest reportTest;
+    int apiId;
         
     @Parameters("browserType")
     @BeforeClass
@@ -67,10 +70,11 @@ public class LoginTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
+        apiId = 27883;
     }
     
     @Test(enabled = true)
-    public void testCase001() {
+    public void testCase001() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         driver.get(finalEnvironment());
@@ -81,14 +85,16 @@ public class LoginTestCases {
             log.info("Page loaded");
             log.info("PASS");
             reportTest.log(Status.PASS, "Login Page Loaded");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");            
         }
     }
     
     @Test(enabled = true)
-    public void testCase002() {
+    public void testCase002() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName);        
         reportTest.log(Status.INFO, "WebPage Opened: " + finalEnvironment());
@@ -99,14 +105,16 @@ public class LoginTestCases {
             log.info("Elements are present");
             log.info("PASS");
             reportTest.log(Status.PASS, "Elements are present");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase003() {
+    public void testCase003() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -118,15 +126,17 @@ public class LoginTestCases {
             patientListPgTest.waitPgLoad();
             log.info("Home page loaded");
             reportTest.log(Status.PASS, "Patient Dashboard Displayed");
-            log.info("PASS");            
+            log.info("PASS");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase004() {
+    public void testCase004() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -136,15 +146,17 @@ public class LoginTestCases {
             logInPgTest.logInNoCred();//Method tries to login without credentials
             reportTest.log(Status.INFO, "Login Attempt with no credentials");
             reportTest.log(Status.PASS, "Submit button is disbaled");
-            log.info("PASS");            
+            log.info("PASS");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase005() {
+    public void testCase005() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName);
         try {
@@ -155,14 +167,16 @@ public class LoginTestCases {
             reportTest.log(Status.INFO, "Login Attempt with invalid user");
             log.info("PASS");
             reportTest.log(Status.PASS, "Validation message displayed");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase006() {
+    public void testCase006() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -173,14 +187,16 @@ public class LoginTestCases {
             reportTest.log(Status.INFO, "Login Attempt with invalid pw");
             log.info("PASS");
             reportTest.log(Status.PASS, "Validation message displayed");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase007() {
+    public void testCase007() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -191,14 +207,16 @@ public class LoginTestCases {
         reportTest.log(Status.INFO, "Login Attempt with invalid user");
         log.info("PASS");
         reportTest.log(Status.PASS, "Validation message displayed");
+        testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase008() {
+    public void testCase008() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -209,14 +227,16 @@ public class LoginTestCases {
             logInPgTest.clickRemMeChkBox();
             log.info("PASS");
             reportTest.log(Status.PASS, "Remember Me checkbox is selectable");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }        
     }
     
     @Test(enabled = true)
-    public void testCase009() {
+    public void testCase009() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -227,14 +247,16 @@ public class LoginTestCases {
             patientListPgTest.waitPgLoad();
             log.info("PASS");
             reportTest.log(Status.PASS, "Remember Me check box is checked username saved");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }    
     }
     
     @Test(enabled = true)
-    public void testCase010() {
+    public void testCase010() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -247,14 +269,16 @@ public class LoginTestCases {
             patientListPgTest.waitPgLoad();
             log.info("PASS");
             reportTest.log(Status.PASS, "Remember Me check box is unchecked username not saved");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase011() {
+    public void testCase011() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -267,14 +291,16 @@ public class LoginTestCases {
             log.info("Page loaded");
             log.info("PASS");
             reportTest.log(Status.PASS, "Directed to reset finalPass()word page");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase012() {
+    public void testCase012() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -287,14 +313,16 @@ public class LoginTestCases {
             log.info("Elements present in page");
             log.info("PASS");
             reportTest.log(Status.PASS, "Elements in Reset Password page displayed");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }        
     }
     
     @Test(enabled = true)
-    public void testCase013() {
+    public void testCase013() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -307,14 +335,16 @@ public class LoginTestCases {
         resetpwLogInPgTest.sendResetLink(finalEmail());        
         log.info("PASS");
         reportTest.log(Status.PASS, "Confirmation message displayed");
+        testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase014() {
+    public void testCase014() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         driver.get(finalEnvironment()); 
@@ -325,16 +355,18 @@ public class LoginTestCases {
         try {
             resetpwLogInPgTest.submitBtnClickable();
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         } catch (Exception e) {
             log.info("Submit Button not clickable");
             log.info("PASS");
             reportTest.log(Status.PASS, "Send Reset Link button is disabled");
+            testCaseJamaApiPass(apiId++);
         }        
     }
     
     @Test(enabled = true)
-    public void testCase015() {
+    public void testCase015() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -345,14 +377,16 @@ public class LoginTestCases {
         reportTest.log(Status.INFO, "Clicked User Guide link");
         reportTest.log(Status.PASS, "Directed to User Guide in new link");
         log.info("PASS");
+        testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase016() {
+    public void testCase016() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -365,14 +399,16 @@ public class LoginTestCases {
             log.info("Home page loaded");
             log.info("PASS");
             reportTest.log(Status.PASS, "Elements displayed on Patient Page");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase017() {
+    public void testCase017() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -387,14 +423,16 @@ public class LoginTestCases {
             reportTest.log(Status.INFO, "Searched Nav Bar: test3");
             log.info("PASS");
             reportTest.log(Status.PASS, "Search displayed all details");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase018() {
+    public void testCase018() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
         reportTest = extent.createTest(methodName); 
         try {
@@ -409,8 +447,10 @@ public class LoginTestCases {
             reportTest.log(Status.INFO, "Searched Nav Bar with invalid patient name: lala");
             log.info("PASS");
             reportTest.log(Status.PASS, "No results found message displayed");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
             org.testng.Assert.fail("Test FAILED");
         }
     }
