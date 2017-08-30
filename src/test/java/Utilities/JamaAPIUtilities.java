@@ -20,6 +20,7 @@ public class JamaAPIUtilities {
         status.put("status", "PASSED");
         jamaBody.put("fields", fields);
         fields.put("testRunSteps", new JSONObject[] { status });
+        fields.put("actualResults", "Automated Test Run Script");
         HttpResponse<JsonNode> jamaReq = Unirest.put(jamaUrl + apiId)
                 .header("content-type", "application/json")
                 .header("authorization", "Basic YW5kcmVzLmdvbWV6Ojg4QWd6Xl9e")
@@ -27,6 +28,7 @@ public class JamaAPIUtilities {
                 .asJson();
         jamaRes = jamaReq.getBody().getObject();
         System.out.println(jamaRes.toString(2));
+        System.out.println("********** API ID =" + apiId);
     }
     
     public static void testCaseJamaApiFail(int apiId) throws UnirestException {
@@ -40,5 +42,6 @@ public class JamaAPIUtilities {
                 .asJson();
         jamaRes = jamaReq.getBody().getObject();
         System.out.println(jamaRes.toString(2));
+        System.out.println("********** API ID =" + apiId);
     }
 }
