@@ -7,6 +7,7 @@ package TestCases;
 
 
 import Utilities.ExtentFactory;
+import static Utilities.JamaAPIUtilities.*;
 import static Utilities.LoginEnvUtilities.*;
 import static Utilities.PathUtilities.*;
 import static Utilities.Screenshot.*;
@@ -14,6 +15,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
@@ -43,6 +45,7 @@ public class ForgotPassTestCases {
     public String methodName;
     ExtentReports extent;
     ExtentTest reportTest;
+    public int apiId;
     
     
     @Parameters("browserType")
@@ -67,10 +70,11 @@ public class ForgotPassTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
+        apiId = 30354;
     }
     
     @Test(enabled = true)
-    public void testCase080() {
+    public void testCase080() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -81,14 +85,16 @@ public class ForgotPassTestCases {
             resetpwLogInPgTest.sendResetLink(finalEmail());
             reportTest.log(Status.PASS, "Sent reset password link to: " + finalEmail());
             log.info("PASS");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+            testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true) 
-    public void testCase081() {
+    public void testCase081() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -99,14 +105,16 @@ public class ForgotPassTestCases {
             resetpwLogInPgTest.sendResetLink(finalEmail());
             reportTest.log(Status.PASS, "Sent reset password link to: " + finalEmail());
             log.info("PASS");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+            testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)//Needs manual testing to check mail
-    public void testCase082() {
+    public void testCase082() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -117,14 +125,16 @@ public class ForgotPassTestCases {
             //resetpwLogInPgTest.sendResetLink(finalEmail());
             reportTest.log(Status.PASS, "Sent reset password link");
             log.info("PASS");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+            testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)//Needs manual testing to check mail
-    public void testCase083() {
+    public void testCase083() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -135,14 +145,16 @@ public class ForgotPassTestCases {
             //resetpwLogInPgTest.sendResetLink(finalEmail());
             reportTest.log(Status.PASS, "Sent reset password link");
             log.info("PASS");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+            testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)//Needs manual testing to check mail
-    public void testCase084() {
+    public void testCase084() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -153,8 +165,10 @@ public class ForgotPassTestCases {
             //resetpwLogInPgTest.sendResetLink(finalEmail());
             reportTest.log(Status.PASS, "Sent reset password link");
             log.info("PASS");
+            testCaseJamaApiPass(apiId++);
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+            testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
