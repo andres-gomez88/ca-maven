@@ -7,6 +7,7 @@ package TestCases;
 
 
 import Utilities.ExtentFactory;
+import static Utilities.JamaAPIUtilities.*;
 import static Utilities.LoginEnvUtilities.*;
 import static Utilities.PathUtilities.*;
 import static Utilities.Screenshot.*;
@@ -14,6 +15,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
@@ -44,6 +46,7 @@ public class ChangePWTestCases {
     public String methodName;
     ExtentReports extent;
     ExtentTest reportTest;
+    public int apiId;
     
     @Parameters("browserType")
     @BeforeClass
@@ -69,10 +72,11 @@ public class ChangePWTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
+        apiId = 32087;
     }
     
     @Test(enabled = true)
-    public void testCase171() {
+    public void testCase171() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -87,15 +91,17 @@ public class ChangePWTestCases {
             changePWPgTest.fillNewPW("abc123");
             reportTest.log(Status.INFO, "Filled new finalPass()word: abc123");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Password Strength displays red");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase172() {
+    public void testCase172() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -110,15 +116,17 @@ public class ChangePWTestCases {
             changePWPgTest.fillNewPW("aBc123^&");
             reportTest.log(Status.INFO, "Filled new finalPass()word: aBc123^&");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Password Strength displayed yellow checkmark");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase173() {
+    public void testCase173() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -133,15 +141,17 @@ public class ChangePWTestCases {
             changePWPgTest.fillNewPW("aBc123^D&e88");
             reportTest.log(Status.INFO, "Filled new finalPass()word: aBc123^D&e88");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Password Strength displays green checkmark");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase174() {
+    public void testCase174() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -156,15 +166,17 @@ public class ChangePWTestCases {
             changePWPgTest.fillNewPW("       ");
             changePWPgTest.fillConfPW("       ");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Fields validaded");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase175() {
+    public void testCase175() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -181,19 +193,22 @@ public class ChangePWTestCases {
             reportTest.log(Status.INFO, "Filled Old Password and New Password");
             if (changePWPgTest.submitBtnEnabled() == false) {
                 log.info("PASS");
+                testCaseJamaApiPass(apiId++);
                 reportTest.log(Status.PASS, "Submit disabled confirmation finalPass()word not entered");
             } else {
                 reportTest.log(Status.FAIL, "Test FAILED");
+                testCaseJamaApiFail(apiId++);
                 org.testng.Assert.fail("Test FAILED");
             }
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase176() {
+    public void testCase176() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -211,19 +226,22 @@ public class ChangePWTestCases {
             reportTest.log(Status.INFO, "Filled Old, New and Confirmation Password");
             if (changePWPgTest.submitBtnEnabled() == false) {
                 log.info("PASS");
+                testCaseJamaApiPass(apiId++);
                 reportTest.log(Status.PASS, "Submit disabled invalid confiramtion finalPass()word");
             } else {
                 reportTest.log(Status.FAIL, "Test FAILED");
-	    org.testng.Assert.fail("Test FAILED");
+                testCaseJamaApiFail(apiId++);
+                org.testng.Assert.fail("Test FAILED");
             }
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = false)
-    public void testCase177() {
+    public void testCase177() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -243,9 +261,11 @@ public class ChangePWTestCases {
             changePWPgTest.clickSubmitBtn();
             reportTest.log(Status.INFO, "Submit button clicked");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Confirmation message displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }

@@ -7,6 +7,7 @@ package TestCases;
 
 
 import Utilities.ExtentFactory;
+import static Utilities.JamaAPIUtilities.*;
 import static Utilities.LoginEnvUtilities.*;
 import static Utilities.PathUtilities.*;
 import static Utilities.Screenshot.*;
@@ -14,6 +15,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
@@ -44,6 +46,7 @@ public class SupportVideosTestCases {
     public String methodName;
     ExtentReports extent;
     ExtentTest reportTest;
+    public int apiId;
     
     @Parameters("browserType")
     @BeforeClass
@@ -69,10 +72,11 @@ public class SupportVideosTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
+        apiId = 32100;
     }
     
     @Test(enabled = true)
-    public void testCase178() {
+    public void testCase178() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -86,15 +90,17 @@ public class SupportVideosTestCases {
             reportTest.log(Status.INFO, "Navigating to support from profile Dropdown");
             supportPgTest.waitPgLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Support Videos Page displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase179() {
+    public void testCase179() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -108,15 +114,17 @@ public class SupportVideosTestCases {
 	    reportTest.log(Status.INFO, "Navigating to support from profile Dropdown");  
             supportPgTest.waitPgLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "All elements displayed in Support Video Page");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase180() {
+    public void testCase180() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -131,15 +139,17 @@ public class SupportVideosTestCases {
             supportPgTest.waitPgLoad();
             supportPgTest.fillSrchVidTxtBox("test");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "User is able to input text and watermark is cleared on input");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase181() {
+    public void testCase181() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -154,15 +164,17 @@ public class SupportVideosTestCases {
             supportPgTest.waitPgLoad();
             supportPgTest.fillSrchVidTxtBox("patient");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Search inputs updated dynamically");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase182() {
+    public void testCase182() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -177,15 +189,17 @@ public class SupportVideosTestCases {
             supportPgTest.waitPgLoad();
             supportPgTest.fillSrchVidTxtBox("%^^#*(");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "No search results, user manual download prompt displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase183() {
+    public void testCase183() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -201,15 +215,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickAddPatVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase184() {
+    public void testCase184() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -227,15 +243,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase185() {
+    public void testCase185() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -251,15 +269,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickSearchPatVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase186() {
+    public void testCase186() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -277,15 +297,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase187() {
+    public void testCase187() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -301,15 +323,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickDashboardVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase188() {
+    public void testCase188() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -327,15 +351,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase189() {
+    public void testCase189() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -351,15 +377,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickOptPatListVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase190() {
+    public void testCase190() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -377,15 +405,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase191() {
+    public void testCase191() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -401,15 +431,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickPatDetailVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase192() {
+    public void testCase192() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -427,15 +459,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase193() {
+    public void testCase193() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -451,15 +485,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickRevEditPatProfVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase194() {
+    public void testCase194() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -477,15 +513,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase195() {
+    public void testCase195() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -501,15 +539,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickViewTestSurvVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase196() {
+    public void testCase196() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -527,15 +567,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase197() {
+    public void testCase197() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -551,15 +593,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickUseReportsVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase198() {
+    public void testCase198() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -577,15 +621,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase199() {
+    public void testCase199() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -601,15 +647,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickEditNewProgVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase200() {
+    public void testCase200() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -627,15 +675,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase201() {
+    public void testCase201() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -651,15 +701,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickViewExcPlanVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase202() {
+    public void testCase202() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -677,15 +729,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }   
     
     @Test(enabled = true)
-    public void testCase203() {
+    public void testCase203() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -701,15 +755,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickCreateClinVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase204() {
+    public void testCase204() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -727,15 +783,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     } 
     
     @Test(enabled = true)
-    public void testCase205() {
+    public void testCase205() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -751,15 +809,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickUseProtVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase206() {
+    public void testCase206() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -777,15 +837,17 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase207() {
+    public void testCase207() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -800,9 +862,11 @@ public class SupportVideosTestCases {
             supportPgTest.waitPgLoad();
             supportPgTest.clickUserManualLink();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "PDF User Manual Opened in new Tab");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }

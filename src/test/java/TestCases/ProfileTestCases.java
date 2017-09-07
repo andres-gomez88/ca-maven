@@ -7,6 +7,7 @@ package TestCases;
 
 
 import Utilities.ExtentFactory;
+import static Utilities.JamaAPIUtilities.*;
 import static Utilities.LoginEnvUtilities.*;
 import static Utilities.PathUtilities.*;
 import static Utilities.Screenshot.*;
@@ -14,6 +15,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
@@ -43,6 +45,7 @@ public class ProfileTestCases {
     public String methodName;
     ExtentReports extent;
     ExtentTest reportTest;
+    public int apiId;
     
     @Parameters("browserType")
     @BeforeClass
@@ -68,10 +71,11 @@ public class ProfileTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
+        apiId = 32200;
     }
     
     @Test(enabled = true)
-    public void testCase208() {
+    public void testCase208() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -84,15 +88,17 @@ public class ProfileTestCases {
             patientListPgTest.clickExtraOptn();
             reportTest.log(Status.INFO, "Clicked Patient Extra Options");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Extra Options dropdown shows all options");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase209() {
+    public void testCase209() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -105,17 +111,20 @@ public class ProfileTestCases {
             patientListPgTest.profileExtraOptn();
             reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Profile Page displayed with all elements");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase210() {
+    public void testCase210() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
+        apiId = 32161;
         try {
             driver.get(finalEnvironment()); 
             log.info("Opened: " + finalEnvironment());
@@ -130,15 +139,17 @@ public class ProfileTestCases {
             profilePgTest.waitForDischrgPopup();            
             log.info("Discharge Confirmation Popup Displayed");            
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Discharge Confirmation Popup Displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase211() {
+    public void testCase211() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -156,15 +167,17 @@ public class ProfileTestCases {
             log.info("Discharge Confirmation Popup Displayed");
             profilePgTest.clickCancelBtn();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Discharge popup closed with cancel button");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
-    @Test(enabled = false)
-    public void testCase212() {
+    @Test(enabled = true)
+    public void testCase212() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -182,15 +195,17 @@ public class ProfileTestCases {
             profilePgTest.clickOkDischrgBtn();
             log.info("Patient Discharged");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Patient discharged, button changed to Reactivate");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase213() {
+    public void testCase213() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -207,15 +222,17 @@ public class ProfileTestCases {
             log.info("Discharge Confirmation Popup Displayed");
             profilePgTest.closePopup();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Discharge Popup closed with Cross Button");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase214() {
+    public void testCase214() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -229,15 +246,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             profilePgTest.clickPatNamePlan();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Directed to Exercise Plan tab");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase215() {
+    public void testCase215() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -251,15 +270,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             profilePgTest.clickPatEmailBtn();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Email program popup displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase216() {
+    public void testCase216() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -272,15 +293,17 @@ public class ProfileTestCases {
             patientListPgTest.profileExtraOptn();
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "All elements in Profile displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase217() {
+    public void testCase217() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -294,15 +317,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             profilePgTest.clickNoEmailChkBox();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "No finalEmail() checkbox is diabled");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase218() {
+    public void testCase218() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -318,15 +343,17 @@ public class ProfileTestCases {
             reportTest.log(Status.INFO, "Cleared finalEmail()");
             profilePgTest.clickNoEmailChkBox();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "No finalEmail() checkbox is now enabled");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase219() {
+    public void testCase219() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -340,15 +367,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             profilePgTest.clickGenderDrpDown();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Gender Dropdown Options are Male and Female");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase220() {
+    public void testCase220() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -362,15 +391,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             profilePgTest.clickDateDrpDown();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "DOB ranges, Month 1-12, Day 1-31, Year 1903-2002");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase221() {
+    public void testCase221() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -385,15 +416,17 @@ public class ProfileTestCases {
             profilePgTest.fillPrimPhone("6191234567");
             profilePgTest.fillAltPhone("6191234567");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Primary and alternate phones only accept integers");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase222() {
+    public void testCase222() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -408,15 +441,17 @@ public class ProfileTestCases {
             profilePgTest.fillPrimPhone("!@#$%^&*(");
             profilePgTest.fillAltPhone("!@#$%^&*(");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Primary and alternate phones do not accept special characters");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase223() {
+    public void testCase223() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -430,15 +465,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             profilePgTest.fillAddress("123 test", "Tcity", "NY", "91234");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Address fields accept text, state is selectable and zip is limited to 5 characters");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase224() {
+    public void testCase224() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -453,15 +490,17 @@ public class ProfileTestCases {
             profilePgTest.clickClinicialTab();
             reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "All elements displayed and text boxes are editable");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase225() {
+    public void testCase225() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -477,15 +516,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.fillMRN("abc123!@#");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "MRN text field accepts integers and special characters");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase226() {
+    public void testCase226() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -501,15 +542,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.clickDiagDrpDown();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Diagnosis dropdown shows all selections available");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase227() {
+    public void testCase227() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -525,15 +568,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.clickBiasDrpDown();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Bias dropdown selections None, Left, RIght and Bilateral");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase228() {
+    public void testCase228() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -549,15 +594,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.fillNotes("Notes 123");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "User able to input notes with letters, integers and special characters");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase229() {
+    public void testCase229() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -573,15 +620,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.clickClinDrpDown();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Selectable Clinician Dropdown List Displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase230() {
+    public void testCase230() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -597,15 +646,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.fillCareTeam("a");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Clinician Names are Searchable on Care Team textbox");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase231() {
+    public void testCase231() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -621,15 +672,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.fillSurgeon("Strange");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Surgeon textbox will try finding best match name dynamically");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase232() {
+    public void testCase232() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -645,15 +698,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.clickInjuryCal();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Injury Calendar with current month displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase233() {
+    public void testCase233() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -672,15 +727,17 @@ public class ProfileTestCases {
             profilePgTest.clickCalLArrow();
             profilePgTest.clickCalRArrow();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Calendar scrolls back and forwards months with the arrows");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase234() {
+    public void testCase234() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -698,15 +755,17 @@ public class ProfileTestCases {
             reportTest.log(Status.INFO, "Injury Calendar with current month displayed");
             profilePgTest.clickCalTodayBtn();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Today's date inserted with the Today Button");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase235() {
+    public void testCase235() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -724,15 +783,17 @@ public class ProfileTestCases {
             reportTest.log(Status.INFO, "Injury Calendar with current month displayed");
             profilePgTest.clickCalClearBtn();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Date of Injury cleared with Clear Button");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase236() {
+    public void testCase236() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -750,15 +811,17 @@ public class ProfileTestCases {
             reportTest.log(Status.INFO, "Injury Calendar with current month displayed");
             profilePgTest.clickCalDoneBtn();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Calendar popup closed with Done Button");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase237() {
+    public void testCase237() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -774,15 +837,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.fillInjuryDate("12/12/2017");            
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Error displayed injury date cannot be later than today");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase238() {
+    public void testCase238() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -798,15 +863,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.fillInjuryDate("$!@@#$");            
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Calendar Error Displayed wrong format");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase239() {//Need to click date
+    public void testCase239() throws UnirestException {//Need to click date
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -822,15 +889,17 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.clickInjuryCal();            
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Injury Calendar displayed with correct bounds");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase240() {
+    public void testCase240() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -845,15 +914,17 @@ public class ProfileTestCases {
             profilePgTest.clickKitInfoTab();
             reportTest.log(Status.INFO, "Navigating to Kit Information Tab");            
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "All elements displayed in Kit Information tab");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase241() {
+    public void testCase241() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -868,15 +939,17 @@ public class ProfileTestCases {
             profilePgTest.clickKitInfoTab();   
             reportTest.log(Status.INFO, "Navigating to Kit Information Tab"); 
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Text fields are disabled");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase242() {
+    public void testCase242() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -893,15 +966,17 @@ public class ProfileTestCases {
             profilePgTest.clickReqKitInstChkBox();
             reportTest.log(Status.INFO, "Request Kit Checkbox enabled");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Text fields are now enabled");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase243() {
+    public void testCase243() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -920,15 +995,17 @@ public class ProfileTestCases {
             profilePgTest.clickInstDifAddChkBox();
             reportTest.log(Status.INFO, "Different Address Checkbox enabled");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Address information matches the kit information");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase244() {
+    public void testCase244() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -943,15 +1020,17 @@ public class ProfileTestCases {
             profilePgTest.clickLoginInfoTab();
             reportTest.log(Status.INFO, "Navigating to Login Information Tab");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Username displayed with Reset Password link");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase245() {
+    public void testCase245() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -968,15 +1047,17 @@ public class ProfileTestCases {
             profilePgTest.clickResetPwLink();
             reportTest.log(Status.INFO, "Clicked Reset Password Link");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Patient Password popup displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase246() {
+    public void testCase246() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -994,15 +1075,17 @@ public class ProfileTestCases {
             reportTest.log(Status.INFO, "Clicked Reset Password Link");
             profilePgTest.clickCancelBtn();
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup closed with Cancel button");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase247() {
+    public void testCase247() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -1022,15 +1105,17 @@ public class ProfileTestCases {
             profilePgTest.clickSendEmailBtn();
             reportTest.log(Status.INFO, "Clicked Send E-mail button");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup confirmation of instructions sent displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
     
     @Test(enabled = true)
-    public void testCase248() {
+    public void testCase248() throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -1050,9 +1135,11 @@ public class ProfileTestCases {
             profilePgTest.clickGenPWBtn();
             reportTest.log(Status.INFO, "Clicked Generate Password button");
             log.info("PASS");
+	    testCaseJamaApiPass(apiId++);
 	    reportTest.log(Status.PASS, "Popup displayed with generated password");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
+	    testCaseJamaApiFail(apiId++);
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
