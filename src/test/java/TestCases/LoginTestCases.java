@@ -44,11 +44,10 @@ public class LoginTestCases {
     public String methodName;
     ExtentReports extent;
     ExtentTest reportTest;
-    int apiId;
         
-    @Parameters("browserType")
+    @Parameters({"browserType", "apiId"})
     @BeforeClass
-    public void setup(@Optional String browser) throws Exception {
+    public void setup(@Optional String browser, @Optional String id) throws Exception {
         if(browser == null) {
             System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
             driver = new ChromeDriver();
@@ -70,7 +69,11 @@ public class LoginTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
-        apiId = 27883;
+        if(id == null) {
+            setApiId(27883);
+        } else {
+            setApiId(Integer.parseInt(id));
+        }
     }
     
     @Test(enabled = true)
@@ -85,10 +88,10 @@ public class LoginTestCases {
             log.info("Page loaded");
             log.info("PASS");
             reportTest.log(Status.PASS, "Login Page Loaded");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");            
         }
     }
@@ -105,10 +108,10 @@ public class LoginTestCases {
             log.info("Elements are present");
             log.info("PASS");
             reportTest.log(Status.PASS, "Elements are present");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -127,10 +130,10 @@ public class LoginTestCases {
             log.info("Home page loaded");
             reportTest.log(Status.PASS, "Patient Dashboard Displayed");
             log.info("PASS");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -147,10 +150,10 @@ public class LoginTestCases {
             reportTest.log(Status.INFO, "Login Attempt with no credentials");
             reportTest.log(Status.PASS, "Submit button is disbaled");
             log.info("PASS");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -167,10 +170,10 @@ public class LoginTestCases {
             reportTest.log(Status.INFO, "Login Attempt with invalid user");
             log.info("PASS");
             reportTest.log(Status.PASS, "Validation message displayed");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -187,10 +190,10 @@ public class LoginTestCases {
             reportTest.log(Status.INFO, "Login Attempt with invalid pw");
             log.info("PASS");
             reportTest.log(Status.PASS, "Validation message displayed");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -207,10 +210,10 @@ public class LoginTestCases {
         reportTest.log(Status.INFO, "Login Attempt with invalid user");
         log.info("PASS");
         reportTest.log(Status.PASS, "Validation message displayed");
-        testCaseJamaApiPass(apiId++);
+        testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -227,10 +230,10 @@ public class LoginTestCases {
             logInPgTest.clickRemMeChkBox();
             log.info("PASS");
             reportTest.log(Status.PASS, "Remember Me checkbox is selectable");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -247,10 +250,10 @@ public class LoginTestCases {
             patientListPgTest.waitPgLoad();
             log.info("PASS");
             reportTest.log(Status.PASS, "Remember Me check box is checked username saved");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }    
     }
@@ -269,10 +272,10 @@ public class LoginTestCases {
             patientListPgTest.waitPgLoad();
             log.info("PASS");
             reportTest.log(Status.PASS, "Remember Me check box is unchecked username not saved");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -291,10 +294,10 @@ public class LoginTestCases {
             log.info("Page loaded");
             log.info("PASS");
             reportTest.log(Status.PASS, "Directed to reset finalPass()word page");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -313,10 +316,10 @@ public class LoginTestCases {
             log.info("Elements present in page");
             log.info("PASS");
             reportTest.log(Status.PASS, "Elements in Reset Password page displayed");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -335,10 +338,10 @@ public class LoginTestCases {
         resetpwLogInPgTest.sendResetLink(finalEmail());        
         log.info("PASS");
         reportTest.log(Status.PASS, "Confirmation message displayed");
-        testCaseJamaApiPass(apiId++);
+        testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -355,13 +358,13 @@ public class LoginTestCases {
         try {
             resetpwLogInPgTest.submitBtnClickable();
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         } catch (Exception e) {
             log.info("Submit Button not clickable");
             log.info("PASS");
             reportTest.log(Status.PASS, "Send Reset Link button is disabled");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         }        
     }
     
@@ -377,10 +380,10 @@ public class LoginTestCases {
         reportTest.log(Status.INFO, "Clicked User Guide link");
         reportTest.log(Status.PASS, "Directed to User Guide in new link");
         log.info("PASS");
-        testCaseJamaApiPass(apiId++);
+        testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -399,10 +402,10 @@ public class LoginTestCases {
             log.info("Home page loaded");
             log.info("PASS");
             reportTest.log(Status.PASS, "Elements displayed on Patient Page");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -423,10 +426,10 @@ public class LoginTestCases {
             reportTest.log(Status.INFO, "Searched Nav Bar: test3");
             log.info("PASS");
             reportTest.log(Status.PASS, "Search displayed all details");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -447,10 +450,10 @@ public class LoginTestCases {
             reportTest.log(Status.INFO, "Searched Nav Bar with invalid patient name: lala");
             log.info("PASS");
             reportTest.log(Status.PASS, "No results found message displayed");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
             org.testng.Assert.fail("Test FAILED");
         }
     }

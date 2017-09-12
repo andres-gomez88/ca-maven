@@ -46,11 +46,10 @@ public class HomePageTestCases {
     public String methodName;
     ExtentReports extent;
     ExtentTest reportTest;
-    public int apiId;
     
-    @Parameters("browserType")
+    @Parameters({"browserType", "apiId"})
     @BeforeClass
-    public void setup(@Optional String browser) throws Exception {
+    public void setup(@Optional String browser, @Optional String id) throws Exception {
         if(browser == null) {
             System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
             driver = new ChromeDriver();
@@ -72,7 +71,9 @@ public class HomePageTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
-        apiId = 31052;
+        if(id == null) {
+            setApiId(31052);
+        }
     }
     
     @Test(enabled = true)
@@ -89,11 +90,11 @@ public class HomePageTestCases {
             log.info("Home page loaded");
             navBarFooterPgTest.clickSrchNavBar();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Search field expanded with the correct watermark text"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -113,11 +114,11 @@ public class HomePageTestCases {
             navBarFooterPgTest.searchNavBar("testL");
             reportTest.log(Status.INFO, "Performing Nav bar patient search");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Displaying valid search result"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -137,11 +138,11 @@ public class HomePageTestCases {
             navBarFooterPgTest.searchNavBar("test");
             reportTest.log(Status.INFO, "Performing Nav bar patient search");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Displaying results with same name"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -161,11 +162,11 @@ public class HomePageTestCases {
             navBarFooterPgTest.searchNavBar("lalalalala");
             reportTest.log(Status.INFO, "Performing Nav bar patient search");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "No result found page displayed with clear search results");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -184,11 +185,11 @@ public class HomePageTestCases {
             log.info("Home page loaded");
             patientListPgTest.clickSeachPatTxtBox();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Clicked Search Patient field, watermark is displayed"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -208,11 +209,11 @@ public class HomePageTestCases {
             patientListPgTest.searchPatient("test 1");
             reportTest.log(Status.INFO, "Performing active patient search");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Search results displayed with patient details"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -232,11 +233,11 @@ public class HomePageTestCases {
             patientListPgTest.searchPatient("T");
             reportTest.log(Status.INFO, "Performing active patient search");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Auto suggestion list result dsiplayed"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -256,11 +257,11 @@ public class HomePageTestCases {
             patientListPgTest.searchPatient("test");
             reportTest.log(Status.INFO, "Performing active patient search with same name");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Patients with same name results displayed"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -280,11 +281,11 @@ public class HomePageTestCases {
             patientListPgTest.searchPatient("lalala");
             reportTest.log(Status.INFO, "Performing active patient search");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "No result found displayed with clear search option"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -304,11 +305,11 @@ public class HomePageTestCases {
             patientListPgTest.clearSearch();
             reportTest.log(Status.INFO, "Attempting to clear search");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Cancel button is diabled"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -330,11 +331,11 @@ public class HomePageTestCases {
             patientListPgTest.clearSearch();
             reportTest.log(Status.INFO, "Cleared Search");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Search data removed"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -356,11 +357,11 @@ public class HomePageTestCases {
             addPatientPgTest.waitPgLoad();
             log.info("Directed to Add Patient Page");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Directed to Add Patient Page"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -382,11 +383,11 @@ public class HomePageTestCases {
             addPatientPgTest.waitPgLoad();
             log.info("Add Patient Page Element displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Add Patient Page elements displayed"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -410,11 +411,11 @@ public class HomePageTestCases {
             reportTest.log(Status.INFO, "Filled first name field");
             addPatientPgTest.clickCancelAddBtn();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup prompt displaying Changes have not been saved"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -440,11 +441,11 @@ public class HomePageTestCases {
             addPatientPgTest.clickNoUnsavedCh();
             reportTest.log(Status.INFO, "Click cancel and clicking No on the popup");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "User remains in Add Patient Page"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -470,11 +471,11 @@ public class HomePageTestCases {
             addPatientPgTest.clickYesUnsavedCh();
             reportTest.log(Status.INFO, "Click cancel and yes on the popup");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "User returned to Patient List Page"); 
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -496,16 +497,16 @@ public class HomePageTestCases {
             addPatientPgTest.waitPgLoad();
             if(addPatientPgTest.doneBtnClickable() == false) {
                 log.info("PASS");
-                testCaseJamaApiPass(apiId++);
+                testCaseJamaApiPass(getIncApiId());
                 reportTest.log(Status.PASS, "Done and Next buttons are disabled"); 
             } else {
                 reportTest.log(Status.FAIL, "Test FAILED");
-                testCaseJamaApiFail(apiId++);
+                testCaseJamaApiFail(getIncApiId());
                 org.testng.Assert.fail("Test FAILED");
             }
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -530,16 +531,16 @@ public class HomePageTestCases {
             reportTest.log(Status.INFO, "Filling basic patient info");
             if(addPatientPgTest.doneBtnClickable() == true) {
                 log.info("PASS");
-                testCaseJamaApiPass(apiId++);
+                testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Done and next buttons are enabled"); 
             } else {
                 reportTest.log(Status.FAIL, "Test FAILED");
-                testCaseJamaApiFail(apiId++);
+                testCaseJamaApiFail(getIncApiId());
                 org.testng.Assert.fail("Test FAILED");
             }
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -566,11 +567,11 @@ public class HomePageTestCases {
             reportTest.log(Status.INFO, "Done button clicked");
             addPatientPgTest.waitForVerifySavePg();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
             reportTest.log(Status.PASS, "Verify & Save Page information is correct");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }

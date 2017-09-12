@@ -132,5 +132,22 @@
               </plugins>
           </build>
       </profile>
+      <profile>
+          <id>FullClinicianTest</id>          
+          <build>
+              <plugins>
+                  <plugin>
+                      <groupId>org.apache.maven.plugins</groupId>
+                      <artifactId>maven-surefire-plugin</artifactId>
+                      <version>2.20</version>
+                      <configuration>
+                          <suiteXmlFiles>
+                              <suiteXmlFile>fullClinicianTestCh.xml</suiteXmlFile>
+                          </suiteXmlFiles>
+                      </configuration>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
   </profiles>
 </project>

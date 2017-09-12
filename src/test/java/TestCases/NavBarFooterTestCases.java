@@ -45,11 +45,10 @@ public class NavBarFooterTestCases {
     public String methodName;
     ExtentReports extent;
     ExtentTest reportTest;
-    public int apiId;
     
-    @Parameters("browserType")
+    @Parameters({"browserType", "apiId"})
     @BeforeClass
-    public void setup(@Optional String browser) throws Exception {
+    public void setup(@Optional String browser, @Optional String id) throws Exception {
         if(browser == null) {
             System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
             driver = new ChromeDriver();
@@ -70,7 +69,9 @@ public class NavBarFooterTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
-        apiId = 32071;
+        if(id == null) {
+            setApiId(32071);
+        }
     }
     
     @Test(enabled = true)
@@ -85,11 +86,11 @@ public class NavBarFooterTestCases {
 	    reportTest.log(Status.INFO, "Login Attempt with user: " + finalEmail());
             patientListPgTest.waitPgLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "User name displayed top right");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -108,11 +109,11 @@ public class NavBarFooterTestCases {
             navBarFooterPgTest.clickProfDrpDown();
             reportTest.log(Status.INFO, "Clicked Profile Dropdown menu");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Dropdown list displaying finalPass()word, support and logout link");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -131,20 +132,22 @@ public class NavBarFooterTestCases {
             navBarFooterPgTest.clickProfPass();
             reportTest.log(Status.INFO, "Navigating to Password from Profile Dropdown Menu");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Change finalPass()word page displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
-    
+    @Parameters("apiId")
     @Test(enabled = true)
-    public void testCase162() throws UnirestException {
+    public void testCase162(@Optional String id) throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
-        apiId = 32062;
+        if (id == null) {
+            setApiId(32062);
+        }
         try {
             driver.get(finalEnvironment()); 
             log.info("Opened: " + finalEnvironment());
@@ -155,11 +158,11 @@ public class NavBarFooterTestCases {
             navBarFooterPgTest.clickProfSupport();
             reportTest.log(Status.INFO, "Navigating to Support from Profile Dropdown Menu");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Support page displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -177,11 +180,11 @@ public class NavBarFooterTestCases {
             patientListPgTest.waitPgLoad();
             navBarFooterPgTest.clickProfLogout();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Clicked Logout from Profile dropdown user logged out");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -198,11 +201,11 @@ public class NavBarFooterTestCases {
 	    reportTest.log(Status.INFO, "Login Attempt with user: " + finalEmail());
             patientListPgTest.waitPgLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Footer displayed with all elements");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -220,11 +223,11 @@ public class NavBarFooterTestCases {
             patientListPgTest.waitPgLoad();
             navBarFooterPgTest.openCompanyPage();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Company page window tab opened");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -242,11 +245,11 @@ public class NavBarFooterTestCases {
             patientListPgTest.waitPgLoad();
             navBarFooterPgTest.navToPatientsTabFtr();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Directed to Patients via footer");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -264,11 +267,11 @@ public class NavBarFooterTestCases {
             patientListPgTest.waitPgLoad();
             navBarFooterPgTest.navToProtocolsTabFtr();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Directed to Protocols via Footer");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -286,11 +289,11 @@ public class NavBarFooterTestCases {
             patientListPgTest.waitPgLoad();
             navBarFooterPgTest.navToCliniciansTabFtr();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Directed to Clinicians via Footer");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -308,11 +311,11 @@ public class NavBarFooterTestCases {
             patientListPgTest.waitPgLoad();
             navBarFooterPgTest.openFbPage();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Company Facebook page window tab opened");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -330,11 +333,11 @@ public class NavBarFooterTestCases {
             patientListPgTest.waitPgLoad();
             navBarFooterPgTest.openFbPage();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Company Twitter page window tab opened");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }

@@ -45,12 +45,11 @@ public class ForgotPassTestCases {
     public String methodName;
     ExtentReports extent;
     ExtentTest reportTest;
-    public int apiId;
     
     
-    @Parameters("browserType")
+    @Parameters({"browserType", "apiId"})
     @BeforeClass
-    public void setup(@Optional String browser) throws Exception {
+    public void setup(@Optional String browser, @Optional String id) throws Exception {
         if(browser == null) {
             System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
             driver = new ChromeDriver();
@@ -70,7 +69,9 @@ public class ForgotPassTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
-        apiId = 30354;
+        if(id == null) {
+            setApiId(30354);
+        }
     }
     
     @Test(enabled = true)
@@ -85,10 +86,10 @@ public class ForgotPassTestCases {
             resetpwLogInPgTest.sendResetLink(finalEmail());
             reportTest.log(Status.PASS, "Sent reset password link to: " + finalEmail());
             log.info("PASS");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-            testCaseJamaApiFail(apiId++);
+            testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -105,10 +106,10 @@ public class ForgotPassTestCases {
             resetpwLogInPgTest.sendResetLink(finalEmail());
             reportTest.log(Status.PASS, "Sent reset password link to: " + finalEmail());
             log.info("PASS");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-            testCaseJamaApiFail(apiId++);
+            testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -125,10 +126,10 @@ public class ForgotPassTestCases {
             //resetpwLogInPgTest.sendResetLink(finalEmail());
             reportTest.log(Status.PASS, "Sent reset password link");
             log.info("PASS");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-            testCaseJamaApiFail(apiId++);
+            testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -145,10 +146,10 @@ public class ForgotPassTestCases {
             //resetpwLogInPgTest.sendResetLink(finalEmail());
             reportTest.log(Status.PASS, "Sent reset password link");
             log.info("PASS");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-            testCaseJamaApiFail(apiId++);
+            testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -165,10 +166,10 @@ public class ForgotPassTestCases {
             //resetpwLogInPgTest.sendResetLink(finalEmail());
             reportTest.log(Status.PASS, "Sent reset password link");
             log.info("PASS");
-            testCaseJamaApiPass(apiId++);
+            testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-            testCaseJamaApiFail(apiId++);
+            testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }

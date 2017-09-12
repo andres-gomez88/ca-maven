@@ -43,11 +43,10 @@ public class ProtocolTestCases {
     public String methodName;
     ExtentReports extent;
     ExtentTest reportTest;
-    int apiId;
     
-    @Parameters("browserType")
+    @Parameters({"browserType", "apiId"})
     @BeforeClass
-    public void setup(@Optional String browser) throws Exception {
+    public void setup(@Optional String browser, @Optional String id) throws Exception {
         if(browser == null) {
             System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
             driver = new ChromeDriver();
@@ -70,7 +69,9 @@ public class ProtocolTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
-        apiId = 29633;
+        if(id == null) {
+            setApiId(29633);
+        }
     }
     
     @Test(enabled = true)
@@ -90,11 +91,11 @@ public class ProtocolTestCases {
             protocolsListPgTest.waitPgLoad();
             log.info("Redirected to Protocol List Page");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
             reportTest.log(Status.PASS, "Redirected to Protocol List Page");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -116,11 +117,11 @@ public class ProtocolTestCases {
             protocolsListPgTest.waitPgLoad();
             log.info("All elements displayed on page");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
             reportTest.log(Status.PASS, "All elements displayed on page");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -145,11 +146,11 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.waitForPgLoad();
             log.info("Redirected to Add New Protocol");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
             reportTest.log(Status.PASS, "Redirected to Create a Protocol Page");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -174,11 +175,11 @@ public class ProtocolTestCases {
             log.info("Clicked Add Protocol");
             createEditProtocolPgTest.waitForPgLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
             reportTest.log(Status.PASS, "All elements displayed in Add Protocol page");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -205,10 +206,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.searchExcAssess("clams");
             reportTest.log(Status.PASS, "Search data for clams displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -235,10 +236,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.searchExcAssess("lalalala");
             reportTest.log(Status.PASS, "No results found displayed no data found");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -265,10 +266,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickExcercisesTab();
             reportTest.log(Status.PASS, "Exercise list and search field displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -295,10 +296,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickAssessmentsTab();
             reportTest.log(Status.PASS, "Assessments list and search field displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -325,10 +326,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.selectExcercises();
 	    reportTest.log(Status.PASS,"Exercises selected and added to list");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -355,10 +356,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.selectExcercises();
 	    reportTest.log(Status.PASS,"Exercises selected are displayed with their related details");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -387,10 +388,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.viewExcerciseDesc();
             reportTest.log(Status.PASS, "Popup window displayed related to the exercise");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -419,10 +420,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.viewExcerciseDesc();
             reportTest.log(Status.PASS, "Popup window displayed with exercise image and procedure");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -453,10 +454,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickOKBtn();
             reportTest.log(Status.PASS, "Popup exercise window closed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -487,10 +488,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.closeDescWindow();
             reportTest.log(Status.PASS, "Popup exercise window closed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -519,10 +520,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.checkSR();
             reportTest.log(Status.PASS, "SR checkbox is selectable");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -551,10 +552,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickBiasDrp();
             reportTest.log(Status.PASS, "Bias dropdown list displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -583,10 +584,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickSetsDrp();
             reportTest.log(Status.PASS, "Sets dropdown list displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -615,10 +616,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickRepsDrp();
             reportTest.log(Status.PASS, "Reps dropdown list displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -647,10 +648,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickXDaysDrp();
             reportTest.log(Status.PASS, "x/Days dropdown list displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -679,10 +680,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickFreqDrp();
             reportTest.log(Status.PASS, "Frequency dropdown list displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -711,10 +712,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickEditOptEx();
             reportTest.log(Status.PASS, "Equipment and Rest Between Sets fields displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -744,10 +745,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickEquipDrp();
             reportTest.log(Status.PASS, "Equipment dropdown list displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -777,10 +778,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickRestSetDrp();
             reportTest.log(Status.PASS, "Rest Between Sets dropdown list displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -809,10 +810,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickExpCollExc();
             reportTest.log(Status.PASS, "Exercise list is hidden");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -841,10 +842,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickReorderExc();
             reportTest.log(Status.PASS, "Reorder option in exercises list enabled");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -873,10 +874,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickReorderExc();
             reportTest.log(Status.PASS, "Reorder option in exercises list enabled");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -905,10 +906,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickExtraOptnRowE();
             reportTest.log(Status.PASS, "Extra options expanded for the exercise");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -937,10 +938,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.deleteExc();
             reportTest.log(Status.PASS, "Selected exercise is now deleted");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -969,10 +970,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.copyExc();
             reportTest.log(Status.PASS, "Selected exercise has been copied to list");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1001,10 +1002,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.resetValExc();
             reportTest.log(Status.PASS, "Selected exercise has reset to default values");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1035,10 +1036,10 @@ public class ProtocolTestCases {
             protocolsListPgTest.waitPgLoad();
             reportTest.log(Status.PASS,"Canceled New Protocol redirected to Protocol list");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1067,10 +1068,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickSaveAsProt();
             reportTest.log(Status.PASS, "Popup window displayed to enter details");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1099,10 +1100,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickSaveAsProt();
             reportTest.log(Status.PASS, "Popup window displayed with the required fields and buttons");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1125,10 +1126,10 @@ public class ProtocolTestCases {
             protocolsListPgTest.addProtocol("Case 52", "Test description");
             reportTest.log(Status.PASS, "Protocol saved confirmation message displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }   
     }
@@ -1158,10 +1159,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.checkDisableProtSaveBtn();
             reportTest.log(Status.PASS, "Save button is disabled no details provided");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }   
     }
@@ -1192,10 +1193,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickCancelPopupBtn();
             reportTest.log(Status.PASS, "Popup window to save protocol closed with cancel button");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1222,10 +1223,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickAssessmentsTab();
             reportTest.log(Status.PASS, "Assessment list and search field with watermark displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1254,10 +1255,10 @@ public class ProtocolTestCases {
             reportTest.log(Status.INFO, "Performing assessment search");
             reportTest.log(Status.PASS, "Assessments search results displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1286,10 +1287,10 @@ public class ProtocolTestCases {
             reportTest.log(Status.INFO, "Performing assessment search");
             reportTest.log(Status.PASS, "No result found validation displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1319,10 +1320,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickClearSearch();
             reportTest.log(Status.PASS, "Cleared search text field, default assessment list displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1350,10 +1351,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.selectAssessments();
             reportTest.log(Status.PASS,"Assessments selected and added to list");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1381,10 +1382,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.selectAssessments();
             reportTest.log(Status.PASS,"Assessments selected are displayed with their related details");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1414,10 +1415,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickExpCollAssess();
             reportTest.log(Status.PASS, "Assessment list is now hidden");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1449,10 +1450,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickExpCollAssess();
             reportTest.log(Status.PASS,"Assessments list displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1482,10 +1483,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.changeFreqA("Every");
             reportTest.log(Status.PASS, "Frequency changed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1515,10 +1516,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.changeBiasA("right");
             reportTest.log(Status.PASS, "Bias changed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1548,10 +1549,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickReorderAss();
             reportTest.log(Status.PASS, "Reorder option in assessments list enabled");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1581,10 +1582,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickReorderAss();
             reportTest.log(Status.PASS, "Reorder option in assessments list enabled position changeable");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1614,10 +1615,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.deleteAss();
             reportTest.log(Status.PASS, "Selected assessment is now deleted");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1648,10 +1649,10 @@ public class ProtocolTestCases {
             log.info("Assessments List Reduced by 1");
             reportTest.log(Status.PASS, "Assessment deleted list reduced by 1");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1681,10 +1682,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.copyAss();
             reportTest.log(Status.PASS, "Selected assessment is now copied");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1715,10 +1716,10 @@ public class ProtocolTestCases {
             log.info("Copied Assessment placed below the original one");
             reportTest.log(Status.PASS, "Copied assessment placed below the original one");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1749,10 +1750,10 @@ public class ProtocolTestCases {
             log.info("Assessments list increased by one");
             reportTest.log(Status.PASS, "Assessment copied list increased by 1");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1782,10 +1783,10 @@ public class ProtocolTestCases {
             log.info("Frequency on the current day");
             reportTest.log(Status.PASS, "Frequency on the current day and every weekday");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1815,10 +1816,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.resDefaultAss();
             reportTest.log(Status.PASS, "Selected assessment has reset to default values");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1848,10 +1849,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.clickClearAllExAs();
             reportTest.log(Status.PASS, "Selected assessments are now cleared from the list");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1879,10 +1880,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.addSameAssessment();
             reportTest.log(Status.PASS, "Selected assessment has been added twice");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1910,10 +1911,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.addSameAssessment();
             reportTest.log(Status.PASS, "Selected exercise increased two times on the image");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1946,10 +1947,10 @@ public class ProtocolTestCases {
             log.info("Sent Back to Protocol List");
             reportTest.log(Status.PASS, "Clicked cancel button exiting to Protocol List");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1979,10 +1980,10 @@ public class ProtocolTestCases {
             createEditProtocolPgTest.checkClickSaveAsProt();
             reportTest.log(Status.PASS, "Save as New Protocol button is not clickable");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -2005,10 +2006,10 @@ public class ProtocolTestCases {
             protocolsListPgTest.addProtocol("Case 79", "Test description");
             reportTest.log(Status.PASS, "Protocol saved confirmation message displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
