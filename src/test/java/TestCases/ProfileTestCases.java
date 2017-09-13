@@ -47,9 +47,9 @@ public class ProfileTestCases {
     ExtentTest reportTest;
     public int apiId;
     
-    @Parameters("browserType")
+    @Parameters({"browserType", "apiId"})
     @BeforeClass
-    public void setup(@Optional String browser) throws Exception {
+    public void setup(@Optional String browser, @Optional String id) throws Exception {
         if(browser == null) {
             System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
             driver = new ChromeDriver();
@@ -71,7 +71,9 @@ public class ProfileTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
-        apiId = 32200;
+        if(id == null) {
+            setApiId(32200);
+        }
     }
     
     @Test(enabled = true)
@@ -88,11 +90,11 @@ public class ProfileTestCases {
             patientListPgTest.clickExtraOptn();
             reportTest.log(Status.INFO, "Clicked Patient Extra Options");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Extra Options dropdown shows all options");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -111,20 +113,22 @@ public class ProfileTestCases {
             patientListPgTest.profileExtraOptn();
             reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Profile Page displayed with all elements");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
-    
+    @Parameters("apiId")
     @Test(enabled = true)
-    public void testCase210() throws UnirestException {
+    public void testCase210(@Optional String id) throws UnirestException {
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
-        apiId = 32161;
+        if(id == null) {
+            setApiId(32161);
+        }
         try {
             driver.get(finalEnvironment()); 
             log.info("Opened: " + finalEnvironment());
@@ -139,11 +143,11 @@ public class ProfileTestCases {
             profilePgTest.waitForDischrgPopup();            
             log.info("Discharge Confirmation Popup Displayed");            
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Discharge Confirmation Popup Displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -167,11 +171,11 @@ public class ProfileTestCases {
             log.info("Discharge Confirmation Popup Displayed");
             profilePgTest.clickCancelBtn();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Discharge popup closed with cancel button");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -195,11 +199,11 @@ public class ProfileTestCases {
             profilePgTest.clickOkDischrgBtn();
             log.info("Patient Discharged");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Patient discharged, button changed to Reactivate");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -222,11 +226,11 @@ public class ProfileTestCases {
             log.info("Discharge Confirmation Popup Displayed");
             profilePgTest.closePopup();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Discharge Popup closed with Cross Button");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -246,11 +250,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             profilePgTest.clickPatNamePlan();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Directed to Exercise Plan tab");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -270,11 +274,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             profilePgTest.clickPatEmailBtn();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Email program popup displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -293,11 +297,11 @@ public class ProfileTestCases {
             patientListPgTest.profileExtraOptn();
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "All elements in Profile displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -317,11 +321,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             profilePgTest.clickNoEmailChkBox();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "No finalEmail() checkbox is diabled");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -343,11 +347,11 @@ public class ProfileTestCases {
             reportTest.log(Status.INFO, "Cleared finalEmail()");
             profilePgTest.clickNoEmailChkBox();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "No finalEmail() checkbox is now enabled");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -367,11 +371,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             profilePgTest.clickGenderDrpDown();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Gender Dropdown Options are Male and Female");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -391,11 +395,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             profilePgTest.clickDateDrpDown();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "DOB ranges, Month 1-12, Day 1-31, Year 1903-2002");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -416,11 +420,11 @@ public class ProfileTestCases {
             profilePgTest.fillPrimPhone("6191234567");
             profilePgTest.fillAltPhone("6191234567");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Primary and alternate phones only accept integers");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -441,11 +445,11 @@ public class ProfileTestCases {
             profilePgTest.fillPrimPhone("!@#$%^&*(");
             profilePgTest.fillAltPhone("!@#$%^&*(");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Primary and alternate phones do not accept special characters");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -465,11 +469,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Selected Profile from Patient Extra options dropdown");
             profilePgTest.fillAddress("123 test", "Tcity", "NY", "91234");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Address fields accept text, state is selectable and zip is limited to 5 characters");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -490,11 +494,11 @@ public class ProfileTestCases {
             profilePgTest.clickClinicialTab();
             reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "All elements displayed and text boxes are editable");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -516,11 +520,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.fillMRN("abc123!@#");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "MRN text field accepts integers and special characters");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -542,11 +546,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.clickDiagDrpDown();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Diagnosis dropdown shows all selections available");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -568,11 +572,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.clickBiasDrpDown();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Bias dropdown selections None, Left, RIght and Bilateral");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -594,11 +598,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.fillNotes("Notes 123");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "User able to input notes with letters, integers and special characters");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -620,11 +624,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.clickClinDrpDown();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Selectable Clinician Dropdown List Displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -646,11 +650,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.fillCareTeam("a");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Clinician Names are Searchable on Care Team textbox");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -672,11 +676,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.fillSurgeon("Strange");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Surgeon textbox will try finding best match name dynamically");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -698,11 +702,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.clickInjuryCal();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Injury Calendar with current month displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -727,11 +731,11 @@ public class ProfileTestCases {
             profilePgTest.clickCalLArrow();
             profilePgTest.clickCalRArrow();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Calendar scrolls back and forwards months with the arrows");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -755,11 +759,11 @@ public class ProfileTestCases {
             reportTest.log(Status.INFO, "Injury Calendar with current month displayed");
             profilePgTest.clickCalTodayBtn();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Today's date inserted with the Today Button");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -783,11 +787,11 @@ public class ProfileTestCases {
             reportTest.log(Status.INFO, "Injury Calendar with current month displayed");
             profilePgTest.clickCalClearBtn();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Date of Injury cleared with Clear Button");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -811,11 +815,11 @@ public class ProfileTestCases {
             reportTest.log(Status.INFO, "Injury Calendar with current month displayed");
             profilePgTest.clickCalDoneBtn();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Calendar popup closed with Done Button");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -837,11 +841,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.fillInjuryDate("12/12/2017");            
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Error displayed injury date cannot be later than today");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -863,11 +867,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.fillInjuryDate("$!@@#$");            
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Calendar Error Displayed wrong format");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -889,11 +893,11 @@ public class ProfileTestCases {
 	    reportTest.log(Status.INFO, "Navigating to Clinical Information Tab");
             profilePgTest.clickInjuryCal();            
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Injury Calendar displayed with correct bounds");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -914,11 +918,11 @@ public class ProfileTestCases {
             profilePgTest.clickKitInfoTab();
             reportTest.log(Status.INFO, "Navigating to Kit Information Tab");            
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "All elements displayed in Kit Information tab");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -939,11 +943,11 @@ public class ProfileTestCases {
             profilePgTest.clickKitInfoTab();   
             reportTest.log(Status.INFO, "Navigating to Kit Information Tab"); 
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Text fields are disabled");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -966,11 +970,11 @@ public class ProfileTestCases {
             profilePgTest.clickReqKitInstChkBox();
             reportTest.log(Status.INFO, "Request Kit Checkbox enabled");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Text fields are now enabled");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -995,11 +999,11 @@ public class ProfileTestCases {
             profilePgTest.clickInstDifAddChkBox();
             reportTest.log(Status.INFO, "Different Address Checkbox enabled");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Address information matches the kit information");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1020,11 +1024,11 @@ public class ProfileTestCases {
             profilePgTest.clickLoginInfoTab();
             reportTest.log(Status.INFO, "Navigating to Login Information Tab");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Username displayed with Reset Password link");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1047,11 +1051,11 @@ public class ProfileTestCases {
             profilePgTest.clickResetPwLink();
             reportTest.log(Status.INFO, "Clicked Reset Password Link");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Patient Password popup displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1075,11 +1079,11 @@ public class ProfileTestCases {
             reportTest.log(Status.INFO, "Clicked Reset Password Link");
             profilePgTest.clickCancelBtn();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup closed with Cancel button");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1105,11 +1109,11 @@ public class ProfileTestCases {
             profilePgTest.clickSendEmailBtn();
             reportTest.log(Status.INFO, "Clicked Send E-mail button");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup confirmation of instructions sent displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -1135,11 +1139,11 @@ public class ProfileTestCases {
             profilePgTest.clickGenPWBtn();
             reportTest.log(Status.INFO, "Clicked Generate Password button");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup displayed with generated password");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }

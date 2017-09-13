@@ -48,9 +48,9 @@ public class SupportVideosTestCases {
     ExtentTest reportTest;
     public int apiId;
     
-    @Parameters("browserType")
+    @Parameters({"browserType", "apiId"})
     @BeforeClass
-    public void setup(@Optional String browser) throws Exception {
+    public void setup(@Optional String browser, @Optional String id) throws Exception {
         if(browser == null) {
             System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
             driver = new ChromeDriver();
@@ -72,7 +72,9 @@ public class SupportVideosTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
-        apiId = 32100;
+        if(id == null) {
+            setApiId(32100);
+        }
     }
     
     @Test(enabled = true)
@@ -90,11 +92,11 @@ public class SupportVideosTestCases {
             reportTest.log(Status.INFO, "Navigating to support from profile Dropdown");
             supportPgTest.waitPgLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Support Videos Page displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -114,11 +116,11 @@ public class SupportVideosTestCases {
 	    reportTest.log(Status.INFO, "Navigating to support from profile Dropdown");  
             supportPgTest.waitPgLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "All elements displayed in Support Video Page");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -139,11 +141,11 @@ public class SupportVideosTestCases {
             supportPgTest.waitPgLoad();
             supportPgTest.fillSrchVidTxtBox("test");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "User is able to input text and watermark is cleared on input");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -164,11 +166,11 @@ public class SupportVideosTestCases {
             supportPgTest.waitPgLoad();
             supportPgTest.fillSrchVidTxtBox("patient");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Search inputs updated dynamically");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -189,11 +191,11 @@ public class SupportVideosTestCases {
             supportPgTest.waitPgLoad();
             supportPgTest.fillSrchVidTxtBox("%^^#*(");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "No search results, user manual download prompt displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -215,11 +217,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickAddPatVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -243,11 +245,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -269,11 +271,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickSearchPatVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -297,11 +299,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -323,11 +325,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickDashboardVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -351,11 +353,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -377,11 +379,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickOptPatListVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -405,11 +407,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -431,11 +433,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickPatDetailVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -459,11 +461,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -485,11 +487,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickRevEditPatProfVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -513,11 +515,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -539,11 +541,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickViewTestSurvVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -567,11 +569,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -593,11 +595,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickUseReportsVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -621,11 +623,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -647,11 +649,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickEditNewProgVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -675,11 +677,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -701,11 +703,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickViewExcPlanVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -729,11 +731,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }   
@@ -755,11 +757,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickCreateClinVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -783,11 +785,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     } 
@@ -809,11 +811,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickUseProtVideo();
             supportPgTest.waitVideoLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup window with video displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -837,11 +839,11 @@ public class SupportVideosTestCases {
             supportPgTest.clickPlayVideo();
 	    reportTest.log(Status.INFO, "Popup window with video displayed");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Play functionality working as intended");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -862,11 +864,11 @@ public class SupportVideosTestCases {
             supportPgTest.waitPgLoad();
             supportPgTest.clickUserManualLink();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "PDF User Manual Opened in new Tab");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }

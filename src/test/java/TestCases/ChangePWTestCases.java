@@ -48,9 +48,9 @@ public class ChangePWTestCases {
     ExtentTest reportTest;
     public int apiId;
     
-    @Parameters("browserType")
+    @Parameters({"browserType", "apiId"})
     @BeforeClass
-    public void setup(@Optional String browser) throws Exception {
+    public void setup(@Optional String browser, @Optional String id) throws Exception {
         if(browser == null) {
             System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
             driver = new ChromeDriver();
@@ -72,7 +72,9 @@ public class ChangePWTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
-        apiId = 32087;
+        if(id == null) {
+            setApiId(32087);
+        } 
     }
     
     @Test(enabled = true)
@@ -91,11 +93,11 @@ public class ChangePWTestCases {
             changePWPgTest.fillNewPW("abc123");
             reportTest.log(Status.INFO, "Filled new finalPass()word: abc123");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Password Strength displays red");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -116,11 +118,11 @@ public class ChangePWTestCases {
             changePWPgTest.fillNewPW("aBc123^&");
             reportTest.log(Status.INFO, "Filled new finalPass()word: aBc123^&");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Password Strength displayed yellow checkmark");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -141,11 +143,11 @@ public class ChangePWTestCases {
             changePWPgTest.fillNewPW("aBc123^D&e88");
             reportTest.log(Status.INFO, "Filled new finalPass()word: aBc123^D&e88");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Password Strength displays green checkmark");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -166,11 +168,11 @@ public class ChangePWTestCases {
             changePWPgTest.fillNewPW("       ");
             changePWPgTest.fillConfPW("       ");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Fields validaded");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -193,16 +195,16 @@ public class ChangePWTestCases {
             reportTest.log(Status.INFO, "Filled Old Password and New Password");
             if (changePWPgTest.submitBtnEnabled() == false) {
                 log.info("PASS");
-                testCaseJamaApiPass(apiId++);
+                testCaseJamaApiPass(getIncApiId());
                 reportTest.log(Status.PASS, "Submit disabled confirmation finalPass()word not entered");
             } else {
                 reportTest.log(Status.FAIL, "Test FAILED");
-                testCaseJamaApiFail(apiId++);
+                testCaseJamaApiFail(getIncApiId());
                 org.testng.Assert.fail("Test FAILED");
             }
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -226,16 +228,16 @@ public class ChangePWTestCases {
             reportTest.log(Status.INFO, "Filled Old, New and Confirmation Password");
             if (changePWPgTest.submitBtnEnabled() == false) {
                 log.info("PASS");
-                testCaseJamaApiPass(apiId++);
+                testCaseJamaApiPass(getIncApiId());
                 reportTest.log(Status.PASS, "Submit disabled invalid confiramtion finalPass()word");
             } else {
                 reportTest.log(Status.FAIL, "Test FAILED");
-                testCaseJamaApiFail(apiId++);
+                testCaseJamaApiFail(getIncApiId());
                 org.testng.Assert.fail("Test FAILED");
             }
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -261,11 +263,11 @@ public class ChangePWTestCases {
             changePWPgTest.clickSubmitBtn();
             reportTest.log(Status.INFO, "Submit button clicked");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Confirmation message displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }

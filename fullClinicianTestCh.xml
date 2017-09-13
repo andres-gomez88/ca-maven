@@ -9,6 +9,9 @@
             <class name="TestCases.HomePageTestCases"/>
             <class name="TestCases.ClinicianTestCases"/>
             <class name="TestCases.NavBarFooterTestCases"/>
+            <class name="TestCases.ChangePWTestCases"/> 
+            <class name="TestCases.SupportVideosTestCases"/>
+            <class name="TestCases.ProfileTestCases"/>
         </classes>
     </test>
 </suite>
