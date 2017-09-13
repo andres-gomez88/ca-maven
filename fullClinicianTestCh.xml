@@ -12,6 +12,7 @@
             <class name="TestCases.ChangePWTestCases"/> 
             <class name="TestCases.SupportVideosTestCases"/>
             <class name="TestCases.ProfileTestCases"/>
+            <class name="TestCases.PatExtraOptnTestCases"/>
         </classes>
     </test>
 </suite>

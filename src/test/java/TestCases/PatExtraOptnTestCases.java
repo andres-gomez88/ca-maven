@@ -45,11 +45,10 @@ public class PatExtraOptnTestCases {
     public String methodName;
     ExtentReports extent;
     ExtentTest reportTest;
-    public int apiId;
     
-    @Parameters("browserType")
+    @Parameters({"browserType", "apiId"})
     @BeforeClass
-    public void setup(@Optional String browser) throws Exception {
+    public void setup(@Optional String browser, @Optional String id) throws Exception {
         if(browser == null) {
             System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
             driver = new ChromeDriver();
@@ -70,7 +69,9 @@ public class PatExtraOptnTestCases {
         } else {
             extent = ExtentFactory.getInstance();
         }
-        apiId = 32244;
+        if(id == null) {
+            setApiId(32244);
+        }
     }
     
     @Test(enabled = true)
@@ -87,11 +88,11 @@ public class PatExtraOptnTestCases {
             reportTest.log(Status.INFO, "Selected Kit Install from Extra Options");
             patientListPgTest.waitForKitInstPopup();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup kit installation request window displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -112,11 +113,11 @@ public class PatExtraOptnTestCases {
             reportTest.log(Status.INFO, "Clicked on cancel button ");
             patientListPgTest.clickCancelBtn();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup window closed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -137,11 +138,11 @@ public class PatExtraOptnTestCases {
             reportTest.log(Status.INFO, "Clicked Edit Profile Button");
             //profilePgTest.waitPgLoad();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Navigated to Kit Information Tab");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -159,11 +160,11 @@ public class PatExtraOptnTestCases {
             patientListPgTest.dischrgPatExtraOptn();
             reportTest.log(Status.INFO, "Selected Discharge from Extra Options");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup windows displayed to confirmate the discharge");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -183,11 +184,11 @@ public class PatExtraOptnTestCases {
             patientListPgTest.clickOkBtn();
             reportTest.log(Status.INFO, "Clicked OK button");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Patient is now Discharged ");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -207,11 +208,11 @@ public class PatExtraOptnTestCases {
             patientListPgTest.clickCancelBtn();
             reportTest.log(Status.INFO, "Clicked Cancel Button");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup windows is now closed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -230,11 +231,11 @@ public class PatExtraOptnTestCases {
             reportTest.log(Status.INFO, "Selected Discharge from Extra Options");
             patientListPgTest.clickCancelBtn(); //patientListPgTest.clickClosePopupBtn();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Clicked cancel popup closing");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -252,11 +253,11 @@ public class PatExtraOptnTestCases {
             patientListPgTest.plOnHoldExtraOptn();
             reportTest.log(Status.INFO, "Selected On Hold from Extra Options");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup Windows displayed with On Hold parameters");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -276,11 +277,11 @@ public class PatExtraOptnTestCases {
             patientListPgTest.clickCalendarBtn();
             reportTest.log(Status.INFO, "Clicked Calendar Button");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Drop-down Calendar Displayed");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -299,11 +300,11 @@ public class PatExtraOptnTestCases {
             reportTest.log(Status.INFO, "Selected On Hold from Extra Options");
             patientListPgTest.fillFromHoldDate("04/30/17");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Filled with 04/30/17");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -322,11 +323,11 @@ public class PatExtraOptnTestCases {
             reportTest.log(Status.INFO, "Selected On Hold from Extra Options");
             patientListPgTest.clickToHoldDrpDown();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "All options displayed in dropdown");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -349,11 +350,11 @@ public class PatExtraOptnTestCases {
             reportTest.log(Status.INFO, "Selected Specific Date");
             patientListPgTest.fillToHoldDate("05/10/17");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Filled in date manually");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -372,11 +373,11 @@ public class PatExtraOptnTestCases {
             reportTest.log(Status.INFO, "Selected On Hold from Extra Options");
             patientListPgTest.clickSaveHoldBtn();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup displayed with confirmation. Patient On Hold");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -397,11 +398,11 @@ public class PatExtraOptnTestCases {
             reportTest.log(Status.INFO, "Filled Hold Date with an earlier date than today");
             patientListPgTest.clickSaveHoldBtn();
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Warning Message Displayed Start Date can't be Earlier than Today");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -423,11 +424,11 @@ public class PatExtraOptnTestCases {
             patientListPgTest.clickSaveHoldBtn();
             reportTest.log(Status.INFO, "Clicked Save Hold");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Status Updated popup displayed, patient does not display on hold");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -445,11 +446,11 @@ public class PatExtraOptnTestCases {
             patientListPgTest.cancelHoldOptn();
             reportTest.log(Status.INFO, "Selected Cancel Hold from Extra Options");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Patient Hold Removed from Patient");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -467,11 +468,11 @@ public class PatExtraOptnTestCases {
             patientListPgTest.resetPwExtraOptn();
             reportTest.log(Status.INFO, "Selected Reset Password from Extra Options");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Popup Window Displayed with Options");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }        
     }
@@ -491,11 +492,11 @@ public class PatExtraOptnTestCases {
             patientListPgTest.clickSendEmailPwBtn();
             reportTest.log(Status.INFO, "Clicked Send Email Password Button");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Confirmation Window Displayed of Email Sent");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
@@ -515,11 +516,11 @@ public class PatExtraOptnTestCases {
             patientListPgTest.clickSendEmailPwBtn();
             reportTest.log(Status.INFO, "Clicked Send Email Password Button");
             log.info("PASS");
-	    testCaseJamaApiPass(apiId++);
+	    testCaseJamaApiPass(getIncApiId());
 	    reportTest.log(Status.PASS, "Email sent, Please Check Email");
         } catch (Exception e) {
             reportTest.log(Status.FAIL, "Test FAILED");
-	    testCaseJamaApiFail(apiId++);
+	    testCaseJamaApiFail(getIncApiId());
 	    org.testng.Assert.fail("Test FAILED");
         }
     }
