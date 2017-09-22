@@ -5,11 +5,14 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 
 
 public class JamaAPIUtilities {
     
+    private static final Logger log = LogManager.getLogger(JamaAPIUtilities.class.getName());
     private static String jamaUrl = "https://reflexionhealth.jamacloud.com/rest/latest/testruns/";
     private static JSONObject jamaBody = new JSONObject();
     private static JSONObject fields = new JSONObject();
@@ -21,15 +24,14 @@ public class JamaAPIUtilities {
         status.put("status", "PASSED");
         jamaBody.put("fields", fields);
         fields.put("testRunSteps", new JSONObject[] { status });
-        fields.put("actualResults", "");
+        fields.put("actualResults", "Automation Test Tool Results");
         HttpResponse<JsonNode> jamaReq = Unirest.put(jamaUrl + apiId)
                 .header("content-type", "application/json")
                 .header("authorization", "Basic YW5kcmVzLmdvbWV6Ojg4QWd6Xl9e")
                 .body(jamaBody)
                 .asJson();
         jamaRes = jamaReq.getBody().getObject();
-        System.out.println(jamaRes.toString(2));
-        System.out.println("********** API ID =" + apiId);
+        log.info("REST API PUT Test Results - " + jamaRes.getJSONObject("meta").getString("status"));
     }
     
     public static void testCaseJamaApiFail(int apiId) throws UnirestException {
@@ -42,8 +44,7 @@ public class JamaAPIUtilities {
                 .body(jamaBody)
                 .asJson();
         jamaRes = jamaReq.getBody().getObject();
-        System.out.println(jamaRes.toString(2));
-        System.out.println("********** API ID =" + apiId);
+        log.info("REST API PUT Test Result - " + jamaRes.getJSONObject("meta").getString("status"));
     }
 
     public static void setApiId(int ID) {
