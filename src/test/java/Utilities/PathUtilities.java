@@ -7,7 +7,7 @@ package Utilities;
 
 public class PathUtilities {
     private static String geckoDriverPath =   "geckodriver"; // "C:\\seleniumdriver\\geckodriver.exe";
-    private static String chromeDriverPath = "/driver/chromedriver"; // "C:\\seleniumdriver\\chromedriver.exe";
+    private static String chromeDriverPath = "/usr/local/share/chromedriver"; // "C:\\seleniumdriver\\chromedriver.exe";
     private static String excelPath = "C:\\Users\\User\\Documents\\NetBeansProjects\\CATest\\testData.xlsx";
     private static String extentRepPath = "C:\\Users\\User\\Documents\\Screenshots\\";
     private static String extentConfPath = "C:\\Users\\User\\Documents\\NetBeansProjects\\camaven\\src\\test\\resources\\extent-config.xml";
