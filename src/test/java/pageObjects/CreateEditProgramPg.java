@@ -280,169 +280,172 @@ public class CreateEditProgramPg {
     WebElement e33LongSitHeelSlide;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[34]/div")
-    WebElement e34PatellaMobiliztn;  
+    WebElement e34LongSitIsoQuad;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[35]/div")
-    WebElement e35Planks;
+    WebElement e35PatellaMobiliztn;  
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[36]/div")
-    WebElement e36ProneHipExt;
+    WebElement e36Planks;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[37]/div")
-    WebElement e37ProneKneeHang;
+    WebElement e37ProneHipExt;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[38]/div")
-    WebElement e38QuadStretch;
+    WebElement e38ProneKneeHang;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[39]/div")
-    WebElement e39SeatKneeFlexStrch;
+    WebElement e39QuadStretch;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[40]/div")
-    WebElement e40ShallowLunge;
+    WebElement e40SeatKneeFlexStrch;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[41]/div")
-    WebElement e41ShallowSquat;
+    WebElement e41ShallowLunge;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[42]/div")
-    WebElement e42ShortArcQuad;
+    WebElement e42ShallowSquat;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[43]/div")
-    WebElement e43SidelyingHipAbduct;
+    WebElement e43ShortArcQuad;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[44]/div")
-    WebElement e44SidelyingHipAdduct;
+    WebElement e44SidelyingHipAbduct;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[45]/div")
-    WebElement e45SingleLegBal;
+    WebElement e45SidelyingHipAdduct;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[46]/div")
-    WebElement e46SingleLegBalChrOpp;
+    WebElement e46SingleLegBal;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[47]/div")
-    WebElement e47SingleLegBalChrSame;
+    WebElement e47SingleLegBalChrOpp;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[48]/div")
-    WebElement e48SingleLegBridging;
+    WebElement e48SingleLegBalChrSame;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[49]/div")
-    WebElement e49SingleLegDeadlift;
+    WebElement e49SingleLegBridging;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[50]/div")
-    WebElement e50SingleLegHeelRise;
+    WebElement e50SingleLegDeadlift;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[51]/div")
-    WebElement e51SingleLegSquat;
+    WebElement e51SingleLegHeelRise;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[52]/div")
-    WebElement e52SitStndChair0H;
+    WebElement e52SingleLegSquat;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[53]/div")
-    WebElement e53SitStndChair1H;
+    WebElement e53SitStndChair0H;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[54]/div")
-    WebElement e54SitStndChair2H;
+    WebElement e54SitStndChair1H;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[55]/div")
-    WebElement e55SitAnklPumpChair;
+    WebElement e55SitStndChair2H;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[56]/div")
-    WebElement e56SitBallSquezsChair;
+    WebElement e56SitAnklPumpChair;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[57]/div")
-    WebElement e57SitCalfStrchWBand;
+    WebElement e57SitBallSquezsChair;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[58]/div")
-    WebElement e58SitQuadBrainTrck;
+    WebElement e58SitCalfStrchWBand;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[59]/div")
-    WebElement e59StaggrdBal;
+    WebElement e59SitQuadBrainTrck;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[60]/div")
-    WebElement e60StaggrdSquat;
+    WebElement e60StaggrdBal;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[61]/div")
-    WebElement e61StandBackExt;
+    WebElement e61StaggrdSquat;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[62]/div")
-    WebElement e62StandDblLegHeelRaise0H;
+    WebElement e62StandBackExt;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[63]/div")
-    WebElement e63StandDblLegHeelRaise1H;
+    WebElement e63StandDblLegHeelRaise0H;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[64]/div")
-    WebElement e64StandDblLegHeelRaise2H;
+    WebElement e64StandDblLegHeelRaise1H;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[65]/div")
-    WebElement e65StandHipAbduct;
+    WebElement e65StandDblLegHeelRaise2H;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[66]/div")
-    WebElement e66StandHipAdduct;
+    WebElement e66StandHipAbduct;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[67]/div")
-    WebElement e67StandHipExt;
+    WebElement e67StandHipAdduct;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[68]/div")
-    WebElement e68StandHipFlex;
+    WebElement e68StandHipExt;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[69]/div")
-    WebElement e69StandHipFlexMarch;
+    WebElement e69StandHipFlex;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[70]/div")
-    WebElement e70StandKneeFlex;
+    WebElement e70StandHipFlexMarch;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[71]/div")
-    WebElement e71StandToeRaises0H;
+    WebElement e71StandKneeFlex;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[72]/div")
-    WebElement e72StandToeRaises1H;
+    WebElement e72StandToeRaises0H;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[73]/div")
-    WebElement e73StandToeRaises2H;
+    WebElement e73StandToeRaises1H;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[74]/div")
-    WebElement e74StandTrunkRot;
+    WebElement e74StandToeRaises2H;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[75]/div")
-    WebElement e75StepUp;
+    WebElement e75StandTrunkRot;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[76]/div")
-    WebElement e76SupGluteSet;
-    
-    //@FindBy(xpath = "//ul[@class='exercises clearfix']/li[77]/div")
-    //WebElement e77SupAnklePump;    
+    WebElement e76StepUp;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[77]/div")
-    WebElement e77SupHipAbduct;
+    WebElement e77SupAnklePump; 
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[78]/div")
-    WebElement e78SupQuadBrainTrck;
+    WebElement e78SupGluteSet;       
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[79]/div")
-    WebElement e79SupStrghtLegRaise;
+    WebElement e79SupHipAbduct;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[80]/div")
-    WebElement e80TandemBal;
+    WebElement e80SupQuadBrainTrck;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[81]/div")
-    WebElement e81TermKneeExt;
+    WebElement e81SupStrghtLegRaise;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[82]/div")
-    WebElement e82ToeWalk1H;
+    WebElement e82TandemBal;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[83]/div")
-    WebElement e83ToeWalk0H;
+    WebElement e83TermKneeExt;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[84]/div")
-    WebElement e84VMOKicks;
+    WebElement e84ToeWalk1H;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[85]/div")
-    WebElement e85WalkBack1H;
+    WebElement e85ToeWalk0H;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[86]/div")
-    WebElement e86WalkBack0H;
+    WebElement e86VMOKicks;
     
     @FindBy(xpath = "//ul[@class='exercises clearfix']/li[87]/div")
-    WebElement e87WalknTurn;
+    WebElement e87WalkBack1H;
+    
+    @FindBy(xpath = "//ul[@class='exercises clearfix']/li[88]/div")
+    WebElement e88WalkBack0H;
+    
+    @FindBy(xpath = "//ul[@class='exercises clearfix']/li[89]/div")
+    WebElement e89WalknTurn;
     
     //Assesments
     @FindBy(xpath = "//ul[@class='assessments clearfix']/li[1]/div")
