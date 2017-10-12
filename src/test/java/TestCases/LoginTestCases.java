@@ -34,7 +34,7 @@ public class LoginTestCases {
     private ResetpwLogInPg resetpwLogInPgTest;
     private PatientListPg patientListPgTest;
     private NavBarFooterPg navBarFooterPgTest;    
-    private  String methodName;
+    private String methodName;
     private ExtentReports extent;
     private ExtentTest reportTest;
         
