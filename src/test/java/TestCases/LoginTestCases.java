@@ -21,6 +21,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -468,6 +469,6 @@ public class LoginTestCases {
     @AfterClass
     public void flush() {
         extent.flush();
-        driver.close();
+        driver.quit();
     }
 }
