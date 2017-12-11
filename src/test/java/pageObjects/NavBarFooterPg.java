@@ -88,7 +88,7 @@ public class NavBarFooterPg {
         Thread.sleep(1000);
         searchTxtBoxNavBar.sendKeys(input, Keys.ENTER);
         log.info("Entered for Search: " + input);
-        patientListPgTest.waitPgLoad();
+        //patientListPgTest.waitPgLoad();
     }
     
     public void clickSrchNavBar() {

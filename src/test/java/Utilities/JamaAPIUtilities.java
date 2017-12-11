@@ -27,7 +27,7 @@ public class JamaAPIUtilities {
         fields.put("actualResults", "Automation Test Tool Results");
         HttpResponse<JsonNode> jamaReq = Unirest.put(jamaUrl + apiId)
                 .header("content-type", "application/json")
-                .header("authorization", "Basic YW5kcmVzLmdvbWV6Ojg4QWd6Xl9e")
+                .header("authorization", "Basic YW5kcmVzLmdvbWV6OnRDbmV4dXM4OA==")
                 .body(jamaBody)
                 .asJson();
         jamaRes = jamaReq.getBody().getObject();
@@ -40,7 +40,7 @@ public class JamaAPIUtilities {
         fields.put("testRunSteps", new JSONObject[] { status });
         HttpResponse<JsonNode> jamaReq = Unirest.put(jamaUrl + apiId)
                 .header("content-type", "application/json")
-                .header("authorization", "Basic YW5kcmVzLmdvbWV6Ojg4QWd6Xl9e")
+                .header("authorization", "Basic YW5kcmVzLmdvbWV6OnRDbmV4dXM4OA==")
                 .body(jamaBody)
                 .asJson();
         jamaRes = jamaReq.getBody().getObject();

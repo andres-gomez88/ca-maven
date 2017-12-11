@@ -17,7 +17,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
@@ -51,7 +54,15 @@ public class LoginTestCases {
         } else if (browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
             driver = new ChromeDriver();
-        }        
+        } else if (browser.equalsIgnoreCase("iexplorer")) {
+            System.setProperty("webdriver.ie.driver", getIExplorerDriverPath());
+            driver = new InternetExplorerDriver();
+        } else if (browser.equalsIgnoreCase("edge")) {
+            System.setProperty("webdriver.edge.driver", getEdgeDriverPath());
+            driver = new EdgeDriver();
+        } else if (browser.equalsIgnoreCase("safari")) {
+            driver = new SafariDriver();
+        }
         driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         logInPgTest = new LogInPg(driver);
@@ -416,8 +427,9 @@ public class LoginTestCases {
             reportTest.log(Status.INFO, "Login Attempt with user: " + finalEmail());
             patientListPgTest.waitPgLoad();
             log.info("Home page loaded");
-            navBarFooterPgTest.searchNavBar("test3");
+            navBarFooterPgTest.searchNavBar("test");
             reportTest.log(Status.INFO, "Searched Nav Bar: test3");
+            patientListPgTest.validSearchCheck();
             log.info("PASS");
             reportTest.log(Status.PASS, "Search displayed all details");
             testCaseJamaApiPass(getIncApiId());
@@ -442,6 +454,7 @@ public class LoginTestCases {
             log.info("Home page loaded");
             navBarFooterPgTest.searchNavBar("lala");
             reportTest.log(Status.INFO, "Searched Nav Bar with invalid patient name: lala");
+            patientListPgTest.invalidSearchCheck();
             log.info("PASS");
             reportTest.log(Status.PASS, "No results found message displayed");
             testCaseJamaApiPass(getIncApiId());
@@ -462,8 +475,12 @@ public class LoginTestCases {
             path = takeScreenshotFF(methodName + "FF", driver);
         } else if (browser.equalsIgnoreCase("chrome")) {
             path = takeScreenshotCH(methodName + "CH", driver);
-        }
-        reportTest.debug("Final Screenshot", MediaEntityBuilder.createScreenCaptureFromPath(path).build());     
+        } else if (browser.equalsIgnoreCase("iexplorer")) {
+            path = takeScreenShotIE(methodName + "IE", driver);
+        } else if (browser.equalsIgnoreCase("edge")) {
+            path = takeScreenShotME(methodName + "ME", driver);
+        } 
+        reportTest.debug("Final Screenshot", MediaEntityBuilder.createScreenCaptureFromPath(path).build());
     }
     
     @AfterClass

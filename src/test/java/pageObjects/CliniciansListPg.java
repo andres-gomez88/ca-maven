@@ -210,6 +210,11 @@ public class CliniciansListPg {
         log.info("Clicked Email Clinician Button");
     }
     
+    public void checkEmailClin() {
+        waitForClick(sendEmailRow, 3, driver);
+        log.info("Email clinician button clickable");
+    }
+    
     public void expandClinInfo() {
         clinicianInfoRow.click();
         log.info("Clicked Expand Arrow for Clinician Details");

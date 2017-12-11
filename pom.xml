@@ -41,7 +41,7 @@
       <dependency>
           <groupId>com.aventstack</groupId>
           <artifactId>extentreports</artifactId>
-          <version>3.0.6</version>
+          <version>3.1.1</version>
       </dependency>
       <dependency>
           <groupId>org.apache.poi</groupId>
@@ -148,6 +148,57 @@
                       <configuration>
                           <suiteXmlFiles>
                               <suiteXmlFile>fullClinicianTestCh.xml</suiteXmlFile>
+                          </suiteXmlFiles>
+                      </configuration>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+      <profile>
+          <id>TestDataIe</id>          
+          <build>
+              <plugins>
+                  <plugin>
+                      <groupId>org.apache.maven.plugins</groupId>
+                      <artifactId>maven-surefire-plugin</artifactId>
+                      <version>2.20</version>
+                      <configuration>
+                          <suiteXmlFiles>
+                              <suiteXmlFile>testDataIe.xml</suiteXmlFile>
+                          </suiteXmlFiles>
+                      </configuration>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+      <profile>
+          <id>TestDataMe</id>
+          <build>
+              <plugins>
+                  <plugin>
+                      <groupId>org.apache.maven.plugins</groupId>
+                      <artifactId>maven-surefire-plugin</artifactId>
+                      <version>2.20</version>
+                      <configuration>
+                          <suiteXmlFiles>
+                              <suiteXmlFile>testDataMe.xml</suiteXmlFile>
+                          </suiteXmlFiles>
+                      </configuration>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+      <profile>
+          <id>Demo-Test</id>
+          <build>
+              <plugins>
+                  <plugin>
+                      <groupId>org.apache.maven.plugins</groupId>
+                      <artifactId>maven-surefire-plugin</artifactId>
+                      <version>2.20</version>
+                      <configuration>
+                          <suiteXmlFiles>
+                              <suiteXmlFile>demo.xml</suiteXmlFile>
                           </suiteXmlFiles>
                       </configuration>
                   </plugin>

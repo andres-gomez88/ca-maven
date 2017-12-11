@@ -623,6 +623,10 @@ public class CreateEditProtocolPg {
     @FindBy(xpath = "//div[@class='modal-footer ng-scope']/button[1]")
     WebElement cancelPopup;
     
+    //Exercise Desription Pop-up
+    @FindBy(xpath = "//div[@class='modal-content']")
+    WebElement excDescPopup;
+    
     public CreateEditProtocolPg(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -678,7 +682,9 @@ public class CreateEditProtocolPg {
         waitForVisibility(excDesLinkRowE, 2, driver);
         excDesLinkRowE.click();
         log.info("Clicked Excercise Description");
-        waitForVisibility(okBtn, 3, driver);
+        okBtn.click();
+        excDesLinkRowE.click();
+        // waitForVisibility(okBtn, 3, driver);
         log.info("Description Visible");        
     }
     

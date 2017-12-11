@@ -142,6 +142,9 @@ public class PatientListPg {
     @FindBy(name = "end_date")
     WebElement toDateTxtBox;
     
+    @FindBy(xpath = "//div[@class='modal-content']")
+    WebElement holdWin;
+    
     //Cancel On Hold Window
     @FindBy(xpath = "//button[text()='Cancel']")
     WebElement cancelCHoldBtn;
@@ -180,6 +183,10 @@ public class PatientListPg {
     
     @FindBy(xpath = "//button[text()='Edit Profile']")
     WebElement editProfKitBtn;
+    
+    //Invalid search element
+    @FindBy(xpath = "//p[text()='No Results Found']")
+    WebElement invalidSearch;
     
     public PatientListPg(WebDriver driver) {
         this.driver = driver;
@@ -284,9 +291,11 @@ public class PatientListPg {
     
     public void plOnHoldExtraOptn() {
         clickExtraOptn();
+        log.info("Waiting for extra options");
         waitForVisibility(placeHoldExOptn, 2, driver);
         placeHoldExOptn.click();
-        waitForVisibility(cancelKitBtn, 5, driver);
+        log.info("Clicked Place On Hold option");
+        waitForClick(toClick, 5, driver);
     }
     
     public void cancelHoldOptn() {
@@ -342,5 +351,13 @@ public class PatientListPg {
     
     public void waitForKitInstPopup() {
         waitForVisibility(editProfKitBtn, 2, driver);
+    }
+    
+    public void validSearchCheck() {
+        waitForVisibility(patientLinkRow, 4, driver);
+    }
+    
+    public void invalidSearchCheck() {
+        waitForVisibility(invalidSearch, 3, driver);
     }
 }

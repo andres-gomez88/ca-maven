@@ -9,13 +9,14 @@ public class LoginEnvUtilities {
     private static String pre = "https://prerelease-wc.prod.reflexionhealth.com";
     private static String test = "https://test-wc.test.reflexionhealth.com";
     private static String testmaint = "https://test-maint-wc.test.reflexionhealth.com";
+    private static String dev = "https://dev-wc.dev.reflexionhealth.com";
     
     public static String finalEnvironment() {
-        return testmaint;
+        return pre;
     }
     
     public static String finalEmail() {
-        return email3;
+        return email;
     }
     
     public static String finalPass() {

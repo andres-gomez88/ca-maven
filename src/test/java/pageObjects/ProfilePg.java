@@ -451,4 +451,9 @@ public class ProfilePg {
     public void waitResetPWPopup() {
         waitForVisibility(sendEmailPwRBtn, 2, driver);
     }
+    
+    public void checkPatEmailBtn() {
+        waitForClick(sendEmailtoPatBtn, 3, driver);
+        log.info("Email Patient button present.");
+    }
 }

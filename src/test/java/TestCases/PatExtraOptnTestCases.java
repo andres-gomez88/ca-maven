@@ -18,10 +18,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -43,15 +45,23 @@ public class PatExtraOptnTestCases {
     @BeforeClass
     public void setup(@Optional String browser, @Optional String id) throws Exception {
         if(browser == null) {
-            System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
-            driver = new ChromeDriver();
+            System.setProperty("webdriver.ie.driver", getIExplorerDriverPath());
+            driver = new InternetExplorerDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
             System.setProperty("webdriver.gecko.driver", getGeckoDriverPath());
             driver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", getChromeDriverPath());
             driver = new ChromeDriver();
-        }   
+        } else if (browser.equalsIgnoreCase("iexplorer")) {
+            System.setProperty("webdriver.ie.driver", getIExplorerDriverPath());
+            driver = new InternetExplorerDriver();
+        } else if (browser.equalsIgnoreCase("edge")) {
+            System.setProperty("webdriver.edge.driver", getEdgeDriverPath());
+            driver = new EdgeDriver();
+        } else if (browser.equalsIgnoreCase("safari")) {
+            driver = new SafariDriver();
+        }
         driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         logInPgTest = new LogInPg(driver);
@@ -495,7 +505,7 @@ public class PatExtraOptnTestCases {
     }
     
     @Test(enabled = true)
-    public void testCase267() throws UnirestException {// Check finalEmail()
+    public void testCase267() throws UnirestException { // Check finalEmail()
         methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
 	reportTest = extent.createTest(methodName);
         try {
@@ -518,6 +528,26 @@ public class PatExtraOptnTestCases {
         }
     }
     
+    @Test(enabled = false)
+    public void testCase268() throws UnirestException {
+        
+    }
+    
+    @Test(enabled = false)
+    public void testCase269() throws UnirestException {
+        
+    }
+    
+    @Test(enabled = false)
+    public void testCase270() throws UnirestException {
+        
+    }
+    
+    @Test(enabled = false)
+    public void testCase271() throws UnirestException {
+        
+    }
+    
     @Parameters("browserType")
     @AfterMethod
     public void screenAfterMethod(@Optional String browser) throws IOException, InterruptedException {
@@ -528,6 +558,10 @@ public class PatExtraOptnTestCases {
             path = takeScreenshotFF(methodName + "FF", driver);
         } else if (browser.equalsIgnoreCase("chrome")) {
             path = takeScreenshotCH(methodName + "CH", driver);
+        } else if (browser.equalsIgnoreCase("iexplorer")) {
+            path = takeScreenShotIE(methodName + "IE", driver);
+        } else if (browser.equalsIgnoreCase("edge")) {
+            path = takeScreenShotME(methodName + "ME", driver);
         }
         reportTest.debug("Final Screenshot", MediaEntityBuilder.createScreenCaptureFromPath(path).build());     
     }
