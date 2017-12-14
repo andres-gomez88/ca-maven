@@ -44,4 +44,13 @@ public class Screenshot {
         FileUtils.copyFile(screenshot, new File(finalPath));
         return finalPath;
     }
+    
+    public static String takeScreenShotAS(String fileName, WebDriver driver) throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        finalPath = getScreenshotASPath() + fileName + ".png";
+        FileUtils.copyFile(screenshot, new File(finalPath));
+        return finalPath;
+    }
+    
 }

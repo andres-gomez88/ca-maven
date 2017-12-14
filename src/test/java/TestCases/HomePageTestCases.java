@@ -71,7 +71,11 @@ public class HomePageTestCases {
         patientListPgTest = new PatientListPg(driver);
         addPatientPgTest = new AddPatientPg(driver);
         if(ExtentFactory.getInstance() == null) {
-            extent = ExtentFactory.createInstance(browser);
+            if(browser.equalsIgnoreCase("safari")) {
+                extent = ExtentFactory.createInstance(browser, "macos");
+            } else {
+                extent = ExtentFactory.createInstance(browser, "windows");
+            }
         } else {
             extent = ExtentFactory.getInstance();
         }
@@ -778,6 +782,8 @@ public class HomePageTestCases {
             path = takeScreenShotIE(methodName + "IE", driver);
         } else if (browser.equalsIgnoreCase("edge")) {
             path = takeScreenShotME(methodName + "ME", driver);
+        } else if (browser.equalsIgnoreCase("safari")) {
+            path = takeScreenShotAS(methodName + "AS", driver);
         }
         reportTest.debug("Final Screenshot", MediaEntityBuilder.createScreenCaptureFromPath(path).build());     
     }

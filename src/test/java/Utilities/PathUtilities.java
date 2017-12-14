@@ -9,10 +9,13 @@ public class PathUtilities {
     private static String excelPath = "C:\\Users\\andres.gomez\\Documents\\NetBeansProjects\\CATest\\testData.xlsx";
     private static String extentRepPath = "C:\\Users\\andres.gomez\\Documents\\Screenshots\\";
     private static String extentConfPath = "C:\\Users\\andres.gomez\\Documents\\NetBeansProjects\\camaven\\src\\test\\resources\\extent-config.xml";
+    private static String extentRepPathMac = "/usr/local/reports/ca-maven";
+    private static String extentConfPathMac = "/users/qateam/netbeansprojects";
     private static String screenshotFFPath = "C:\\Users\\andres.gomez\\Documents\\Screenshots\\Firefox\\";
     private static String screenshotCHPath = "C:\\Users\\andres.gomez\\Documents\\Screenshots\\Chrome\\";
     private static String screenshotIEPath = "C:\\Users\\andres.gomez\\Documents\\Screenshots\\IExplorer\\";
     private static String screenshotMEPath = "C:\\Users\\andres.gomez\\Documents\\Screenshots\\Edge\\";
+    private static String screenshotASPath = "/usr/local/reports/safari/";
 
     public static String getGeckoDriverPath() {
         return geckoDriverPath;
@@ -41,6 +44,13 @@ public class PathUtilities {
     public static String getExtentConfPath() {
         return extentConfPath;
     }
+    
+    public static String getExtentRepPathMac() {
+        return extentRepPathMac;
+    }
+    public static String getExtentConfPathMac() {
+        return extentConfPathMac;
+    }
 
     public static String getScreenshotFFPath() {
         return screenshotFFPath;
@@ -56,5 +66,9 @@ public class PathUtilities {
     
     public static String getScreenshotMEPath() {
         return screenshotMEPath;
+    }
+    
+    public static String getScreenshotASPath() {
+        return screenshotASPath;
     }
 }
