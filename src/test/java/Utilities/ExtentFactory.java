@@ -9,18 +9,16 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 public class ExtentFactory {
     private static ExtentReports extent;
     
-    public static ExtentReports createInstance(String browser, String operatingSystem) {
+    public static ExtentReports createInstance(String browser) {
         ExtentHtmlReporter htmlReporter;
-        if(operatingSystem.equalsIgnoreCase("windows"))
+        if(browser.equalsIgnoreCase("safari"))
         {
-            htmlReporter = new ExtentHtmlReporter(getExtentRepPath() + browser + "report.html");
-            htmlReporter.loadXMLConfig(getExtentConfPath());
-        } else if (operatingSystem.equalsIgnoreCase("macos")) {
             htmlReporter = new ExtentHtmlReporter(getExtentRepPathMac() + browser + "report.html");
             htmlReporter.loadXMLConfig(getExtentConfPathMac());
+        } else {
+            htmlReporter = new ExtentHtmlReporter(getExtentRepPath() + browser + "report.html");
+            htmlReporter.loadXMLConfig(getExtentConfPath());
         }
-        htmlReporter = new ExtentHtmlReporter(getExtentRepPath() + browser + "report.html");
-        htmlReporter.loadXMLConfig(getExtentConfPath());
         extent = new ExtentReports();        
         extent.attachReporter(htmlReporter);
         extent.setSystemInfo("OS", System.getProperty("os.name"));

@@ -71,11 +71,7 @@ public class ChangePWTestCases {
         changePWPgTest = new ChangePwPg(driver);
         patientListPgTest = new PatientListPg(driver);
         if(ExtentFactory.getInstance() == null) {
-            if(browser.equalsIgnoreCase("safari")) {
-                extent = ExtentFactory.createInstance(browser, "macos");
-            } else {
-                extent = ExtentFactory.createInstance(browser, "windows");
-            }
+            extent = ExtentFactory.createInstance(browser);
         } else {
             extent = ExtentFactory.getInstance();
         }

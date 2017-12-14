@@ -70,11 +70,7 @@ public class LoginTestCases {
         patientListPgTest = new PatientListPg(driver);
         navBarFooterPgTest = new NavBarFooterPg(driver);
         if(ExtentFactory.getInstance() == null) {
-            if(browser.equalsIgnoreCase("safari")) {
-                extent = ExtentFactory.createInstance(browser, "macos");
-            } else {
-                extent = ExtentFactory.createInstance(browser, "windows");
-            }
+            extent = ExtentFactory.createInstance(browser);
         } else {
             extent = ExtentFactory.getInstance();
         }
