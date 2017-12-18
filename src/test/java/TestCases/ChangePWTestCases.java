@@ -43,7 +43,7 @@ public class ChangePWTestCases {
     private ExtentReports extent;
     private ExtentTest reportTest;
     
-    @Parameters({"browserType", "apiId",})
+    @Parameters({"browserType", "apiId"})
     @BeforeClass
     public void setup(@Optional String browser, @Optional String id) throws Exception {
         if(browser == null) {
